@@ -18,8 +18,7 @@ SET time_zone = "+00:00";
 
 --
 -- Base de données :  `jpublankproject`
---
-CREATE DATABASE `jpublankproject` ;
+CREATE DATABASE `jpublankproject`;
 
 USE `jpublankproject` ;
 
@@ -27,13 +26,13 @@ DELIMITER $$
 --
 -- Procédures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `helloworldById` (IN `p_id` INT)  READS SQL DATA
-    SQL SECURITY INVOKER
-SELECT * FROM helloworld WHERE id = p_id$$
+CREATE PROCEDURE `helloworldById` (IN `p_id` INT)  READS SQL DATA
+  SQL SECURITY INVOKER
+  SELECT * FROM helloworld WHERE id = p_id$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `HelloworldByKey` (IN `p_key` VARCHAR(2))  READS SQL DATA
-    SQL SECURITY INVOKER
-SELECT * FROM jpublankproject.helloworld where `key`=p_key$$
+CREATE PROCEDURE `HelloworldByKey` (IN `p_key` VARCHAR(2))  READS SQL DATA
+  SQL SECURITY INVOKER
+  SELECT * FROM jpublankproject.helloworld where `key`=p_key$$
 
 DELIMITER ;
 
@@ -54,10 +53,10 @@ CREATE TABLE `helloworld` (
 --
 
 INSERT INTO `helloworld` (`id`, `key`, `message`) VALUES
-(1, 'GB', 'Hello world'),
-(2, 'FR', 'Bonjour le monde'),
-(3, 'DE', 'Hallo Welt'),
-(4, 'ID', 'Salamat pagi dunia');
+  (1, 'GB', 'Hello world'),
+  (2, 'FR', 'Bonjour le monde'),
+  (3, 'DE', 'Hallo Welt'),
+  (4, 'ID', 'Salamat pagi dunia');
 
 --
 -- Index pour les tables exportées
