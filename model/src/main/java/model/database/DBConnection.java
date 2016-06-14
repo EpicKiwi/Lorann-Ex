@@ -12,10 +12,10 @@ import java.sql.SQLException;
  */
 final class DBConnection {
 	/** The instance. */
-	private static DBConnection	INSTANCE	= null;
+	private static DBConnection	INSTANCE = null;
 
 	/** The connection. */
-	private Connection					connection;
+	private Connection	connection;
 
 	/**
 	 * Instantiates a new DB connection.
