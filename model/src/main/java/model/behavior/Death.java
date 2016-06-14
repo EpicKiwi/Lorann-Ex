@@ -1,7 +1,9 @@
 package model.behavior;
 
 /**
- * Created by Marie on 14/06/2016.
+ * A behavior of death of the player
+ * @author Marie
  */
 public class Death {
+
 }

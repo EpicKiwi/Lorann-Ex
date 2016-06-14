@@ -1,7 +1,7 @@
 package model.behavior;
 
 /**
- * Created by Marie on 14/06/2016.
+ * A beahavior where the player gain a spell
  */
 public class MoreSpell {
 }

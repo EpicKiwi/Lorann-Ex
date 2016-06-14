@@ -1,10 +1,19 @@
 package model.behavior;
 
-import javax.lang.model.element.Element;
+import model.Level;
+import model.elements.Element;
 
 /**
- * Created by Marie on 14/06/2016.
+ * An interface for the differents Behaviour of the éléments
  */
 public interface Behavior {
-    public void onCollision(Element other);
+
+    /**
+     * A methods executed when a collision was triggered
+     * @param other
+     * The other elements in the collision
+     * @param level
+     * The level
+     */
+    public void onCollision(Element other, Level level);
 }

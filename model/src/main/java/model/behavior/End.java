@@ -1,7 +1,8 @@
 package model.behavior;
 
 /**
- * Created by Marie on 14/06/2016.
+ * A Behavior of the end of the level
+ * @author Marie
  */
 public class End {
 }
