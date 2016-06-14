@@ -1,7 +1,7 @@
 package model.elements;
 
 /**
- * Created by Marie on 14/06/2016.
+ * A bubble that open the door
  */
 public class LifeBubble {
 }

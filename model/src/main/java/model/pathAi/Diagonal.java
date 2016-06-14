@@ -1,7 +1,13 @@
 package model.pathAi;
 
+import model.Level;
+
 /**
- * Created by Marie on 14/06/2016.
+ *@author Marie
+ * Deplacement to diagonal
  */
 public class Diagonal implements PathAI  {
+    public void onTick(Level level) {
+
+    }
 }
