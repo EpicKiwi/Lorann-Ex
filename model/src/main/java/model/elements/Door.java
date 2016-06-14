@@ -4,5 +4,14 @@ package model.elements;
  * The door of the level
  * @author Marie
  */
-public class Door {
+public class Door extends Element {
+    /**
+     * localisation and image Door
+     * @param x
+     * @param y
+     * @param image
+     */
+    public Door(int x, int y, String image) {
+        super(x, y, image);
+    }
 }

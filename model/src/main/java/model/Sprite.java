@@ -10,7 +10,7 @@ import java.awt.*;
 public class Sprite {
 
     /** The image of the sprite */
-    private Image image;
+    protected Image image;
 
     /**
      * Instanciate the sprite
