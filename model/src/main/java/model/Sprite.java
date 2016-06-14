@@ -1,6 +1,7 @@
 package model;
 
-public class Sprite {
+public class Sprite 
+{
     private char image; // a voir !
 
     public char getImage() {
