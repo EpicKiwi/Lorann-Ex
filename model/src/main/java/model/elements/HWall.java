@@ -8,10 +8,11 @@ public class HWall extends Wall{
      * Localisation and image HWall
      *
      * @param x
+     * The X position
      * @param y
-     * @param image
+     * The Y position
      */
-    public HWall(int x, int y, String image) {
-        super(x, y, image);
+    public HWall(int x, int y) {
+        super(x, y, "sprites/horizontal_bone.png");
     }
 }

@@ -1,6 +1,7 @@
 package model.elements;
 
-import com.sun.javafx.scene.traversal.Direction;
+import model.Direction;
+import model.Sprite;
 
 
 /**
@@ -21,6 +22,11 @@ public class Entity extends Element{
 
     public Entity(int x, int y, String image) {
         super(x, y, image);
+    }
+
+    public Entity(int x, int y, Sprite sprite) {
+        super(x, y, sprite);
+        this.direction = Direction.UP;
     }
 
     /**

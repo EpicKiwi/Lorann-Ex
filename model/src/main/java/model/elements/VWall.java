@@ -9,10 +9,11 @@ public class VWall extends Wall
      * Localisation and image VWall
      *
      * @param x
+     * The X position
      * @param y
-     * @param image
+     * The Y position
      */
-    public VWall(int x, int y, String image) {
-        super(x, y, image);
+    public VWall(int x, int y) {
+        super(x, y, "sprites/vertical_bone.png");
     }
 }
