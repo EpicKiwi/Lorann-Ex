@@ -8,10 +8,11 @@ public class Cross extends Wall {
      * Localisation and image Cross
      *
      * @param x
+     * The X position
      * @param y
-     * @param image
+     * The Y position
      */
-    public Cross(int x, int y, String image) {
-        super(x, y, image);
+    public Cross(int x, int y) {
+        super(x, y, "sprites/bone.png");
     }
 }

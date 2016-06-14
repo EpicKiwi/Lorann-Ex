@@ -5,6 +5,6 @@ package model;
  * enums of type of deplacement
  */
 
-enum Direction {
+public enum Direction {
     UP, DOWN, LEFT, RIGHT, TOPLEFT, TOPRIGHT, BOTTOMLEFT, BOTTOMRIGHT
 }

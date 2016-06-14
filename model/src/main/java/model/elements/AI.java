@@ -1,5 +1,6 @@
 package model.elements;
 
+import model.Sprite;
 import model.pathAi.PathAI;
 
 /**
@@ -18,6 +19,11 @@ public class AI extends Entity {
      */
     public AI(int x, int y, String image, PathAI path) {
         super(x, y, image);
+        this.path = path;
+    }
+
+    public AI(int x, int y, Sprite sprite, PathAI path) {
+        super(x, y, sprite);
         this.path = path;
     }
 
