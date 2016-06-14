@@ -12,6 +12,6 @@ public class LifeBubble extends Item {
      * @param image
      */
     public LifeBubble(int x, int y, String image) {
-        super(x, y, image);
+        super(x, y, "sprites/crystal_ball.png");
     }
 }

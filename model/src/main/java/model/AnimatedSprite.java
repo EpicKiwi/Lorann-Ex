@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Created by Marie on 14/06/2016.
+ *@author Marie
  * 
  * switch sprites to make an animation
  */
