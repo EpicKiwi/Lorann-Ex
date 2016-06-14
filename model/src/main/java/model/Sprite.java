@@ -1,5 +1,6 @@
 package model;
 
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +9,7 @@ import java.awt.*;
  * @author Marie
  */
 public class Sprite {
+
 
     /** The image of the sprite */
     protected Image image;
