@@ -10,6 +10,7 @@ public interface IStockable {
     /**
      * A methods give the query to save the object in DB
      * @return
+
      */
     String getSaveQuery();
 

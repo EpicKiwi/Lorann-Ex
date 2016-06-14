@@ -1,8 +1,10 @@
 package model;
 
 /**
- * Created by Marie on 14/06/2016.
+ * @author Marie
+ * enums of type of deplacement
  */
-public enum Direction {
+
+enum Direction {
     UP, DOWN, LEFT, RIGHT, TOPLEFT, TOPRIGHT, BOTTOMLEFT, BOTTOMRIGHT
 }
