@@ -7,8 +7,6 @@ package model.database;
 public interface IStockable {
     /**
      * A methods which allow to storage the data in the DB
-     * @param
-     * @param
      */
 
 
