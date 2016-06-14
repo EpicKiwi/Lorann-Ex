@@ -42,6 +42,22 @@ class GameFrame extends JFrame implements KeyListener
 		
 	}
 	
+	/**
+	 * geter of the width attribute
+	 */
+	public int getWidth()
+	{
+		return 0;
+	}
+	
+	/**
+	 * geter of the width attribute
+	 */
+	public int getHeight()
+	{
+		return 0;
+	}
+	
 	
 	/**
 	 * methode used to capture the user's actions
