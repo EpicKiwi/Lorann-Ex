@@ -17,12 +17,12 @@ class GameFrame extends JFrame implements KeyListener
 	/**
 	 * attribute to create the frame's size
 	 */
-	private int width;
+	private int width = 640;
 	
 	/**
 	 * attribute to create the frame's size
 	 */
-	private int height;
+	private int height = 380;
 	
 	
 	
@@ -31,7 +31,11 @@ class GameFrame extends JFrame implements KeyListener
 	 */
 	GameFrame()
 	{
-		
+		this.setTitle("Lorran");
+		this.setSize(width, height);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
 	}
 	
 	/**
