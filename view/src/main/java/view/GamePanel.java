@@ -10,7 +10,7 @@ import javax.swing.JPanel;
  *
  * @author Jean-Aymeric Diet
  */
-class GamePanel extends JPanel implements IObserver 
+class GamePanel extends JPanel implements Observer
 {
 	/**
 	 * constructor of this class
@@ -25,15 +25,15 @@ class GamePanel extends JPanel implements IObserver
 	{
 		
 	}
-	
-	
+
 	/**
 	 * methode used to update information sent to a class from IObserver
+	 * @param observable
+	 * The observable object
+	 * @param o
+	 * An object
 	 */
-	public void update() 
-	{
-		
+	public void update(Observable observable, Object o) {
+
 	}
-	
-	
 }

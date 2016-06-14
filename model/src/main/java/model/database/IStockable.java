@@ -1,18 +1,27 @@
 package model.database;
 
+import java.sql.ResultSet;
+
 /**
  * An Interface for the differents possibility of storage in the DB
  * @Marie
  */
 public interface IStockable {
     /**
-     * A methods which allow to storage the data in the DB
-     * @param
-     * @param
+     * A methods give the query to save the object in DB
+     * @return
      */
+    String getSaveQuery();
 
+    /**
+     * A method loading the object from a result set
+     * @return
+     */
+    void load(ResultSet raw);
 
-    public String getSaveQuery();
-    public String load();
-    public String getTableName();
+    /**
+     * Get the name of the table
+     * @return
+     */
+    String getTableName();
 }
