@@ -1,16 +1,11 @@
 package model.elements;
 
 /**
- * Created by Marie on 14/06/2016.
+ * The hero of the game (Lorann)
  */
 public class Hero {
-    private boolean spell(){
-        return true;
-    }
-    private Integer score(){
-        return 0;
-    }
-    private Integer life(){
-        return 0;
-    }
+    /** The indicator of the capacity to the hero to launch a RAINBOW SPELLr <b>*o*</b> */
+    boolean spell;
+    /** The score of the player */
+    int score;
 }

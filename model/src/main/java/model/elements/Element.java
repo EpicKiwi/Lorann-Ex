@@ -1,5 +1,6 @@
 package model.elements;
 
+import model.Level;
 import model.Location;
 import model.Sprite;
 import model.behavior.Behavior;
@@ -68,6 +69,17 @@ public class Element {
     public Element(Location location, Sprite sprite) {
         this.location = location;
         this.sprite = sprite;
+    }
+
+    /**
+     * Executed when an entity have the same position in the world
+     * @param other
+     * The other element
+     * @param level
+     * The level
+     */
+    public void onCollision(Element other, Level level){
+
     }
 
     // GETTERS & SETTERS //

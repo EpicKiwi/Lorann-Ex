@@ -1,7 +1,17 @@
 package model.elements;
 
 /**
- * Created by Marie on 14/06/2016.
+ * An element who can move an live
  */
 public class Entity {
+    /**
+     * Move the entyty to a specified position
+     * @param x
+     * The new X position
+     * @param y
+     * The new Y position
+     */
+    public void moveTo(int x, int y){
+
+    }
 }

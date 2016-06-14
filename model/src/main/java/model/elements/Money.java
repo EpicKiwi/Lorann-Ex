@@ -1,7 +1,7 @@
 package model.elements;
 
 /**
- * Created by Marie on 14/06/2016.
+ * An item that give money to the hero
  */
 public class Money {
 }
