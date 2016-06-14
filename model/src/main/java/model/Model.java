@@ -28,10 +28,12 @@ private Connection connection;
 	/** Instantiates a new model. */
 
 
-	public void loadLevel(Integer Id){
+	public boolean loadLevel(int Id){
+		return true;
 	}
 
-	public void saveLevel()	{
+	public boolean saveLevel()	{
+		return true;
 	}
 
 	public Level getLevel(){
@@ -40,7 +42,6 @@ private Connection connection;
 
 	public void flush() {
 	}
-
 
 	public Observable getObservable() {
 		return this;

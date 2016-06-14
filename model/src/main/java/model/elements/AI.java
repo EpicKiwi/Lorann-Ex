@@ -15,14 +15,28 @@ public class AI extends Entity {
     /**
      * instanciate the Object
      *
-     * @param path
+     * @param x
+     * The X position
+     * @param y
+     * The Y position
+     * @param image
+     * the path to the image representing the element
      */
-    public AI(int x, int y, String image, PathAI path) {
+    public AI(int x, int y, String image) {
         super(x, y, image);
         this.path = path;
     }
 
-    public AI(int x, int y, Sprite sprite, PathAI path) {
+    /**
+     * Instanciate the object
+     * @param x
+     * The X position
+     * @param y
+     * The Y position
+     * @param sprite
+     * The Sprite of the element
+     */
+    public AI(int x, int y, Sprite sprite) {
         super(x, y, sprite);
         this.path = path;
     }

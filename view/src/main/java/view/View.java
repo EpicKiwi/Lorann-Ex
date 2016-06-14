@@ -2,6 +2,7 @@ package view;
 
 
 import java.awt.event.KeyEvent;
+import java.util.Observer;
 
 import javax.swing.SwingUtilities;
 
@@ -15,13 +16,13 @@ import contract.IView;
  *
  * @author Clement Chabrier
  */
-public class View implements  IView
+public class View implements IView
 {
 	
 	/**
 	 * constructor of the view class
 	 */
-	View()
+	public View()
 	{
 		
 	}
@@ -42,7 +43,11 @@ public class View implements  IView
 	{
 		
 	}
-	
+
+	public Observer getObserver() {
+		return null;
+	}
+
 	/**
 	 * methode to close the frame
 	 */
@@ -50,6 +55,13 @@ public class View implements  IView
 	{
 		
 	}
-	
-	
+
+	/**
+	 * set the controller associated to the view
+	 * @param controller
+	 * The controller associated
+     */
+	public void setController(IController controller) {
+
+	}
 }

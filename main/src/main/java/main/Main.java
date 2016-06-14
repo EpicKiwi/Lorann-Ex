@@ -18,6 +18,10 @@ public abstract class Main {
 	 *          the arguments
 	 */
 	public static void main(final String[] args) {
-		System.out.println("Lol");
+		Model model = new Model();
+		View view = new View();
+		Controller controller = new Controller(view,model);
+		view.setController(controller);
+		controller.start();
 	}
 }

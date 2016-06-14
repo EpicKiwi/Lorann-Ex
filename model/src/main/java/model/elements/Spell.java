@@ -1,8 +1,9 @@
 package model.elements;
 
 import model.AnimatedSprite;
+import model.Direction;
 import model.Sprite;
-import model.pathAi.PathAI;
+import model.pathAi.Straight;
 
 /**
  *@Marie
@@ -10,8 +11,17 @@ import model.pathAi.PathAI;
  */
 public class Spell extends AI{
 
-    public Spell(int x, int y, PathAI path) {
-        super(x, y, new Sprite("sprites/fireball_1.png"), path);
+    /**
+     * Instanciate a spell object
+     * @param x
+     * The X position
+     * @param y
+     * The Y position
+     * @param direction
+     * The direction of the spell
+     */
+    public Spell(int x, int y, Direction direction) {
+        super(x, y, new Sprite("sprites/fireball_1.png"));
         String imagesPaths[] = {
                 "sprites/fireball_1.png",
                 "sprites/fireball_2.png",
@@ -20,5 +30,6 @@ public class Spell extends AI{
                 "sprites/fireball_5.png"
         };
         this.sprite = new AnimatedSprite("sprites/fireball_1.png",imagesPaths);
+        this.path = new Straight(this);
     }
 }

@@ -5,4 +5,7 @@ package model.elements;
  * Monster of the game
  */
 public class Monster extends AI {
+    public Monster(int x, int y) {
+        super(x, y, "sprites/monster_1.png");
+    }
 }
