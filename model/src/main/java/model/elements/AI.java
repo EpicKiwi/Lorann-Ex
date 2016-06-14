@@ -16,7 +16,8 @@ public class AI extends Entity {
      *
      * @param path
      */
-    public AI(PathAI path) {
+    public AI(int x, int y, String image, PathAI path) {
+        super(x, y, image);
         this.path = path;
     }
 
