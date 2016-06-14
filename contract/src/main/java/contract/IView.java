@@ -3,15 +3,14 @@ package contract;
 /**
  * The Interface IView.
  *
- * @author Jean-Aymeric Diet
+ * @author Clement Chabrier
  */
-public interface IView {
+public interface IView 
+{
 
 	/**
-	 * Prints the message.
-	 *
-	 * @param message
-	 *          the message
+	 * update what the user see on screen
+	 * 
 	 */
-	void printMessage(final String message);
+	void repaint();
 }

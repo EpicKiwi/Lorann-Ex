@@ -3,20 +3,29 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Jean-Aymeric Diet
+ * @author Baptiste
  */
 public interface IController {
 
 	/**
-	 * Control.
-	 */
-	public void control();
+	 * Send an order to the controller.
+	 *
+	 * @param order
+	 * The order to perform
+     */
+	public void orderPerform(Order order);
 
 	/**
-	 * Order perform.
+	 * Set the model of the controller
 	 *
-	 * @param controllerOrder
-	 *          the controller order
+	 * @param model
+	 * The model of the controller
+     */
+	public void setModel(IModel model);
+
+	/**
+	 * Begin the game
 	 */
-	public void orderPerform(ControllerOrder controllerOrder);
+	public void start();
+
 }
