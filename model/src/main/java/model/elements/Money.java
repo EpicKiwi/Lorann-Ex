@@ -12,6 +12,6 @@ public class Money extends Item {
      * @param image
      */
     public Money(int x, int y, String image) {
-        super(x, y, image);
+        super(x, y, "sprites/purse.png");
     }
 }
