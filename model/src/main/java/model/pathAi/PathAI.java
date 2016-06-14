@@ -1,9 +1,11 @@
 package model.pathAi;
 
 import model.Level;
+import model.elements.AI;
 
 /**
- * Created by Marie on 14/06/2016.
+ *@author Marie
+ * Interface of AI of monster
  */
 public interface PathAI {
     public void onTick (Level level);

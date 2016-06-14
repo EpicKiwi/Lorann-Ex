@@ -5,6 +5,7 @@ import model.elements.Element;
 
 /**
  * A beahavior where the player gain a spell
+ * @Marie
  */
 public class MoreSpell implements Behavior{
 

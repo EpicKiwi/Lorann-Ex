@@ -5,6 +5,7 @@ import model.elements.Element;
 
 /**
  * An interface for the differents Behaviour of the éléments
+ * @Marie
  */
 public interface Behavior {
 
