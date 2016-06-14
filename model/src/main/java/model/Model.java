@@ -2,6 +2,7 @@ package model;
 
 import java.sql.SQLException;
 import java.util.Observable;
+import java.util.logging.Level;
 
 import contract.IModel;
 
@@ -12,56 +13,25 @@ import contract.IModel;
  */
 public class Model extends Observable implements IModel {
 
-	/** The message. */
-	private String message;
 
-	/**
-	 * Instantiates a new model.
-	 */
-	public Model() {
-		this.message = "";
+
+	/** Instantiates a new model. */
+
+
+	public void loadLevel(Integer Id){
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage()
-	 */
-	public String getMessage() {
-		return this.message;
+	public void saveLevel()	{
 	}
 
-	/**
-	 * Sets the message.
-	 *
-	 * @param message
-	 *          the new message
-	 */
-	private void setMessage(final String message) {
-		this.message = message;
-		this.setChanged();
-		this.notifyObservers();
+	public Level getLevel(){
+		return null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage(java.lang.String)
-	 */
-	public void loadMessage(final String key) {
-		try {
-			final DAOHelloWorld daoHelloWorld = new DAOHelloWorld(DBConnection.getInstance().getConnection());
-			this.setMessage(daoHelloWorld.find(key).getMessage());
-		} catch (final SQLException e) {
-			e.printStackTrace();
-		}
+	public void flush() {
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getObservable()
-	 */
+
 	public Observable getObservable() {
 		return this;
 	}
