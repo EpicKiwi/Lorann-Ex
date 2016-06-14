@@ -35,8 +35,18 @@ public class View implements  IView
 		
 	}
 	
-	
+	/**
+	 * methode to open the frame
+	 */
 	public void openFrame()
+	{
+		
+	}
+	
+	/**
+	 * methode to close the frame
+	 */
+	public void closeFrame()
 	{
 		
 	}
