@@ -17,13 +17,6 @@ import contract.IView;
  */
 public class View implements  IView
 {
-/**
- * update methode from IView inteface	
- */
-	public void repaint()
-	{
-		
-	}
 	
 	/**
 	 * constructor of the view class
@@ -32,5 +25,21 @@ public class View implements  IView
 	{
 		
 	}
+	
+	
+/**
+ * update methode from IView inteface	
+ */
+	public void repaint()
+	{
+		
+	}
+	
+	
+	public void openFrame()
+	{
+		
+	}
+	
 	
 }
