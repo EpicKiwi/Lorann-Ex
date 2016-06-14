@@ -17,6 +17,16 @@ import contract.IView;
  */
 public class View implements  IView
 {
+	
+	/**
+	 * constructor of the view class
+	 */
+	View()
+	{
+		
+	}
+	
+	
 /**
  * update methode from IView inteface	
  */
@@ -26,11 +36,20 @@ public class View implements  IView
 	}
 	
 	/**
-	 * constructor of the view class
+	 * methode to open the frame
 	 */
-	View()
+	public void openFrame()
 	{
 		
 	}
+	
+	/**
+	 * methode to close the frame
+	 */
+	public void closeFrame()
+	{
+		
+	}
+	
 	
 }
