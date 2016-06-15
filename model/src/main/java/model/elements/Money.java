@@ -14,4 +14,8 @@ public class Money extends Item {
     public Money(int x, int y, String image) {
         super(x, y, "sprites/purse.png");
     }
+
+    public String getType() {
+        return "money";
+    }
 }

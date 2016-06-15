@@ -15,4 +15,8 @@ public class Cross extends Wall {
     public Cross(int x, int y) {
         super(x, y, "sprites/bone.png");
     }
+
+    public String getType() {
+        return "cross-wall";
+    }
 }

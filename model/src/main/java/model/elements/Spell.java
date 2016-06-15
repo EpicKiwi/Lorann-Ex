@@ -33,4 +33,8 @@ public class Spell extends AI{
         this.sprite = new AnimatedSprite("sprites/fireball_1.png",imagesPaths);
         this.path = new Straight(this);
     }
+
+    public String getType() {
+        return "spell";
+    }
 }

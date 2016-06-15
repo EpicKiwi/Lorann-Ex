@@ -15,4 +15,8 @@ public class HWall extends Wall{
     public HWall(int x, int y) {
         super(x, y, "sprites/horizontal_bone.png");
     }
+
+    public String getType() {
+        return "horizontal-wall";
+    }
 }
