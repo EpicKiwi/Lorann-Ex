@@ -1,18 +1,20 @@
 package model.elements;
 
+import contract.IElement;
 import model.Level;
 import model.Location;
 import model.Sprite;
 import model.behavior.Behavior;
 import model.database.IStockable;
 
+import java.awt.*;
 import java.sql.ResultSet;
 
 /**
  * An element of a level
  * @author Marie
  */
-public class Element implements IStockable {
+public class Element implements IStockable, IElement {
 
     /** The behavior of the element */
     protected Behavior behavior;
@@ -161,6 +163,10 @@ public class Element implements IStockable {
 
     public void load(ResultSet raw) {
 
+    }
+
+    public Image getImage() {
+        return this.sprite.getImage();
     }
 
     public String getTableName() {

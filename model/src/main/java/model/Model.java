@@ -1,10 +1,10 @@
 package model;
 
+import java.awt.*;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Observable;
-import java.util.logging.Level;
 
+import contract.IElement;
 import contract.IModel;
 import model.elements.Hero;
 
@@ -17,8 +17,12 @@ public class Model extends Observable implements IModel {
 	/**
 	 * Model of connection
 	 */
+	private Connection connection;
 
-private Connection connection;
+	/**
+	 * The level
+	 */
+	private Level level;
 
 	/**
 	 * Model of Hero
@@ -37,17 +41,21 @@ private Connection connection;
 	}
 
 	public Level getLevel(){
-		return null;
+		return this.level;
 	}
 
 	public void flush() {
 	}
 
-	public void onTick(){
+	public void onTick(long tickNumber){
 		System.out.println("Model Tick");
 	}
 
 	public Observable getObservable() {
 		return this;
+	}
+
+	public IElement getElement(int x, int y) {
+		return this.level.getElement(x,y);
 	}
 }
