@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -22,8 +23,10 @@ class GamePanel extends JPanel implements Observer
 		setVisible(true);
 	}
 	
-	
-	public void paintComponent()
+	/**
+	 * will print on screen sprites of the game
+	 */
+	public void paintComponent(Graphics g)
 	{
 		
 	}
@@ -35,7 +38,8 @@ class GamePanel extends JPanel implements Observer
 	 * @param o
 	 * An object
 	 */
-	public void update(Observable observable, Object o) {
+	public void update(Observable observable, Object o) 
+	{
 
 	}
 }
