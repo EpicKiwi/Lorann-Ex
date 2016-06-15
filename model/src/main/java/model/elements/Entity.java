@@ -8,6 +8,10 @@ import model.Sprite;
  * An element who can move an live
  */
 public class Entity extends Element{
+
+    public boolean moveTo(Integer x, Integer y){
+        return false;
+    }
     /**
      * Direction of the entity
      */
@@ -39,4 +43,5 @@ public class Entity extends Element{
     public void moveTo(int x, int y){
 
     }
+
 }

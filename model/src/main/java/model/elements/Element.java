@@ -4,13 +4,17 @@ import model.Level;
 import model.Location;
 import model.Sprite;
 import model.behavior.Behavior;
+import model.database.IStockable;
+
+import java.sql.ResultSet;
 
 /**
  * An element of a level
  * @author Marie
  */
-public class Element {
-    /** The behavior of the élément */
+public class Element implements IStockable {
+
+    /** The behavior of the element */
     protected Behavior behavior;
     /** The location of the element */
     protected Location location;
@@ -18,6 +22,12 @@ public class Element {
     protected Sprite sprite;
     /** Set if an entity can walk hover the element */
     protected boolean permeable;
+
+    public void OnCollision(Element other, Level level){
+
+    }
+
+
 
     /**
      * Instanciate the element
@@ -147,5 +157,13 @@ public class Element {
      */
     public boolean isPermeable() {
         return permeable;
+    }
+
+    public void load(ResultSet raw) {
+
+    }
+
+    public String getTableName() {
+        return "element";
     }
 }

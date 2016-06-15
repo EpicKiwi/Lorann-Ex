@@ -8,7 +8,7 @@ import java.util.logging.Level;
  *
  * @author Jean-Aymeric Diet
  */
-public interface IModel {
+public interface IModel{
 
 	boolean loadLevel(int id);
 	Level getLevel();

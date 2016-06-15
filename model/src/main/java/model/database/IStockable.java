@@ -7,12 +7,6 @@ import java.sql.ResultSet;
  * @Marie
  */
 public interface IStockable {
-    /**
-     * A methods give the query to save the object in DB
-     * @return
-
-     */
-    String getSaveQuery();
 
     /**
      * A method loading the object from a result set
