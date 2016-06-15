@@ -14,7 +14,7 @@ public class Spell extends AI{
 
     /**
      * Instanciate a spell object
-     * @param x
+     * @param x*
      * The X position
      * @param y
      * The Y position

@@ -12,6 +12,7 @@ public interface IModel{
 
 	boolean loadLevel(int id);
 	IElement getElement(int x, int y);
+	IElement[][] getElements();
 	boolean saveLevel();
 	void flush();
 	Observable getObservable();

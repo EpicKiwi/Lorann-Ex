@@ -8,7 +8,7 @@ import model.Sprite;
 /**
  * An element who can move an live
  */
-public class Entity extends Element implements IEntity {
+public abstract class Entity extends Element implements IEntity {
 
     public boolean moveTo(Integer x, Integer y){
         return false;
