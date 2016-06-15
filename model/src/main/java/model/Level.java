@@ -45,14 +45,9 @@ public class Level implements IStockable {
         this.dimention = new Dimention(width,height);
         this.hero = hero;
         this.number = number;
+        this.elements = new Element[height][width];
+        this.entities = new ArrayList<Entity>();
     }
-
-    public Level(Dimention dimentation, Hero hero, int number) {
-        this.dimention = dimentation;
-        this.hero = hero;
-        this.number = number;
-    }
-
 
     public boolean setElement(Integer x, Integer y, Element element){
         return false;
@@ -195,7 +190,6 @@ public class Level implements IStockable {
      */
     public void setElement(int x, int y, Element element){
         this.elements[y][x] = element;
-
     }
     /**
      * Get the entities of the level

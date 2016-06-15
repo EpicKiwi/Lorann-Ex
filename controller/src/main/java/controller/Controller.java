@@ -67,9 +67,9 @@ public class Controller implements IController,Observer {
 	 */
 	public void start(){
 		if(this.model.loadLevel(1)){
-			/*this.model.getObservable().addObserver(this.view.getObserver());
+			this.model.getObservable().addObserver(this.view.getObserver());
 			this.view.openFrame();
-			this.model.flush();*/
+			this.model.flush();
 
 			this.clock = new Clock();
 			this.clock.addObserver(this);
