@@ -32,6 +32,7 @@ public class ModelTest {
 
     @Test
     public void getObservable() throws Exception {
+        this.model.loadLevel(1);
         assertNotNull(this.model.getObservable());
     }
 

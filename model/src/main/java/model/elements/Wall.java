@@ -3,7 +3,7 @@ package model.elements;
 /**
  * A wall element that block the hero
  */
-public class Wall extends Element {
+public abstract class Wall extends Element {
     /**
      * Localisation and image Wall
      * @param x

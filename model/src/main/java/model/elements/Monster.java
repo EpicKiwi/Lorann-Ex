@@ -34,4 +34,7 @@ public class Monster extends AI {
         super(x, y, "sprites/monster_1.png");
     }
 
+    public String getType() {
+        return "monster";
+    }
 }

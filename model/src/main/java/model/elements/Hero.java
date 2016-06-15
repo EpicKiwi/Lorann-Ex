@@ -55,4 +55,8 @@ public class Hero extends Entity implements contract.IHero {
     public void setSpell(boolean spell) {
         this.spell = spell;
     }
+
+    public String getType() {
+        return "hero";
+    }
 }

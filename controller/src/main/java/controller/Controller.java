@@ -1,9 +1,6 @@
 package controller;
 
-import contract.IController;
-import contract.IModel;
-import contract.IView;
-import contract.Order;
+import contract.*;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -68,13 +65,13 @@ public class Controller implements IController,Observer {
 	public void start(){
 		if(this.model.loadLevel(1)){
 			this.model.getObservable().addObserver(this.view.getObserver());
-			this.view.openFrame();
-			this.model.flush();
-
 			this.clock = new Clock();
 			this.clock.addObserver(this);
 			this.clockThread = new Thread(this.clock);
 			this.clockThread.start();
+			this.view.openFrame();
+			this.model.flush();
+
 		} else {
 			System.err.println("Can't load level id:"+LEVELID);
 
@@ -90,6 +87,41 @@ public class Controller implements IController,Observer {
      */
 	public void update(Observable observable, Object o) {
 		System.out.println("Tick n°"+this.clock.getTickNumber());
+		ILevel level = this.model.getLevel();
+		for(IEntity entity:level.getEntities()){
+			if(entity instanceof IAI && ((IAI) entity).getPath() != null){
+				((IAI) entity).getPath().onTick(level);
+			}
+			performCollision(entity);
+		}
+	}
+
+	/**
+	 * Check if a collision append between the element and an other
+	 * @return
+	 * The other element in collision or null if no collision
+	 */
+	public IElement hasCollision(IElement element){
+		ILocation elementLocation = element.getLocation();
+		for(IEntity entity: this.model.getLevel().getEntities()){
+			if(elementLocation.equals(entity.getLocation())){
+				return entity;
+			}
+		}
+		return this.model.getLevel().getElements()[elementLocation.getY()][elementLocation.getX()];
+	}
+
+	/**
+	 * Perform the collision depending of the behavior
+	 */
+	public void performCollision(IElement element){
+		IElement other = hasCollision(element);
+		if(other == null)
+			return;
+		if(other.getBehavior() != null)
+			other.getBehavior().onCollision(element,this.model.getLevel());
+		if(element.getBehavior() != null)
+			element.getBehavior().onCollision(other,this.model.getLevel());
 	}
 
 	// GETTERS & SETTERS //

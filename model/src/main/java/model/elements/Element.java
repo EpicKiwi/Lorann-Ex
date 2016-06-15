@@ -12,7 +12,7 @@ import java.sql.ResultSet;
  * An element of a level
  * @author Marie
  */
-public class Element implements IStockable, IElement {
+public abstract class Element implements IStockable, IElement {
 
     /** The behavior of the element */
     protected Behavior behavior;
@@ -74,6 +74,8 @@ public class Element implements IStockable, IElement {
         this.location = location;
         this.sprite = sprite;
     }
+
+    public abstract String getType();
 
     /**
      * Executed when an entity have the same position in the world
