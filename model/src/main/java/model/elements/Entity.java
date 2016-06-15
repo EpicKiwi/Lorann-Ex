@@ -1,7 +1,7 @@
 package model.elements;
 
 import contract.IEntity;
-import model.Direction;
+import contract.Direction;
 import model.Sprite;
 
 
@@ -45,4 +45,21 @@ public abstract class Entity extends Element implements IEntity {
 
     }
 
+    /**
+     * Get the direction of the Entity
+     * @return
+     * The direction
+     */
+    public Direction getDirection() {
+        return direction;
+    }
+
+    /**
+     * Set a new direction to the Entity
+     * @param direction
+     * The new direction
+     */
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
 }

@@ -1,7 +1,7 @@
 package model.elements;
 
+import contract.AIType;
 import model.Sprite;
-import model.pathAi.PathAI;
 
 /**
  * @author Marie
@@ -9,8 +9,8 @@ import model.pathAi.PathAI;
  */
 public abstract class  AI extends Entity implements contract.IAI {
 
-    /** The autonomous path class */
-    protected PathAI path;
+    /** The type of AI */
+    protected AIType aiType;
 
     /**
      * instanciate the Object
@@ -24,7 +24,6 @@ public abstract class  AI extends Entity implements contract.IAI {
      */
     public AI(int x, int y, String image) {
         super(x, y, image);
-        this.path = path;
     }
 
     /**
@@ -38,15 +37,23 @@ public abstract class  AI extends Entity implements contract.IAI {
      */
     public AI(int x, int y, Sprite sprite) {
         super(x, y, sprite);
-        this.path = path;
     }
 
     /**
-     * Get the autonomous path class
+     * Get the type of Artificial intelligence of the object
      * @return
-     * The autonomous path class
+     * The AIType
      */
-    public PathAI getPath() {
-        return path;
+    public AIType getAiType() {
+        return aiType;
+    }
+
+    /**
+     * Set a new type of artificial intelligence
+     * @param aiType
+     * The new AIType
+     */
+    public void setAiType(AIType aiType) {
+        this.aiType = aiType;
     }
 }

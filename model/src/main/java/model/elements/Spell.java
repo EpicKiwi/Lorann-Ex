@@ -1,10 +1,9 @@
 package model.elements;
 
-import model.pathAi.PathAI;
+import contract.AIType;
 import model.AnimatedSprite;
-import model.Direction;
+import contract.Direction;
 import model.Sprite;
-import model.pathAi.Straight;
 
 /**
  *@Marie
@@ -31,7 +30,7 @@ public class Spell extends AI{
                 "sprites/fireball_5.png"
         };
         this.sprite = new AnimatedSprite("sprites/fireball_1.png",imagesPaths);
-        this.path = new Straight(this);
+        this.aiType = AIType.STRAIGHT;
     }
 
     public String getType() {
