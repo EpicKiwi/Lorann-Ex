@@ -8,19 +8,11 @@ public class Dimention {
     private int width;
     private int height;
 
-    /**
-     *width of the dimension
-     */
+    public Dimention(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
 
-    private Integer width(){
-        return null;
-    }
-    /**
-     *height of the dimention
-     */
-    private Integer height(){
-        return null;
-    }
     /**
      * Get the width of the dimention
      * @return

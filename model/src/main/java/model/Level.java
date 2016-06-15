@@ -33,11 +33,26 @@ public class Level implements IStockable {
      */
 
     private Dimention dimention;
-
+    
     /**
      * Localisation of elements
-     * @return
+     * @param width
+     * @param height
+     * @param hero
+     *
      */
+    public Level(int width, int height, Hero hero, int number) {
+        this.dimention = new Dimention(width,height);
+        this.hero = hero;
+        this.number = number;
+    }
+
+    public Level(Dimention dimentation, Hero hero, int number) {
+        this.dimention = dimentation;
+        this.hero = hero;
+        this.number = number;
+    }
+
 
     public boolean setElement(Integer x, Integer y, Element element){
         return false;
@@ -58,9 +73,21 @@ public class Level implements IStockable {
 
     }
     /**
-     * Name of table in DB
-     * @return
+     * Add the entity
+     * @param entity
      */
+
+    public void addEntity(Entity entity){
+        this.entities.add(entity);
+    }
+    /**
+     * Remove the entity
+     * @param entity
+     */
+    public void removeEntity(Entity entity){
+        this.entities.remove(entity);
+    }
+
     public String getTableName() {
         return ("level");
     }
