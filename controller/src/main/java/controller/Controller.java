@@ -5,6 +5,7 @@ import contract.IModel;
 import contract.IView;
 import contract.Order;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -13,7 +14,7 @@ import java.util.Observer;
  *
  * @author Baptiste
  */
-public class Controller implements IController {
+public class Controller implements IController,Observer {
 
 	/** The view. */
 	private IView	view;
@@ -54,17 +55,30 @@ public class Controller implements IController {
 	 */
 	public void start(){
 		if(this.model.loadLevel(1)){
-			this.model.getObservable().addObserver(this.view.getObserver());
+			/*this.model.getObservable().addObserver(this.view.getObserver());
 			this.view.openFrame();
-			this.model.flush();
+			this.model.flush();*/
 
 			this.clock = new Clock();
+			this.clock.addObserver(this);
 			this.clockThread = new Thread(this.clock);
 			this.clockThread.start();
 		} else {
 			System.err.println("Can't load level id:"+LEVELID);
 
 		}
+	}
+
+	/**
+	 * Updated when a tick appen
+	 * @param observable
+	 * The observable object @see Clock
+	 * @param o
+	 * An object
+     */
+	public void update(Observable observable, Object o) {
+		System.out.println("Tick n°"+this.clock.getTickNumber());
+		this.model.getLevel();
 	}
 
 	// GETTERS & SETTERS //

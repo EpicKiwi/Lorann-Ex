@@ -38,9 +38,9 @@ public class Clock extends Observable implements Runnable {
      */
     public void run() {
         System.out.println("Clock started");
-        while(!stopped) {
+        while(true) {
             this.setChanged();
-            this.notifyObservers();
+            this.notifyObservers(stopped);
             try {
                 Thread.sleep(this.tickInterval);
             } catch (InterruptedException e) {
