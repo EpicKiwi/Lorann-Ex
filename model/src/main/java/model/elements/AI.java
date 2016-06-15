@@ -7,7 +7,7 @@ import model.pathAi.PathAI;
  * @author Marie
  * Autonomous and entity
  */
-public class AI extends Entity {
+public abstract class  AI extends Entity {
 
     /** The autonomous path class */
     protected PathAI path;

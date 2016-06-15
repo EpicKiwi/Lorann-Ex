@@ -30,6 +30,15 @@ public abstract class PathAI {
 
     // GETTERS & SETTERS //
 
+
+    /**
+     * Set the AI associated
+     * @param ai
+     */
+    public void setAi(AI ai) {
+        this.ai = ai;
+    }
+
     /**
      * Get the AI associated
      * @return
