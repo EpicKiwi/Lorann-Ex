@@ -1,6 +1,7 @@
 package view;
 
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
@@ -32,6 +33,7 @@ class GameFrame extends JFrame implements KeyListener
 	
 	/**
 	 * constructor of this class
+	 * initiat the game panel
 	 */
 	GameFrame()
 	{
@@ -41,6 +43,8 @@ class GameFrame extends JFrame implements KeyListener
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.panel = new GamePanel();
+		this.panel.setBackground(Color.BLACK);
+		this.setContentPane(this.panel); //<--------------------------------- ICI
 	}
 	
 	/**

@@ -1,18 +1,27 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import contract.IElement;
+import contract.ILevel;
+import contract.IModel;
+
 /**
  * The Class ViewPanel.
  *
- * @author Jean-Aymeric Diet
+ * @author Clement Chabrier
  */
 class GamePanel extends JPanel implements Observer
 {
+	
+	private IModel model;
+	
 	/**
 	 * constructor of this class
 	 */
@@ -22,10 +31,28 @@ class GamePanel extends JPanel implements Observer
 		setVisible(true);
 	}
 	
-	
-	public void paintComponent()
+	/**
+	 * will print on screen sprites of the game
+	 */
+	public void paintComponent(Graphics g)
 	{
+		super.paintComponent(g);
 		
+		ILevel level = this.model.getLevel();
+		
+		for (int y = 0; y < level.getDimention().getHeight(); y++)
+		{
+			
+			for (int x = 0; x < level.getDimention().getWidth(); x++)
+			{
+				IElement ele = level.getElement(x, y);
+				if (ele == null)
+					continue;
+				System.out.println("coucou je suis baptiste et je notifie le paint component");
+				g.drawImage(model.getElements()[y][x].getImage(),y,x,this);
+				System.out.println("coucou je suis baptiste et je notifie le getElement");
+			}
+		}
 	}
 
 	/**
@@ -35,7 +62,13 @@ class GamePanel extends JPanel implements Observer
 	 * @param o
 	 * An object
 	 */
-	public void update(Observable observable, Object o) {
-
+	public void update(Observable observable, Object o) 
+	{
+		this.model = (IModel) observable;
+		this.repaint();
+		System.out.println("coucou je suis baptiste et je notifie");
 	}
+
+	
+	
 }
