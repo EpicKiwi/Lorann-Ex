@@ -47,7 +47,19 @@ public class Controller implements IController,Observer {
 	 * The order to perform
      */
 	public void orderPerform(Order order) {
-
+		switch (order){
+			case CHARACTER_DOWN:
+				break;
+			case CHARACTER_UP:
+				break;
+			case CHARACTER_LEFT:
+				break;
+			case CHARACTER_RIGHT:
+				break;
+			default:
+				System.out.println("Not supported order : "+order.toString());
+				break;
+		}
 	}
 
 	/**
