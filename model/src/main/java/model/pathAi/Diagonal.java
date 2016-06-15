@@ -1,5 +1,7 @@
 package model.pathAi;
 
+import contract.IAI;
+import contract.ILevel;
 import model.Level;
 import model.elements.AI;
 
@@ -14,7 +16,7 @@ public class Diagonal extends PathAI  {
      * @param ai
      * The Entity to move
      */
-    public Diagonal(AI ai) {
+    public Diagonal(IAI ai) {
         super(ai);
     }
 
@@ -23,7 +25,7 @@ public class Diagonal extends PathAI  {
      * @param level
      * The level
      */
-    public void onTick(Level level) {
+    public void onTick(ILevel level) {
 
     }
 }
