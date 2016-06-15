@@ -89,8 +89,8 @@ public class Controller implements IController,Observer {
 		System.out.println("Tick n°"+this.clock.getTickNumber());
 		ILevel level = this.model.getLevel();
 		for(IEntity entity:level.getEntities()){
-			if(entity instanceof IAI && ((IAI) entity).getPath() != null){
-				((IAI) entity).getPath().onTick(level);
+			if(entity instanceof IAI){
+				performAi((IAI) entity);
 			}
 			performCollision(entity);
 		}
@@ -109,6 +109,23 @@ public class Controller implements IController,Observer {
 			}
 		}
 		return this.model.getLevel().getElements()[elementLocation.getY()][elementLocation.getX()];
+	}
+
+	public void performAi(IAI entity){
+		switch (entity.getAiType()){
+			case STRAIGHT:
+				//TODO Strainght Ai
+				break;
+			case DIAGONAL:
+				//TODO Straight Ai
+				break;
+			case RANDOM:
+				//TODO Straight Ai
+				break;
+			case NOTHING:
+				//Do nothing ???
+				break;
+		}
 	}
 
 	/**

@@ -1,8 +1,7 @@
 package model.elements;
 
-import model.pathAi.PathAI;
 import model.AnimatedSprite;
-import model.Direction;
+import contract.Direction;
 import model.Sprite;
 import model.pathAi.Straight;
 
