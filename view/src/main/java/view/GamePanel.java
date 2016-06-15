@@ -2,13 +2,13 @@ package view;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
 
 import contract.IElement;
+import contract.IEntity;
 import contract.ILevel;
 import contract.IModel;
 
@@ -39,20 +39,25 @@ class GamePanel extends JPanel implements Observer
 		super.paintComponent(g);
 		
 		ILevel level = this.model.getLevel();
-		
 		for (int y = 0; y < level.getDimention().getHeight(); y++)
 		{
-			
 			for (int x = 0; x < level.getDimention().getWidth(); x++)
 			{
 				IElement ele = level.getElement(x, y);
 				if (ele == null)
 					continue;
-				System.out.println("coucou je suis baptiste et je notifie le paint component");
 				g.drawImage(model.getElements()[y][x].getImage(),y,x,this);
-				System.out.println("coucou je suis baptiste et je notifie le getElement");
 			}
 		}
+		
+		
+		for (IEntity ele : model.getLevel().getEntities())
+		{
+			g.drawImage(ele.getImage(), ele.getLocation().getX(), ele.getLocation().getY(), null);
+		}
+		
+		
+		
 	}
 
 	/**
