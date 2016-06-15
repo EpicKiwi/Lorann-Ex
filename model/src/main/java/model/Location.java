@@ -3,7 +3,7 @@ package model;
 /**
  * A class representing the location of an element
  */
-public class Location {
+public class Location implements contract.ILocation {
     /** The X position */
     private Integer x;
     /** The Y position */

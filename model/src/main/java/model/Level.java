@@ -1,5 +1,6 @@
 package model;
 
+import contract.*;
 import model.database.IStockable;
 import model.elements.Element;
 import model.elements.Entity;
@@ -12,27 +13,27 @@ import java.util.ArrayList;
  *@author Marie
  * level of the game
  */
-public class Level implements IStockable {
+public class Level implements IStockable, ILevel {
 
     private int number;
     private boolean exit = false;
 
-    private ArrayList<Entity> entities;
+    private ArrayList<IEntity> entities;
     /**
      * level of Element
      */
-    private Element elements[][];
+    private IElement elements[][];
     /**
      * level of hero
      */
 
-    private Hero hero;
+    private IHero hero;
 
     /**
      *level of dimention
      */
 
-    private Dimention dimention;
+    private IDimention dimention;
     
     /**
      * Localisation of elements
@@ -46,18 +47,11 @@ public class Level implements IStockable {
         this.hero = hero;
         this.number = number;
         this.elements = new Element[height][width];
-        this.entities = new ArrayList<Entity>();
+        this.entities = new ArrayList<IEntity>();
     }
 
-    public boolean setElement(Integer x, Integer y, Element element){
+    public boolean setElement(Integer x, Integer y, IElement element){
         return false;
-    }
-    /**
-     * Number of level
-     * @param
-     */
-    private Integer number(){
-        return null;
     }
 
     /**
@@ -65,24 +59,24 @@ public class Level implements IStockable {
      * @param raw
      */
     public void load(ResultSet raw) {
-
+        //TODO Charger le niveau ici
     }
+
     /**
      * Add the entity
      * @param entity
      */
-
-    public void addEntity(Entity entity){
+    public void addEntity(IEntity entity){
         this.entities.add(entity);
     }
 
-    public Element hasCollisionWith(Element element){
-        Location elementLocation = element.getLocation();
-        Element collisionElement = this.getElement(elementLocation.getX(),elementLocation.getY());
+    public IElement hasCollisionWith(IElement element){
+        ILocation elementLocation = element.getLocation();
+        IElement collisionElement = this.getElement(elementLocation.getX(),elementLocation.getY());
         if(collisionElement != null){
             return collisionElement;
         }
-        for(Entity entity : this.entities){
+        for(IEntity entity : this.entities){
             if(elementLocation.getX().equals(entity.getLocation().getX())){
                 return entity;
             }
@@ -91,8 +85,8 @@ public class Level implements IStockable {
     }
 
 
-    public void performCollision(Element element){
-        Element collisionElement = this.hasCollisionWith(element);
+    public void performCollision(IElement element){
+        IElement collisionElement = this.hasCollisionWith(element);
         if(collisionElement != null){
             collisionElement.onCollision(element,this);
             element.onCollision(collisionElement,this);
@@ -103,7 +97,7 @@ public class Level implements IStockable {
      * Remove the entity
      * @param entity
      */
-    public void removeEntity(Entity entity){
+    public void removeEntity(IEntity entity){
         this.entities.remove(entity);
     }
 
@@ -132,7 +126,7 @@ public class Level implements IStockable {
      * @return
      * The dimention
      */
-    public Dimention getDimention() {
+    public IDimention getDimention() {
         return dimention;
     }
     /**
@@ -140,7 +134,7 @@ public class Level implements IStockable {
      * @param dimention
      * The dimention
      */
-    public void setDimention(Dimention dimention) {
+    public void setDimention(IDimention dimention) {
         this.dimention = dimention;
     }
     /**
@@ -148,7 +142,7 @@ public class Level implements IStockable {
      * @return
      * The Hero
      */
-    public Hero getHero() {
+    public IHero getHero() {
         return hero;
     }
     /**
@@ -156,11 +150,11 @@ public class Level implements IStockable {
      * @param hero
      * The hero
      */
-    public void setHero(Hero hero) {
+    public void setHero(IHero hero) {
         this.hero = hero;
     }
 
-    public Element[][] getElements() {
+    public IElement[][] getElements() {
         return elements;
     }
     /**
@@ -168,7 +162,7 @@ public class Level implements IStockable {
     * @return
      *The element
     */
-    public void setElements(Element[][] elements) {
+    public void setElements(IElement[][] elements) {
         this.elements = elements;
     }
     /**
@@ -176,7 +170,7 @@ public class Level implements IStockable {
      * @return
      * The element
      */
-    public Element getElement(int x, int y){
+    public IElement getElement(int x, int y){
         return this.elements[y][x];
     }
 
@@ -188,7 +182,7 @@ public class Level implements IStockable {
      * localisation y
      * @param element
      */
-    public void setElement(int x, int y, Element element){
+    public void setElement(int x, int y, IElement element){
         this.elements[y][x] = element;
     }
     /**
@@ -196,7 +190,7 @@ public class Level implements IStockable {
      * @return
      * The entity
      */
-    public ArrayList<Entity> getEntities() {
+    public ArrayList<IEntity> getEntities() {
         return entities;
     }
     /**
@@ -204,7 +198,7 @@ public class Level implements IStockable {
      * @param entities
      * The entity
      */
-    public void setEntities(ArrayList<Entity> entities) {
+    public void setEntities(ArrayList<IEntity> entities) {
         this.entities = entities;
     }
     /**

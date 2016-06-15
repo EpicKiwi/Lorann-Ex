@@ -1,14 +1,19 @@
 package model;
 
 
+import contract.ISprite;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * A sprite representing an element in the level
  * @author Marie
  */
-public class Sprite {
+public class Sprite implements ISprite {
 
 
     /** The image of the sprite */
@@ -20,7 +25,12 @@ public class Sprite {
      * A path to the image
      */
     public Sprite(String image) {
-        this.image = new ImageIcon(image).getImage();
+        try {
+            this.image = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(image));
+        } catch (IOException e) {
+            System.err.println("Impossible de charger l'image "+image);
+            e.printStackTrace();
+        }
     }
 
     /**

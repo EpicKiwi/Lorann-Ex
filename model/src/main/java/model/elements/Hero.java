@@ -3,7 +3,7 @@ package model.elements;
 /**
  * The hero of the game (Lorann)
  */
-public class Hero extends Entity {
+public class Hero extends Entity implements contract.IHero {
     /** The indicator of the capacity to the hero to launch a RAINBOW SPELLr <b>*o*</b> */
     private boolean spell = true;
     /** The score of the player */

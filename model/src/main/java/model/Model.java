@@ -55,19 +55,6 @@ public class Model extends Observable implements IModel {
 		this.notifyObservers();
 	}
 
-	public void onTick(long tickNumber){
-		Level level = this.getLevel();
-		for(Entity entity:level.getEntities()){
-			if(entity instanceof AI && ((AI) entity).getPath() != null){
-				((AI) entity).getPath().onTick(level);
-			}
-			if(entity.getSprite() instanceof AnimatedSprite){
-				((AnimatedSprite) entity.getSprite()).nextStep();
-			}
-			level.performCollision(entity);
-		}
-	}
-
 	public Observable getObservable() {
 		return this;
 	}

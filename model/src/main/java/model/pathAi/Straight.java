@@ -1,5 +1,7 @@
 package model.pathAi;
 
+import contract.IAI;
+import contract.ILevel;
 import model.Level;
 import model.elements.AI;
 
@@ -14,7 +16,7 @@ public class Straight extends PathAI {
      * @param ai
      * The entity to move
      */
-    public Straight(AI ai) {
+    public Straight(IAI ai) {
         super(ai);
     }
 
@@ -23,7 +25,7 @@ public class Straight extends PathAI {
      * @param level
      * The level
      */
-    public void onTick(Level level) {
+    public void onTick(ILevel level) {
 
     }
 }

@@ -1,5 +1,6 @@
 package model.pathAi;
 
+import contract.IAI;
 import model.Level;
 import model.elements.AI;
 
@@ -7,26 +8,19 @@ import model.elements.AI;
  *@author Marie
  * Interface of AI of monster
  */
-public abstract class PathAI {
+public abstract class PathAI implements contract.IPathAI {
 
     /**The AI instance to move*/
-    protected AI ai;
+    protected IAI ai;
 
     /**
      * Instanciate the PathAi
      * @param ai
      * The entity to move
      */
-    public PathAI(AI ai) {
+    public PathAI(IAI ai) {
         this.ai = ai;
     }
-
-    /**
-     * A method executed on each tick
-     * @param level
-     * The level
-     */
-    public abstract void onTick (Level level);
 
     // GETTERS & SETTERS //
 
@@ -35,7 +29,7 @@ public abstract class PathAI {
      * Set the AI associated
      * @param ai
      */
-    public void setAi(AI ai) {
+    public void setAi(IAI ai) {
         this.ai = ai;
     }
 
@@ -44,7 +38,7 @@ public abstract class PathAI {
      * @return
      * The AI associated
      */
-    public AI getAi() {
+    public IAI getAi() {
         return ai;
     }
 }
