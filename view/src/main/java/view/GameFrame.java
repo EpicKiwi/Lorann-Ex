@@ -25,6 +25,10 @@ class GameFrame extends JFrame implements KeyListener
 	private int height = 380;
 	
 	
+
+	private GamePanel panel;
+	
+	
 	
 	/**
 	 * constructor of this class
@@ -35,7 +39,8 @@ class GameFrame extends JFrame implements KeyListener
 		this.setSize(width, height);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
+		
+		this.panel = new GamePanel();
 	}
 	
 	/**
@@ -46,12 +51,18 @@ class GameFrame extends JFrame implements KeyListener
 		
 	}
 	
+	public GamePanel getGamePanel()
+	{
+		return this.panel;
+	}
+	
+	
 	/**
 	 * geter of the width attribute
 	 */
 	public int getWidth()
 	{
-		return 0;
+		return width;
 	}
 	
 	/**
@@ -59,15 +70,15 @@ class GameFrame extends JFrame implements KeyListener
 	 */
 	public int getHeight()
 	{
-		return 0;
+		return height;
 	}
 	
 	
 	/**
 	 * methode used to capture the user's actions
 	 */
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+	public void keyPressed(KeyEvent e) 
+	{
 		
 	}
 	
@@ -75,8 +86,8 @@ class GameFrame extends JFrame implements KeyListener
 	/**
 	 * methode used to capture the user's actions
 	 */
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+	public void keyReleased(KeyEvent e) 
+	{
 		
 	}
 	
@@ -84,9 +95,9 @@ class GameFrame extends JFrame implements KeyListener
 	/**
 	 * methode used to capture the user's actions
 	 */
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
+	public void keyTyped(KeyEvent e) 
+	{
+	
 	}
 
 	
