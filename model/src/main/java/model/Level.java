@@ -32,68 +32,132 @@ public class Level implements IStockable {
      *level of dimention
      */
 
-    private Dimention dimentation;
+    private Dimention dimention;
 
+    /**
+     * Localisation of elements
+     * @return
+     */
 
     public boolean setElement(Integer x, Integer y, Element element){
         return false;
     }
+    /**
+     * Number of level
+     * @param
+     */
     private Integer number(){
         return null;
     }
 
+    /**
+     * All data storage of raw in the data base
+     * @param raw
+     */
     public void load(ResultSet raw) {
 
     }
-
+    /**
+     * Name of table in DB
+     * @return
+     */
     public String getTableName() {
         return ("level");
     }
 
+    /**
+     * Get the number of level
+     * @return
+     * The number
+     */
     public int getNumber() {
         return number;
     }
-
+    /**
+     * Set the number of level
+     * @param number
+     * The number
+     */
     public void setNumber(int number) {
         this.number = number;
     }
-
-    public Dimention getDimentation() {
-        return dimentation;
+    /**
+     * Get the dimention of level
+     * @return
+     * The dimention
+     */
+    public Dimention getDimention() {
+        return dimention;
     }
-
-    public void setDimentation(Dimention dimentation) {
-        this.dimentation = dimentation;
+    /**
+     * Set the dimention of level
+     * @param dimention
+     * The dimention
+     */
+    public void setDimention(Dimention dimention) {
+        this.dimention = dimention;
     }
-
+    /**
+     * Get the hero of level
+     * @return
+     * The Hero
+     */
     public Hero getHero() {
         return hero;
     }
-
+    /**
+     * Set the hero of level
+     * @param hero
+     * The hero
+     */
     public void setHero(Hero hero) {
         this.hero = hero;
     }
-
+    /**
+     * Get the element of level
+     * @return
+     * The element
+     */
     public Element[][] getElement() {
         return element;
     }
-
+    /**
+     * Set the element of the level
+     * @return
+     *The element
+     */
     public void setElement(Element[][] element) {
         this.element = element;
     }
-
+    /**
+     * Get the entities of the level
+     * @return
+     * The entity
+     */
     public ArrayList<Entity> getEntities() {
         return entities;
     }
-
+    /**
+     * Set the entities of the level
+     * @param entities
+     * The entity
+     */
     public void setEntities(ArrayList<Entity> entities) {
         this.entities = entities;
     }
-
+    /**
+     * Is (get) the exit of the level
+     * @return
+     * The sprite
+     */
     public boolean isExit() {
         return exit;
     }
-
+    /**
+     * Set exit of the level
+     * @param exit
+     * The exit
+     */
     public void setExit(boolean exit) {
         this.exit = exit;
     }
