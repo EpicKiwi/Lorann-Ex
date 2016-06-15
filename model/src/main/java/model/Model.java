@@ -6,7 +6,9 @@ import java.util.Observable;
 
 import contract.IElement;
 import contract.IModel;
+import model.elements.HWall;
 import model.elements.Hero;
+import model.elements.Monster;
 
 /**
  * The Class Model.
@@ -33,6 +35,10 @@ public class Model extends Observable implements IModel {
 
 
 	public boolean loadLevel(int Id){
+		//TODO Implementer base de données
+		this.level = new Level(12,20,new Hero(1,1),1);
+		this.level.setElement(0,0,new HWall(0,0));
+		this.level.addEntity(new Monster(5,5));
 		return true;
 	}
 
@@ -57,5 +63,9 @@ public class Model extends Observable implements IModel {
 
 	public IElement getElement(int x, int y) {
 		return this.level.getElement(x,y);
+	}
+
+	public IElement[][] getElements(){
+		return this.level.getElements();
 	}
 }
