@@ -44,14 +44,20 @@ public class Controller implements IController,Observer {
 	 * The order to perform
      */
 	public void orderPerform(Order order) {
+		IHero hero = this.model.getLevel().getHero();
+		ILocation heroLocation = hero.getLocation();
 		switch (order){
 			case CHARACTER_DOWN:
+				safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()+1);
 				break;
 			case CHARACTER_UP:
+				safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()-1);
 				break;
 			case CHARACTER_LEFT:
+				safeMoveTo(hero,heroLocation.getX()-1,heroLocation.getY());
 				break;
 			case CHARACTER_RIGHT:
+				safeMoveTo(hero,heroLocation.getX()+1,heroLocation.getY());
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
@@ -101,7 +107,7 @@ public class Controller implements IController,Observer {
 	 * @return
 	 * The other element in collision or null if no collision
 	 */
-	public IElement hasCollision(IElement element){
+	private IElement hasCollision(IElement element){
 		ILocation elementLocation = element.getLocation();
 		for(IEntity entity: this.model.getLevel().getEntities()){
 			if(elementLocation.equals(entity.getLocation())){
@@ -111,10 +117,10 @@ public class Controller implements IController,Observer {
 		return this.model.getLevel().getElements()[elementLocation.getY()][elementLocation.getX()];
 	}
 
-	public void performAi(IAI entity){
+	private void performAi(IAI entity){
 		switch (entity.getAiType()){
 			case STRAIGHT:
-				//TODO Strainght Ai
+				//TODO Straight Ai
 				break;
 			case DIAGONAL:
 				//TODO Straight Ai
@@ -131,7 +137,7 @@ public class Controller implements IController,Observer {
 	/**
 	 * Perform the collision depending of the behavior
 	 */
-	public void performCollision(IElement element){
+	private void performCollision(IElement element){
 		IElement other = hasCollision(element);
 		if(other == null)
 			return;
@@ -139,6 +145,23 @@ public class Controller implements IController,Observer {
 			other.getBehavior().onCollision(element,this.model.getLevel());
 		if(element.getBehavior() != null)
 			element.getBehavior().onCollision(other,this.model.getLevel());
+	}
+
+	private boolean canMoveOn(int x, int y){
+		IDimention levelDimentions = this.model.getLevel().getDimention();
+		if(x > levelDimentions.getWidth()-1 || x < 0)
+			return false;
+		if(y > levelDimentions.getHeight()-1 || y < 0)
+			return false;
+		return this.model.getLevel().getElement(x,y).isPermeable();
+	}
+
+	private boolean safeMoveTo(IEntity entity, int x, int y){
+		if(canMoveOn(x,y)) {
+			entity.moveTo(x,y);
+			return true;
+		}
+		return false;
 	}
 
 	// GETTERS & SETTERS //
