@@ -3,6 +3,7 @@ package model.elements;
 import contract.AIType;
 import contract.Direction;
 
+import static contract.AIType.DIAGONAL;
 import static contract.AIType.STRAIGHT;
 
 /**

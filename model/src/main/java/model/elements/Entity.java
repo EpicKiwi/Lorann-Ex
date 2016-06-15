@@ -4,6 +4,9 @@ import contract.IEntity;
 import contract.Direction;
 import model.Sprite;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 /**
  * An element who can move an live
@@ -58,5 +61,11 @@ public abstract class Entity extends Element implements IEntity {
      */
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    @Override
+    public void load(ResultSet raw) throws SQLException {
+        super.load(raw);
+        this.direction = Direction.valueOf(raw.getString(5));
     }
 }

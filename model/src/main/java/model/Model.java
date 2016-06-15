@@ -37,9 +37,13 @@ public class Model extends Observable implements IModel {
 
 	public boolean loadLevel(int Id){
 		//TODO Implementer base de données
-		this.level = new Level(12,20,new Hero(1,1),1);
+		this.level = new Level(20,12,new Hero(1,1),1);
 		this.level.setElement(0,0,new HWall(0,0));
-		this.level.addEntity(new Monster(5,5, Direction.DOWN));
+		this.level.setElement(1,0,new HWall(1,0));
+		this.level.setElement(2,0,new HWall(2,0));
+		this.level.setElement(3,0,new HWall(3,0));
+		this.level.setElement(4,0,new HWall(4,0));
+		this.level.addEntity(new Monster(5,5, Direction.RIGHT));
 		return true;
 	}
 

@@ -46,18 +46,14 @@ class GamePanel extends JPanel implements Observer
 				IElement ele = level.getElement(x, y);
 				if (ele == null)
 					continue;
-				g.drawImage(model.getElements()[y][x].getImage(),y,x,this);
+				g.drawImage(model.getElement(x,y).getImage(),x*32,y*32,this);
 			}
 		}
-		
-		
+
 		for (IEntity ele : model.getLevel().getEntities())
 		{
-			g.drawImage(ele.getImage(), ele.getLocation().getX(), ele.getLocation().getY(), null);
+			g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
 		}
-		
-		
-		
 	}
 
 	/**
@@ -71,7 +67,6 @@ class GamePanel extends JPanel implements Observer
 	{
 		this.model = (IModel) observable;
 		this.repaint();
-		System.out.println("coucou je suis baptiste et je notifie");
 	}
 
 	

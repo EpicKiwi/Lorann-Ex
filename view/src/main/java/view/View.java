@@ -35,7 +35,6 @@ public class View implements IView
 	{
 		this.frame = new GameFrame();
 		
-		
 	}
 	
 	

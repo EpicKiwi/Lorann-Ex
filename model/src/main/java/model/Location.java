@@ -5,9 +5,9 @@ package model;
  */
 public class Location implements contract.ILocation {
     /** The X position */
-    private Integer x;
+    private int x;
     /** The Y position */
-    private Integer y;
+    private int y;
 
     /**
      * Instantiate the class
@@ -16,7 +16,7 @@ public class Location implements contract.ILocation {
      * @param y
      * The Y position
      */
-    public Location(Integer x, Integer y) {
+    public Location(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -27,7 +27,7 @@ public class Location implements contract.ILocation {
      * Get The Y position
      * @return
      */
-    public Integer getY() {
+    public int getY() {
         return y;
     }
 
@@ -36,7 +36,7 @@ public class Location implements contract.ILocation {
      * @param y
      * The new Y position
      */
-    public void setY(Integer y) {
+    public void setY(int y) {
         this.y = y;
     }
 
@@ -44,7 +44,7 @@ public class Location implements contract.ILocation {
      * Get the X position
      * @return
      */
-    public Integer getX() {
+    public int getX() {
         return x;
     }
 
@@ -53,7 +53,7 @@ public class Location implements contract.ILocation {
      * @param x
      * The new X position
      */
-    public void setX(Integer x) {
+    public void setX(int x) {
         this.x = x;
     }
 }

@@ -7,6 +7,7 @@ import model.database.IStockable;
 
 import java.awt.*;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * An element of a level
@@ -159,8 +160,8 @@ public abstract class Element implements IStockable, IElement {
      * @param raw
      */
 
-    public void load(ResultSet raw) {
-
+    public void load(ResultSet raw) throws SQLException {
+        this.setLocation(raw.getInt(3),raw.getInt(4));
     }
 
     /**
