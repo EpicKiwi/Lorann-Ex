@@ -51,6 +51,8 @@ public class Model extends Observable implements IModel {
 	}
 
 	public void flush() {
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 	public void onTick(long tickNumber){
