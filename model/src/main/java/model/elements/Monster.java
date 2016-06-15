@@ -8,8 +8,6 @@ import model.pathAi.PathAI;
  */
 public class Monster extends AI {
 
-
-
 	public Monster(int x, int y, String image, PathAI path) {
 		super(x, y, image);
 

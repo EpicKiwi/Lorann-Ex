@@ -2,13 +2,13 @@ package model;
 
 import java.awt.*;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Observable;
 
 import contract.IElement;
+import contract.IEntity;
 import contract.IModel;
-import model.elements.HWall;
-import model.elements.Hero;
-import model.elements.Monster;
+import model.elements.*;
 
 /**
  * The Class Model.
@@ -54,7 +54,16 @@ public class Model extends Observable implements IModel {
 	}
 
 	public void onTick(long tickNumber){
-		System.out.println("Model Tick");
+		Level level = this.getLevel();
+		for(Entity entity:level.getEntities()){
+			if(entity instanceof AI){
+				((AI) entity).getPath().onTick(level);
+			}
+			if(entity.getSprite() instanceof AnimatedSprite){
+				((AnimatedSprite) entity.getSprite()).nextStep();
+			}
+			level.performCollision(entity);
+		}
 	}
 
 	public Observable getObservable() {
@@ -67,5 +76,9 @@ public class Model extends Observable implements IModel {
 
 	public IElement[][] getElements(){
 		return this.level.getElements();
+	}
+
+	public IEntity getHero(){
+		return this.level.getHero();
 	}
 }
