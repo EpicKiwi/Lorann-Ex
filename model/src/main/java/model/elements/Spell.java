@@ -1,26 +1,15 @@
 package model.elements;
 
-<<<<<<< HEAD
 import model.pathAi.PathAI;
-=======
 import model.AnimatedSprite;
 import model.Direction;
 import model.Sprite;
 import model.pathAi.Straight;
->>>>>>> 2526251d257f84941c78a627bee0e4872c930770
 
 /**
  *@Marie
  * Spell of hero
  */
-<<<<<<< HEAD
-public class Spell extends  AI{
-
-	public Spell(int x, int y, String image, PathAI path) {
-		super(x, y, image, path);
-		// TODO Auto-generated constructor stub
-	}
-=======
 public class Spell extends AI{
 
     /**
@@ -44,5 +33,4 @@ public class Spell extends AI{
         this.sprite = new AnimatedSprite("sprites/fireball_1.png",imagesPaths);
         this.path = new Straight(this);
     }
->>>>>>> 2526251d257f84941c78a627bee0e4872c930770
 }

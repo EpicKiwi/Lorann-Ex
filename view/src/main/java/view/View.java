@@ -20,10 +20,21 @@ public class View implements IView
 {
 	
 	/**
+	 * attribute of the GameFrame class from the composition
+	 */
+	private GameFrame frame;
+	
+	
+	private IController controller;
+	
+	
+	/**
 	 * constructor of the view class
 	 */
 	public View()
 	{
+		this.frame = new GameFrame();
+		
 		
 	}
 	
@@ -41,19 +52,27 @@ public class View implements IView
 	 */
 	public void openFrame()
 	{
+		this.frame.setVisible(true);
 		
 	}
 
-	public Observer getObserver() {
-		return null;
-	}
+	
 
 	/**
-	 * methode to close the frame
+	 * methode to close the current frame
 	 */
 	public void closeFrame()
 	{
-		
+		this.frame.setVisible(false);
+	}
+	
+	
+	/**
+	 * methode to get the observer from the patern
+	 */
+	public Observer getObserver() 
+	{
+		return this.frame.getGamePanel();
 	}
 
 	/**
@@ -61,7 +80,8 @@ public class View implements IView
 	 * @param controller
 	 * The controller associated
      */
-	public void setController(IController controller) {
-
+	public void setController(IController controller) 
+	{
+		
 	}
 }

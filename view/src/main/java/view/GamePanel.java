@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -17,7 +18,8 @@ class GamePanel extends JPanel implements Observer
 	 */
 	GamePanel()
 	{
-		
+		setBackground(Color.BLACK);
+		setVisible(true);
 	}
 	
 	
