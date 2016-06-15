@@ -21,7 +21,7 @@ public class Level implements IStockable {
     /**
      * level of Element
      */
-    private Element element[][];
+    private Element elements[][];
     /**
      * level of hero
      */
@@ -74,12 +74,20 @@ public class Level implements IStockable {
         this.hero = hero;
     }
 
-    public Element[][] getElement() {
-        return element;
+    public Element[][] getElements() {
+        return elements;
     }
 
-    public void setElement(Element[][] element) {
-        this.element = element;
+    public void setElements(Element[][] elements) {
+        this.elements = elements;
+    }
+
+    public Element getElement(int x, int y){
+        return this.elements[y][x];
+    }
+
+    public void setElement(int x, int y, Element element){
+        this.elements[y][x] = element;
     }
 
     public ArrayList<Entity> getEntities() {

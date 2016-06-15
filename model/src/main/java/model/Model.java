@@ -43,6 +43,10 @@ private Connection connection;
 	public void flush() {
 	}
 
+	public void onTick(){
+		System.out.println("Model Tick");
+	}
+
 	public Observable getObservable() {
 		return this;
 	}

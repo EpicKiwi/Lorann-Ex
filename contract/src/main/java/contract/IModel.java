@@ -15,4 +15,5 @@ public interface IModel{
 	boolean saveLevel();
 	void flush();
 	Observable getObservable();
+	void onTick();
 }
