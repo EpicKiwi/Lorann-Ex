@@ -154,21 +154,32 @@ public class Element implements IStockable, IElement {
     }
 
     /**
-     * Get if the element if permeable
+     * Is (get) if the element if permeable
      * @return
      */
     public boolean isPermeable() {
         return permeable;
-    }
+    }/**
+     * Loading the result raw  in the database
+     * @param raw
+     */
 
     public void load(ResultSet raw) {
 
     }
 
+    /**
+     * Get the image
+     * @return
+     */
     public Image getImage() {
         return this.sprite.getImage();
     }
 
+    /**
+     * Get the name of the table
+     * @return
+     */
     public String getTableName() {
         return "element";
     }

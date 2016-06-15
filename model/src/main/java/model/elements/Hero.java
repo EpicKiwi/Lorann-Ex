@@ -13,7 +13,9 @@ public class Hero extends Entity {
      * Localisation and image hero
      *
      * @param x
+     *position x
      * @param y
+     * position y
      */
     public Hero(int x, int y) {
         super(x, y, "sprites/lorann_l.png");
@@ -38,7 +40,7 @@ public class Hero extends Entity {
     }
 
     /**
-     * Get the spell
+     * Is (get) if the spell is cast
      * @return
      * The spell
      */
@@ -46,7 +48,7 @@ public class Hero extends Entity {
         return spell;
     }
     /**
-     * Set the spell of hero
+     * Set the spell of hero if cast
      * @param spell
      * The spell
      */
