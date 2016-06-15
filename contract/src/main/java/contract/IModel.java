@@ -1,7 +1,7 @@
 package contract;
 
+import java.awt.*;
 import java.util.Observable;
-import java.util.logging.Level;
 
 /**
  * The Interface IModel.
@@ -11,8 +11,9 @@ import java.util.logging.Level;
 public interface IModel{
 
 	boolean loadLevel(int id);
-	Level getLevel();
+	IElement getElement(int x, int y);
 	boolean saveLevel();
 	void flush();
 	Observable getObservable();
+	void onTick(long tickNumber);
 }

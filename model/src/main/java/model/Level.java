@@ -21,7 +21,7 @@ public class Level implements IStockable {
     /**
      * level of Element
      */
-    private Element element[][];
+    private Element elements[][];
     /**
      * level of hero
      */
@@ -113,21 +113,38 @@ public class Level implements IStockable {
     public void setHero(Hero hero) {
         this.hero = hero;
     }
+
+    public Element[][] getElements() {
+        return elements;
+    }
+    /**
+     * Set the element of the level
+    * @return
+     *The element
+    */
+    public void setElements(Element[][] elements) {
+        this.elements = elements;
+    }
     /**
      * Get the element of level
      * @return
      * The element
      */
-    public Element[][] getElement() {
-        return element;
+    public Element getElement(int x, int y){
+        return this.elements[y][x];
     }
+
     /**
-     * Set the element of the level
-     * @return
-     *The element
+     * Localisation of element
+     * @param x
+     * localisation x
+     * @param y
+     * localisation y
+     * @param element
      */
-    public void setElement(Element[][] element) {
-        this.element = element;
+    public void setElement(int x, int y, Element element){
+        this.elements[y][x] = element;
+
     }
     /**
      * Get the entities of the level

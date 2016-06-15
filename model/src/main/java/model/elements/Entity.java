@@ -1,5 +1,6 @@
 package model.elements;
 
+import contract.IEntity;
 import model.Direction;
 import model.Sprite;
 
@@ -7,7 +8,7 @@ import model.Sprite;
 /**
  * An element who can move an live
  */
-public class Entity extends Element{
+public class Entity extends Element implements IEntity {
 
     public boolean moveTo(Integer x, Integer y){
         return false;
