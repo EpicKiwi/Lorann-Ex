@@ -7,10 +7,6 @@ public interface ILevel {
 
     void addEntity(IEntity entity);
 
-    IElement hasCollisionWith(IElement element);
-
-    void performCollision(IElement element);
-
     void removeEntity(IEntity entity);
 
     int getNumber();

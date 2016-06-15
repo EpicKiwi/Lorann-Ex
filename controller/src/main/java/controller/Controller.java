@@ -1,9 +1,6 @@
 package controller;
 
-import contract.IController;
-import contract.IModel;
-import contract.IView;
-import contract.Order;
+import contract.*;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -68,13 +65,13 @@ public class Controller implements IController,Observer {
 	public void start(){
 		if(this.model.loadLevel(1)){
 			this.model.getObservable().addObserver(this.view.getObserver());
-			this.view.openFrame();
-			this.model.flush();
-
 			this.clock = new Clock();
 			this.clock.addObserver(this);
 			this.clockThread = new Thread(this.clock);
 			this.clockThread.start();
+			this.view.openFrame();
+			this.model.flush();
+
 		} else {
 			System.err.println("Can't load level id:"+LEVELID);
 
@@ -90,6 +87,7 @@ public class Controller implements IController,Observer {
      */
 	public void update(Observable observable, Object o) {
 		System.out.println("Tick n°"+this.clock.getTickNumber());
+		ILevel level = this.model.getLevel();
 	}
 
 	// GETTERS & SETTERS //

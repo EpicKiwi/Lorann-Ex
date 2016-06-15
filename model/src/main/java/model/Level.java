@@ -70,29 +70,6 @@ public class Level implements IStockable, ILevel {
         this.entities.add(entity);
     }
 
-    public IElement hasCollisionWith(IElement element){
-        ILocation elementLocation = element.getLocation();
-        IElement collisionElement = this.getElement(elementLocation.getX(),elementLocation.getY());
-        if(collisionElement != null){
-            return collisionElement;
-        }
-        for(IEntity entity : this.entities){
-            if(elementLocation.getX().equals(entity.getLocation().getX())){
-                return entity;
-            }
-        }
-        return null;
-    }
-
-
-    public void performCollision(IElement element){
-        IElement collisionElement = this.hasCollisionWith(element);
-        if(collisionElement != null){
-            collisionElement.onCollision(element,this);
-            element.onCollision(collisionElement,this);
-        }
-    }
-
     /**
      * Remove the entity
      * @param entity
