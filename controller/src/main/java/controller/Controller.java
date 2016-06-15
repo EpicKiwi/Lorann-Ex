@@ -88,6 +88,40 @@ public class Controller implements IController,Observer {
 	public void update(Observable observable, Object o) {
 		System.out.println("Tick n°"+this.clock.getTickNumber());
 		ILevel level = this.model.getLevel();
+		for(IEntity entity:level.getEntities()){
+			if(entity instanceof IAI && ((IAI) entity).getPath() != null){
+				((IAI) entity).getPath().onTick(level);
+			}
+			performCollision(entity);
+		}
+	}
+
+	/**
+	 * Check if a collision append between the element and an other
+	 * @return
+	 * The other element in collision or null if no collision
+	 */
+	public IElement hasCollision(IElement element){
+		ILocation elementLocation = element.getLocation();
+		for(IEntity entity: this.model.getLevel().getEntities()){
+			if(elementLocation.equals(entity.getLocation())){
+				return entity;
+			}
+		}
+		return this.model.getLevel().getElements()[elementLocation.getY()][elementLocation.getX()];
+	}
+
+	/**
+	 * Perform the collision depending of the behavior
+	 */
+	public void performCollision(IElement element){
+		IElement other = hasCollision(element);
+		if(other == null)
+			return;
+		if(other.getBehavior() != null)
+			other.getBehavior().onCollision(element,this.model.getLevel());
+		if(element.getBehavior() != null)
+			element.getBehavior().onCollision(other,this.model.getLevel());
 	}
 
 	// GETTERS & SETTERS //

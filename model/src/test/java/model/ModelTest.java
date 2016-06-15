@@ -21,8 +21,8 @@ public class ModelTest {
 
     @Test
     public void loadLevel() throws Exception {
-        /*this.model.loadLevel(1);
-        assertNotNull(this.model.getLevel());*/
+        this.model.loadLevel(1);
+        assertNotNull(this.model.getLevel());
     }
 
     @Test
@@ -32,6 +32,7 @@ public class ModelTest {
 
     @Test
     public void getObservable() throws Exception {
+        this.model.loadLevel(1);
         assertNotNull(this.model.getObservable());
     }
 
