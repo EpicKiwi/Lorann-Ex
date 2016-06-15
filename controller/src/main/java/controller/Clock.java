@@ -7,7 +7,9 @@ public class Clock extends Observable implements Runnable {
     /** The number of ticks since the beginning of the game */
     private int tickNumber;
     /** The interval between two ticks */
-    private int tickInterval;
+    private long tickInterval;
+    /** Representing if the clock is stopped or started */
+    private boolean stopped;
     /** The default interval between two ticks */
     public static int DEFAULT_TICK_INTERVAL = 500;
 
@@ -28,6 +30,7 @@ public class Clock extends Observable implements Runnable {
     public Clock(int tickInterval) {
         this.tickNumber = 0;
         this.setTickInterval(tickInterval);
+        this.stopped = false;
     }
 
     /**
@@ -35,6 +38,17 @@ public class Clock extends Observable implements Runnable {
      */
     public void run() {
         System.out.println("Clock started");
+        while(!stopped) {
+            this.setChanged();
+            this.notifyObservers();
+            try {
+                Thread.sleep(this.tickInterval);
+            } catch (InterruptedException e) {
+                System.err.println("Clock thread interrupted");
+                e.printStackTrace();
+            }
+            this.tickNumber++;
+        }
     }
 
     // GETTERS & SETTERS //
@@ -53,7 +67,7 @@ public class Clock extends Observable implements Runnable {
      * @return
      * The interval in miliseconds
      */
-    public int getTickInterval() {
+    public long getTickInterval() {
         return tickInterval;
     }
 
@@ -62,7 +76,23 @@ public class Clock extends Observable implements Runnable {
      * @param tickInterval
      * The new interval in milliseconds
      */
-    public synchronized void setTickInterval(int tickInterval) {
+    public synchronized void setTickInterval(long tickInterval) {
         this.tickInterval = tickInterval;
+    }
+
+    /**
+     * Get if the clock is stopped
+     * @return
+     * True if the clock is stopped
+     */
+    public boolean isStopped() {
+        return stopped;
+    }
+
+    /**
+     * Stop the clock
+     */
+    public void stopClock() {
+        this.stopped = true;
     }
 }

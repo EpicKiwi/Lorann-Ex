@@ -5,6 +5,9 @@ import contract.IModel;
 import contract.IView;
 import contract.Order;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * The Class Controller.
  *
