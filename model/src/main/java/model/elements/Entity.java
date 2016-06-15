@@ -27,10 +27,7 @@ public abstract class Entity extends Element implements IEntity {
 
     public Entity(int x, int y, String image) {
         super(x, y, image);
-    }
-
-    public Entity(int x, int y, Sprite sprite) {
-        super(x, y, sprite);
+        this.permeable = true;
         this.direction = Direction.UP;
     }
 
@@ -42,7 +39,7 @@ public abstract class Entity extends Element implements IEntity {
      * The new Y position
      */
     public void moveTo(int x, int y){
-
+        this.setLocation(x,y);
     }
 
     /**

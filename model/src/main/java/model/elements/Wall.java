@@ -12,5 +12,6 @@ public abstract class Wall extends Element {
      */
     public Wall(int x, int y, String image) {
         super(x, y, image);
+        this.permeable = false;
     }
 }

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import contract.Direction;
 import contract.IElement;
 import contract.IEntity;
 import contract.IModel;
@@ -38,7 +39,7 @@ public class Model extends Observable implements IModel {
 		//TODO Implementer base de données
 		this.level = new Level(12,20,new Hero(1,1),1);
 		this.level.setElement(0,0,new HWall(0,0));
-		this.level.addEntity(new Monster(5,5));
+		this.level.addEntity(new Monster(5,5, Direction.DOWN));
 		return true;
 	}
 

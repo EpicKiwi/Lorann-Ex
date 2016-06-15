@@ -33,6 +33,7 @@ public abstract class Element implements IStockable, IElement {
     public Element(Location location, String image) {
         this.location = location;
         this.sprite = new Sprite(image);
+        this.permeable = true;
     }
 
     /**
