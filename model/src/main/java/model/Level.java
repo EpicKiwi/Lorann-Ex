@@ -34,6 +34,17 @@ public class Level implements IStockable {
 
     private Dimention dimentation;
 
+    public Level(int width, int height, Hero hero, int number) {
+        this.dimentation = new Dimention(width,height);
+        this.hero = hero;
+        this.number = number;
+    }
+
+    public Level(Dimention dimentation, Hero hero, int number) {
+        this.dimentation = dimentation;
+        this.hero = hero;
+        this.number = number;
+    }
 
     public boolean setElement(Integer x, Integer y, Element element){
         return false;
@@ -44,6 +55,14 @@ public class Level implements IStockable {
 
     public void load(ResultSet raw) {
 
+    }
+
+    public void addEntity(Entity entity){
+        this.entities.add(entity);
+    }
+
+    public void removeEntity(Entity entity){
+        this.entities.remove(entity);
     }
 
     public String getTableName() {

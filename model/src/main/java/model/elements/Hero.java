@@ -16,8 +16,8 @@ public class Hero extends Entity {
      * @param y
      * @param image
      */
-    public Hero(int x, int y, String image) {
-        super(x, y, image);
+    public Hero(int x, int y) {
+        super(x, y, "sprites/lorann_l.png");
     }
 
     /**
