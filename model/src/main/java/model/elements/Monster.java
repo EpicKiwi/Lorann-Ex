@@ -1,6 +1,6 @@
 package model.elements;
 
-import model.pathAi.PathAI;
+import contract.AIType;
 
 /**
  *@Marie
@@ -16,12 +16,12 @@ public class Monster extends AI {
      * Localisation y monster
      * @param image
      * Image of monster
-     * @param path
+     * @param aiType
      * Ai of monster
      */
-	public Monster(int x, int y, String image, PathAI path) {
+	public Monster(int x, int y, String image, AIType aiType) {
 		super(x, y, image);
-
+        this.aiType = aiType;
 	}
     /**
      * Localisation and sprite monster

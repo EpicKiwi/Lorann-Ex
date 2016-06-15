@@ -19,7 +19,6 @@ public class Controller implements IController,Observer {
 	/** The model. */
 	private IModel	model;
 
-	private Thread clockThread;
 	private Clock clock;
 
 	public static int LEVELID = 1;
@@ -35,6 +34,8 @@ public class Controller implements IController,Observer {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
+		MoveManager.init(this.model);
+		AIManager.init(this.model);
 	}
 
 	/**
@@ -46,23 +47,26 @@ public class Controller implements IController,Observer {
 	public void orderPerform(Order order) {
 		IHero hero = this.model.getLevel().getHero();
 		ILocation heroLocation = hero.getLocation();
+		MoveManager mm = MoveManager.getInstance();
+
 		switch (order){
 			case CHARACTER_DOWN:
-				safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()+1);
+				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()+1);
 				break;
 			case CHARACTER_UP:
-				safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()-1);
+				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()-1);
 				break;
 			case CHARACTER_LEFT:
-				safeMoveTo(hero,heroLocation.getX()-1,heroLocation.getY());
+				mm.safeMoveTo(hero,heroLocation.getX()-1,heroLocation.getY());
 				break;
 			case CHARACTER_RIGHT:
-				safeMoveTo(hero,heroLocation.getX()+1,heroLocation.getY());
+				mm.safeMoveTo(hero,heroLocation.getX()+1,heroLocation.getY());
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
 				break;
 		}
+		this.model.flush();
 	}
 
 	/**
@@ -73,8 +77,8 @@ public class Controller implements IController,Observer {
 			this.model.getObservable().addObserver(this.view.getObserver());
 			this.clock = new Clock();
 			this.clock.addObserver(this);
-			this.clockThread = new Thread(this.clock);
-			this.clockThread.start();
+			Thread clockThread = new Thread(this.clock);
+			clockThread.start();
 			this.view.openFrame();
 			this.model.flush();
 
@@ -92,76 +96,29 @@ public class Controller implements IController,Observer {
 	 * An object
      */
 	public void update(Observable observable, Object o) {
-		System.out.println("Tick n°"+this.clock.getTickNumber());
+		AIManager aim = AIManager.getInstance();
 		ILevel level = this.model.getLevel();
 		for(IEntity entity:level.getEntities()){
 			if(entity instanceof IAI){
-				performAi((IAI) entity);
+				aim.performAi((IAI) entity);
 			}
 			performCollision(entity);
 		}
-	}
-
-	/**
-	 * Check if a collision append between the element and an other
-	 * @return
-	 * The other element in collision or null if no collision
-	 */
-	private IElement hasCollision(IElement element){
-		ILocation elementLocation = element.getLocation();
-		for(IEntity entity: this.model.getLevel().getEntities()){
-			if(elementLocation.equals(entity.getLocation())){
-				return entity;
-			}
-		}
-		return this.model.getLevel().getElements()[elementLocation.getY()][elementLocation.getX()];
-	}
-
-	private void performAi(IAI entity){
-		switch (entity.getAiType()){
-			case STRAIGHT:
-				//TODO Straight Ai
-				break;
-			case DIAGONAL:
-				//TODO Straight Ai
-				break;
-			case RANDOM:
-				//TODO Straight Ai
-				break;
-			case NOTHING:
-				//Do nothing ???
-				break;
-		}
+		this.model.flush();
 	}
 
 	/**
 	 * Perform the collision depending of the behavior
 	 */
 	private void performCollision(IElement element){
-		IElement other = hasCollision(element);
+		MoveManager mm = MoveManager.getInstance();
+		IElement other = mm.hasCollision(element);
 		if(other == null)
 			return;
 		if(other.getBehavior() != null)
 			other.getBehavior().onCollision(element,this.model.getLevel());
 		if(element.getBehavior() != null)
 			element.getBehavior().onCollision(other,this.model.getLevel());
-	}
-
-	private boolean canMoveOn(int x, int y){
-		IDimention levelDimentions = this.model.getLevel().getDimention();
-		if(x > levelDimentions.getWidth()-1 || x < 0)
-			return false;
-		if(y > levelDimentions.getHeight()-1 || y < 0)
-			return false;
-		return this.model.getLevel().getElement(x,y).isPermeable();
-	}
-
-	private boolean safeMoveTo(IEntity entity, int x, int y){
-		if(canMoveOn(x,y)) {
-			entity.moveTo(x,y);
-			return true;
-		}
-		return false;
 	}
 
 	// GETTERS & SETTERS //
