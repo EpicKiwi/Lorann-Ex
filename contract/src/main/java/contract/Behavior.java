@@ -1,7 +1,4 @@
-package model.behavior;
-
-import model.Level;
-import model.elements.Element;
+package contract;
 
 /**
  * An interface for the differents Behaviour of the éléments
@@ -16,5 +13,5 @@ public interface Behavior {
      * @param level
      * The level
      */
-    public void onCollision(Element other, Level level);
+    public void onCollision(IElement other, ILevel level);
 }

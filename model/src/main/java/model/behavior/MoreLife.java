@@ -1,5 +1,8 @@
 package model.behavior;
 
+import contract.Behavior;
+import contract.IElement;
+import contract.ILevel;
 import model.Level;
 import model.elements.Element;
 
@@ -7,7 +10,7 @@ import model.elements.Element;
  * A behavior to increase the life of the player
  * @author Marie
  */
-public class MoreLife implements Behavior{
+public class MoreLife implements Behavior {
 
     /**
      * Add a life to the hero
@@ -16,7 +19,7 @@ public class MoreLife implements Behavior{
      * @param level
      * The level
      */
-    public void onCollision(Element other, Level level) {
+    public void onCollision(IElement other, ILevel level) {
 
     }
 }

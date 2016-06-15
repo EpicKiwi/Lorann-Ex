@@ -1,5 +1,8 @@
 package model.behavior;
 
+import contract.Behavior;
+import contract.IElement;
+import contract.ILevel;
 import model.Level;
 import model.elements.Element;
 
@@ -7,7 +10,7 @@ import model.elements.Element;
  * A Behavior of the end of the level
  * @author Marie
  */
-public class End implements Behavior{
+public class End implements Behavior {
 
     /**
      * End the level
@@ -16,7 +19,7 @@ public class End implements Behavior{
      * @param level
      * The level
      */
-    public void onCollision(Element other, Level level) {
+    public void onCollision(IElement other, ILevel level) {
 
     }
 }

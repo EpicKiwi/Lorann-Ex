@@ -1,6 +1,8 @@
 package model;
 
 
+import contract.ISprite;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,7 @@ import java.awt.*;
  * A sprite representing an element in the level
  * @author Marie
  */
-public class Sprite {
+public class Sprite implements ISprite {
 
 
     /** The image of the sprite */

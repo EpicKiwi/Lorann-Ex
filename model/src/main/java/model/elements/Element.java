@@ -1,10 +1,8 @@
 package model.elements;
 
-import contract.IElement;
-import model.Level;
+import contract.*;
 import model.Location;
 import model.Sprite;
-import model.behavior.Behavior;
 import model.database.IStockable;
 
 import java.awt.*;
@@ -19,17 +17,11 @@ public class Element implements IStockable, IElement {
     /** The behavior of the element */
     protected Behavior behavior;
     /** The location of the element */
-    protected Location location;
+    protected ILocation location;
     /** The sprite of the element */
-    protected Sprite sprite;
+    protected ISprite sprite;
     /** Set if an entity can walk hover the element */
     protected boolean permeable;
-
-    public void OnCollision(Element other, Level level){
-
-    }
-
-
 
     /**
      * Instanciate the element
@@ -90,7 +82,7 @@ public class Element implements IStockable, IElement {
      * @param level
      * The level
      */
-    public void onCollision(Element other, Level level){
+    public void onCollision(IElement other, ILevel level){
 
     }
 
@@ -110,7 +102,7 @@ public class Element implements IStockable, IElement {
      * @return
      * The location
      */
-    public Location getLocation() {
+    public ILocation getLocation() {
         return location;
     }
 
@@ -119,7 +111,7 @@ public class Element implements IStockable, IElement {
      * @param location
      * The location of the element
      */
-    public void setLocation(Location location) {
+    public void setLocation(ILocation location) {
         this.location = location;
     }
 
@@ -140,7 +132,7 @@ public class Element implements IStockable, IElement {
      * @return
      * The sprite
      */
-    public Sprite getSprite() {
+    public ISprite getSprite() {
         return sprite;
     }
 
@@ -149,7 +141,7 @@ public class Element implements IStockable, IElement {
      * @param sprite
      * The new sprite
      */
-    public void setSprite(Sprite sprite) {
+    public void setSprite(ISprite sprite) {
         this.sprite = sprite;
     }
 

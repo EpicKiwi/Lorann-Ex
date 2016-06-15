@@ -90,7 +90,6 @@ public class Controller implements IController,Observer {
      */
 	public void update(Observable observable, Object o) {
 		System.out.println("Tick n°"+this.clock.getTickNumber());
-		this.model.onTick(this.clock.getTickNumber());
 	}
 
 	// GETTERS & SETTERS //
