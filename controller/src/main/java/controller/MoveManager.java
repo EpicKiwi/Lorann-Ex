@@ -43,7 +43,10 @@ class MoveManager {
             return false;
         if(y > levelDimentions.getHeight()-1 || y < 0)
             return false;
-        return this.model.getLevel().getElement(x,y).isPermeable();
+        if(this.model.getLevel().getElement(x,y) != null){
+            return this.model.getLevel().getElement(x,y).isPermeable();
+        }
+        return true;
     }
 
     boolean safeMoveTo(IEntity entity, int x, int y){

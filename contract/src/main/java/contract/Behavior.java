@@ -1,17 +1,8 @@
 package contract;
 
-/**
- * An interface for the differents Behaviour of the éléments
- * @Marie
- */
-public interface Behavior {
-
-    /**
-     * A methods executed when a collision was triggered
-     * @param other
-     * The other elements in the collision
-     * @param level
-     * The level
-     */
-    public void onCollision(IElement other, ILevel level);
+public enum Behavior {
+    DEATH,
+    MOREPOINT,
+    UNLOCK,
+    END
 }

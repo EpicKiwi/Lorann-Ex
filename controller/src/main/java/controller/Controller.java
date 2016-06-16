@@ -1,8 +1,6 @@
 package controller;
 
 import contract.*;
-
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -19,6 +17,7 @@ public class Controller implements IController,Observer {
 	/** The model. */
 	private IModel	model;
 
+	/** The clock of the game */
 	private Clock clock;
 
 	public static int LEVELID = 1;
@@ -36,6 +35,7 @@ public class Controller implements IController,Observer {
 		this.setModel(model);
 		MoveManager.init(this.model);
 		AIManager.init(this.model);
+		CollisionManager.init(this.model);
 	}
 
 	/**
@@ -112,13 +112,11 @@ public class Controller implements IController,Observer {
 	 */
 	private void performCollision(IElement element){
 		MoveManager mm = MoveManager.getInstance();
+		CollisionManager cm = CollisionManager.getInstance();
 		IElement other = mm.hasCollision(element);
 		if(other == null)
 			return;
-		if(other.getBehavior() != null)
-			other.getBehavior().onCollision(element,this.model.getLevel());
-		if(element.getBehavior() != null)
-			element.getBehavior().onCollision(other,this.model.getLevel());
+		cm.performCollision(element);
 	}
 
 	// GETTERS & SETTERS //

@@ -27,19 +27,6 @@ public abstract class  AI extends Entity implements contract.IAI {
     }
 
     /**
-     * Instanciate the object
-     * @param x
-     * The X position
-     * @param y
-     * The Y position
-     * @param sprite
-     * The Sprite of the element
-     */
-    public AI(int x, int y, Sprite sprite) {
-        super(x, y, sprite);
-    }
-
-    /**
      * Get the type of Artificial intelligence of the object
      * @return
      * The AIType

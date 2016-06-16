@@ -1,6 +1,7 @@
 package model.database;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * An Interface for the differents possibility of storage in the DB
@@ -12,7 +13,7 @@ public interface IStockable {
      * A method loading the object from a result set
      * @return
      */
-    void load(ResultSet raw);
+    void load(ResultSet raw) throws SQLException;
 
     /**
      * Get the name of the table

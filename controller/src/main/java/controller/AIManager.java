@@ -102,7 +102,7 @@ class AIManager {
                     nextX--;
                     break;
                 case RIGHT:
-                    nextY++;
+                    nextX++;
                     break;
                 default:
                     System.out.println("Invalid direction for "+ai.toString());

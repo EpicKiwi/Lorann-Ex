@@ -4,6 +4,9 @@ import contract.IEntity;
 import contract.Direction;
 import model.Sprite;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 /**
  * An element who can move an live
@@ -27,10 +30,7 @@ public abstract class Entity extends Element implements IEntity {
 
     public Entity(int x, int y, String image) {
         super(x, y, image);
-    }
-
-    public Entity(int x, int y, Sprite sprite) {
-        super(x, y, sprite);
+        this.permeable = true;
         this.direction = Direction.UP;
     }
 
@@ -42,7 +42,7 @@ public abstract class Entity extends Element implements IEntity {
      * The new Y position
      */
     public void moveTo(int x, int y){
-
+        this.setLocation(x,y);
     }
 
     /**
@@ -61,5 +61,11 @@ public abstract class Entity extends Element implements IEntity {
      */
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    @Override
+    public void load(ResultSet raw) throws SQLException {
+        super.load(raw);
+        this.direction = Direction.valueOf(raw.getString(5));
     }
 }

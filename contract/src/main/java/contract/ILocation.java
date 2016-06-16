@@ -4,11 +4,11 @@ package contract;
  * Created by baptiste on 15/06/16.
  */
 public interface ILocation {
-    Integer getY();
+    int getY();
 
-    void setY(Integer y);
+    void setY(int y);
 
-    Integer getX();
+    int getX();
 
-    void setX(Integer x);
+    void setX(int x);
 }

@@ -23,7 +23,7 @@ class GameFrame extends JFrame implements KeyListener
 	/**
 	 * attribute to create the frame's size
 	 */
-	private int height = 380;
+	private int height = 416;
 	
 	
 
@@ -41,10 +41,9 @@ class GameFrame extends JFrame implements KeyListener
 		this.setSize(width, height);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		this.panel = new GamePanel();
 		this.panel.setBackground(Color.BLACK);
-		this.setContentPane(this.panel); //<--------------------------------- ICI
+		this.setContentPane(this.panel);
 	}
 	
 	/**
@@ -52,7 +51,7 @@ class GameFrame extends JFrame implements KeyListener
 	 */
 	public void repaint()
 	{
-		
+		this.panel.repaint();
 	}
 	
 	public GamePanel getGamePanel()
