@@ -49,31 +49,57 @@ public class Model extends Observable implements IModel {
 		return true;
 	}
 
+	/**
+	 * Save the level
+	 */
 	public boolean saveLevel()	{
 		return true;
 	}
-
+	
+	/**
+	 * Get the level
+	 * @return
+	 */
 	public Level getLevel(){
 		return this.level;
 	}
 
+	/**
+	 * Inform the view that the model have changed
+	 */
 	public void flush() {
 		this.setChanged();
 		this.notifyObservers();
 	}
-
+	
+	/**
+	 * Get the observable
+	 * @return
+	 */
 	public Observable getObservable() {
 		return this;
 	}
-
+	
+	/**
+	 * Get the element of a specific position
+	 * @return
+	 */
 	public IElement getElement(int x, int y) {
 		return this.level.getElement(x,y);
 	}
 
+	/**
+	 * Get element of the board
+	 * @return
+	 */
 	public IElement[][] getElements(){
 		return this.level.getElements();
 	}
 
+	/**
+	 * Get the hero
+	 * @return
+	 */
 	public IEntity getHero(){
 		return this.level.getHero();
 	}

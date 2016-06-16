@@ -15,6 +15,10 @@ public class Money extends Item {
         super(x, y, "sprites/purse.png");
     }
 
+    /**
+     * Get the type of the element
+     * @return money
+     */
     public String getType() {
         return "money";
     }

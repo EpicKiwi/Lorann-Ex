@@ -17,6 +17,10 @@ public class VWall extends Wall
         super(x, y, "sprites/vertical_bone.png");
     }
 
+    /**
+     * Get the type of the element
+     * @return vertical-wall
+     */
     public String getType() {
         return "vertical-wall";
     }

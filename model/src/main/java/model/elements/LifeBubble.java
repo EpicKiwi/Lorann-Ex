@@ -15,6 +15,10 @@ public class LifeBubble extends Item {
         super(x, y, "sprites/crystal_ball.png");
     }
 
+    /**
+     * Get the type of the element
+     * @return life-bubble
+     */
     public String getType() {
         return "life-bubble";
     }

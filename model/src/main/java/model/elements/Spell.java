@@ -36,6 +36,10 @@ public class Spell extends AI{
         this.aiType = STRAIGHT;
     }
 
+    /**
+     * Get the type of the element
+     * @return spell
+     */
     public String getType() {
         return "spell";
     }
