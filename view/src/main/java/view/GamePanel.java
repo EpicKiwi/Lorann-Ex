@@ -63,8 +63,11 @@ class GamePanel extends JPanel implements Observer
 		
 		if (model.getLevel().getHero().isAlive() == false)
 		{
-			//g.drawString("GAME OVER", GameFrame.HEIGHT/2, GameFrame.);//
+			g.drawString("GAME OVER", GameFrame.HEIGHT/2, GameFrame.WIDTH/2);
 		}
+		
+		g.drawString(model.getLevel().getHero().getScore().toString(), 0, 0);
+		g.drawString("Coucou je suis Baptiste et je teste le draw", 200, 200);
 	}
 
 	/**
