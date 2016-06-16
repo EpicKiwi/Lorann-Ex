@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import contract.IElement;
 import contract.IEntity;
+import contract.IHero;
 import contract.ILevel;
 import contract.IModel;
 
@@ -55,6 +56,10 @@ class GamePanel extends JPanel implements Observer
 			g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
 		}
 
+		
+		IHero ele = level.getHero();
+		g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
+		
 	}
 
 	/**
