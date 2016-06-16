@@ -24,6 +24,6 @@ public class CollisionManager {
     // METHODS //
 
     void performCollision(IElement element){
-        //TODO Perform entity
+        //TODO Perform collision
     }
 }
