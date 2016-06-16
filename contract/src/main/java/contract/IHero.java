@@ -12,4 +12,8 @@ public interface IHero extends IEntity {
     boolean isSpell();
 
     void setSpell(boolean spell);
+    
+    boolean isAlive();
+    
+    void setAlive(boolean alive);
 }

@@ -19,20 +19,29 @@ import contract.Order;
  */
 class GameFrame extends JFrame implements KeyListener 
 {
-	/**
-	 * attribute to create the frame's size
-	 */
-	private int width = 640;
 	
 	/**
 	 * attribute to create the frame's size
 	 */
-	private int height = 416;
+	private int width = 656;
 	
+	
+	/**
+	 * attribute to create the frame's size
+	 */
+	private int height = 464;
+	
+	
+	/**
+	 * attribute to link with the controller
+	 */
 	private IController controller;
 
-	private GamePanel panel;
 	
+	/**
+	 * attribute to link with the controller
+	 */
+	private GamePanel panel;
 	
 	
 	/**
@@ -48,6 +57,7 @@ class GameFrame extends JFrame implements KeyListener
 		this.panel = new GamePanel();
 		this.panel.setBackground(Color.BLACK);
 		this.setContentPane(this.panel);
+		//this.setResizable(resizable = false);
 		
 		this.addKeyListener(this);
 	}
@@ -60,6 +70,11 @@ class GameFrame extends JFrame implements KeyListener
 		this.panel.repaint();
 	}
 	
+	
+	/**
+	 * geter from the GamePanel class
+	 * 
+	 */
 	public GamePanel getGamePanel()
 	{
 		return this.panel;
@@ -74,6 +89,7 @@ class GameFrame extends JFrame implements KeyListener
 		return width;
 	}
 	
+	
 	/**
 	 * geter of the width attribute
 	 */
@@ -83,19 +99,28 @@ class GameFrame extends JFrame implements KeyListener
 	}
 	
 	
-	
-	
-	
-	public IController getController() {
+	/**
+	 * geter from the Controller class
+	 * @return
+	 */
+	public IController getController() 
+	{
 		return controller;
 	}
-
-	public void setController(IController controller) {
+	
+	
+	/**
+	 * seter from the controller class
+	 * @param controller
+	 */
+	public void setController(IController controller)
+	{
 		this.controller = controller;
 	}
 
+	
 	/**
-	 * methode used to capture the user's actions
+	 * methode used to capture the user's actions and send them to the controller
 	 */
 	public void keyPressed(KeyEvent e) 
 	{

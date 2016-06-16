@@ -23,6 +23,7 @@ class GamePanel extends JPanel implements Observer
 	
 	private IModel model;
 	
+	
 	/**
 	 * constructor of this class
 	 */
@@ -31,6 +32,7 @@ class GamePanel extends JPanel implements Observer
 		setBackground(Color.BLACK);
 		setVisible(true);
 	}
+	
 	
 	/**
 	 * will print on screen sprites of the game
@@ -56,10 +58,13 @@ class GamePanel extends JPanel implements Observer
 			g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
 		}
 
-		
 		IHero ele = level.getHero();
 		g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
 		
+		if (model.getLevel().getHero().isAlive() == false)
+		{
+			//g.drawString("GAME OVER", GameFrame.HEIGHT/2, GameFrame.);//
+		}
 	}
 
 	/**
