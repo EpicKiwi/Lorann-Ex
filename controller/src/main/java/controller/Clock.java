@@ -14,9 +14,13 @@ public class Clock extends Thread {
     private boolean stopped;
     /** The default interval between two ticks */
     public static int DEFAULT_TICK_INTERVAL = 100;
+<<<<<<< HEAD
 
     private Controller controller;
 
+=======
+    private Controller controller;
+>>>>>>> b9846468ce231f3c8d46cff327025e66cb8dde47
 
     /**
      * Instantiates a new Clock

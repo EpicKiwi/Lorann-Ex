@@ -5,6 +5,7 @@ import model.database.IStockable;
 import model.elements.Element;
 import model.elements.Entity;
 import model.elements.Hero;
+import model.elements.Spell;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -193,6 +194,10 @@ public class Level implements IStockable, ILevel {
      */
     public void setExit(boolean exit) {
         this.exit = exit;
+    }
+
+    public void createSpell(int x, int y, Direction direction) {
+        this.addEntity(new Spell(x,y,direction));
     }
 }
 
