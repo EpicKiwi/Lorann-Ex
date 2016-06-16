@@ -33,21 +33,23 @@ public class Model extends Observable implements IModel {
 		//DBConnection dbConnection = DBConnection.getInstance();
 
 		//TODO Implementer base de données
-		this.level = new Level(20,12,new Hero(1,1),1);
+		this.level = new Level(20,12,new Hero(5,3),1);
 		this.level.setElement(10,5,new VWall(10,5));
 		this.level.setElement(1,5,new VWall(1,5));
 		this.level.setElement(19,5,new VWall(19,5));
 		this.level.setElement(19,11,new Door(19,11));
 		this.level.setElement(19,0,new LifeBubble(19,0));
+		this.level.setElement(0,0,new Money(0,0));
+		this.level.setElement(1,0,new Money(1,0));
+		this.level.setElement(2,0,new Money(2,0));
+		this.level.setElement(3,0,new Money(3,0));
+		this.level.setElement(4,0,new Money(4,0));
+		this.level.setElement(5,0,new Money(5,0));
 		this.level.addEntity(new Monster(5,5, Direction.RIGHT));
 		this.level.addEntity(new Monster(11,5, Direction.LEFT));
-		this.level.addEntity(new Monster(12,6, Direction.LEFT));
-		this.level.addEntity(new Monster(13,7, Direction.LEFT));
-		this.level.addEntity(new Monster(14,8, Direction.LEFT));
 		AI ele = new Monster(10,10, Direction.TOPRIGHT);
 		ele.setAiType(AIType.DIAGONAL);
 		this.level.addEntity(ele);
-
 		return true;
 	}
 

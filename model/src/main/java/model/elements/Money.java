@@ -11,9 +11,8 @@ public class Money extends Item {
      *
      * @param x
      * @param y
-     * @param image
      */
-    public Money(int x, int y, String image) {
+    public Money(int x, int y) {
         super(x, y, "sprites/purse.png");
         this.behavior = Behavior.MOREPOINT;
     }

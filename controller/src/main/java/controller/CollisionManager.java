@@ -45,7 +45,7 @@ class CollisionManager {
                 System.err.println("Not implemented behavior "+element.getBehavior().toString());
                 break;
         }
-        if(element instanceof IItem){
+        if(element instanceof IItem && other instanceof IHero){
             this.model.getLevel().destroyElement(element);
         }
     }
