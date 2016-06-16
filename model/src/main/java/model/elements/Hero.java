@@ -65,10 +65,17 @@ public class Hero extends Entity implements contract.IHero {
         return "hero";
     }
 
+    /**
+     * Boolean if hero is alive or not
+     * @return alive
+     */
 	public boolean isAlive() {
 		return alive;
 	}
 
+	/**
+	 * Set alive
+	 */
 	public void setAlive(boolean alive) {
 		this.alive = alive;
 	}
