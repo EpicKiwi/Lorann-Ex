@@ -25,9 +25,6 @@ public class View implements IView
 	private GameFrame frame;
 	
 	
-	private IController controller;
-	
-	
 	/**
 	 * constructor of the view class
 	 */
@@ -46,6 +43,7 @@ public class View implements IView
 		
 	}
 	
+	
 	/**
 	 * methode to open the frame
 	 */
@@ -56,7 +54,6 @@ public class View implements IView
 	}
 
 	
-
 	/**
 	 * methode to close the current frame
 	 */
@@ -74,6 +71,7 @@ public class View implements IView
 		return this.frame.getGamePanel();
 	}
 
+	
 	/**
 	 * set the controller associated to the view
 	 * @param controller
@@ -81,6 +79,6 @@ public class View implements IView
      */
 	public void setController(IController controller) 
 	{
-		
+		this.frame.setController(controller);
 	}
 }

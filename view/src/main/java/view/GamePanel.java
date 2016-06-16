@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import contract.IElement;
 import contract.IEntity;
+import contract.IHero;
 import contract.ILevel;
 import contract.IModel;
 
@@ -22,6 +23,7 @@ class GamePanel extends JPanel implements Observer
 	
 	private IModel model;
 	
+	
 	/**
 	 * constructor of this class
 	 */
@@ -30,6 +32,7 @@ class GamePanel extends JPanel implements Observer
 		setBackground(Color.BLACK);
 		setVisible(true);
 	}
+	
 	
 	/**
 	 * will print on screen sprites of the game
@@ -54,6 +57,17 @@ class GamePanel extends JPanel implements Observer
 		{
 			g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
 		}
+
+		IHero ele = level.getHero();
+		g.drawImage(ele.getImage(), ele.getLocation().getX()*32, ele.getLocation().getY()*32, null);
+		
+		if (model.getLevel().getHero().isAlive() == false)
+		{
+			g.drawString("GAME OVER", GameFrame.HEIGHT/2, GameFrame.WIDTH/2);
+		}
+		
+		g.drawString(model.getLevel().getHero().getScore().toString(), 0, 0);
+		g.drawString("Coucou je suis Baptiste et je teste le draw", 200, 200);
 	}
 
 	/**

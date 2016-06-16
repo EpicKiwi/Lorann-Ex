@@ -25,6 +25,10 @@ public class Monster extends AI {
         this.aiType = STRAIGHT;
     }
 
+    /**
+     * Get the type of the element
+     * @return monster
+     */
     public String getType() {
         return "monster";
     }

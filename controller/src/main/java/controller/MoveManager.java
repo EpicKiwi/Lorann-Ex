@@ -52,6 +52,7 @@ class MoveManager {
     boolean safeMoveTo(IEntity entity, int x, int y){
         if(canMoveOn(x,y)) {
             entity.moveTo(x,y);
+            this.model.flush();
             return true;
         }
         return false;

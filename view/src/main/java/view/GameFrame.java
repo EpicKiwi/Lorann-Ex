@@ -4,7 +4,11 @@ package view;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
+
+import contract.IController;
+import contract.Order;
 
 
 /**
@@ -15,20 +19,29 @@ import javax.swing.JFrame;
  */
 class GameFrame extends JFrame implements KeyListener 
 {
-	/**
-	 * attribute to create the frame's size
-	 */
-	private int width = 640;
 	
 	/**
 	 * attribute to create the frame's size
 	 */
-	private int height = 416;
+	private int width = 656;
 	
 	
+	/**
+	 * attribute to create the frame's size
+	 */
+	private int height = 464;
+	
+	
+	/**
+	 * attribute to link with the controller
+	 */
+	private IController controller;
 
-	private GamePanel panel;
 	
+	/**
+	 * attribute to link with the controller
+	 */
+	private GamePanel panel;
 	
 	
 	/**
@@ -44,6 +57,9 @@ class GameFrame extends JFrame implements KeyListener
 		this.panel = new GamePanel();
 		this.panel.setBackground(Color.BLACK);
 		this.setContentPane(this.panel);
+		//this.setResizable(resizable = false);
+		
+		this.addKeyListener(this);
 	}
 	
 	/**
@@ -54,6 +70,11 @@ class GameFrame extends JFrame implements KeyListener
 		this.panel.repaint();
 	}
 	
+	
+	/**
+	 * geter from the GamePanel class
+	 * 
+	 */
 	public GamePanel getGamePanel()
 	{
 		return this.panel;
@@ -68,6 +89,7 @@ class GameFrame extends JFrame implements KeyListener
 		return width;
 	}
 	
+	
 	/**
 	 * geter of the width attribute
 	 */
@@ -78,11 +100,60 @@ class GameFrame extends JFrame implements KeyListener
 	
 	
 	/**
-	 * methode used to capture the user's actions
+	 * geter from the Controller class
+	 * @return
+	 */
+	public IController getController() 
+	{
+		return controller;
+	}
+	
+	
+	/**
+	 * seter from the controller class
+	 * @param controller
+	 */
+	public void setController(IController controller)
+	{
+		this.controller = controller;
+	}
+
+	
+	/**
+	 * methode used to capture the user's actions and send them to the controller
 	 */
 	public void keyPressed(KeyEvent e) 
 	{
-		
+		switch(e.getKeyCode())
+		{
+			case KeyEvent.VK_Z: 
+			case KeyEvent.VK_UP:
+			this.controller.orderPerform(Order.CHARACTER_UP);
+			break;
+			
+			
+			case KeyEvent.VK_S:
+			case KeyEvent.VK_DOWN:
+			this.controller.orderPerform(Order.CHARACTER_DOWN);
+			break;
+			
+			
+			case KeyEvent.VK_Q:
+			case KeyEvent.VK_LEFT:
+			this.controller.orderPerform(Order.CHARACTER_LEFT);
+			break;
+			
+			
+			case KeyEvent.VK_D:
+			case KeyEvent.VK_RIGHT:
+			this.controller.orderPerform(Order.CHARACTER_RIGHT);
+			break;
+			
+			case KeyEvent.VK_SPACE:
+			this.controller.orderPerform(Order.CHARACTER_SPELL);
+			break;
+				
+		}
 	}
 	
 	

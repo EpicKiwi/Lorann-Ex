@@ -36,4 +36,6 @@ public interface ILevel {
     boolean isExit();
 
     void setExit(boolean exit);
+
+    void createSpell(int x, int y, Direction direction);
 }

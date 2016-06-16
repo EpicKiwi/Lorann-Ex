@@ -9,7 +9,7 @@ import java.util.Observer;
  *
  * @author Baptiste
  */
-public class Controller implements IController,Observer {
+public class Controller implements IController {
 
 	/** The view. */
 	private IView	view;
@@ -36,6 +36,7 @@ public class Controller implements IController,Observer {
 		MoveManager.init(this.model);
 		AIManager.init(this.model);
 		CollisionManager.init(this.model);
+		HeroManager.init(this.model);
 	}
 
 	/**
@@ -45,22 +46,22 @@ public class Controller implements IController,Observer {
 	 * The order to perform
      */
 	public void orderPerform(Order order) {
-		IHero hero = this.model.getLevel().getHero();
-		ILocation heroLocation = hero.getLocation();
-		MoveManager mm = MoveManager.getInstance();
-
+		HeroManager hm = HeroManager.getInstance();
 		switch (order){
 			case CHARACTER_DOWN:
-				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()+1);
+				hm.move(Direction.DOWN);
 				break;
 			case CHARACTER_UP:
-				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()-1);
+				hm.move(Direction.UP);
 				break;
 			case CHARACTER_LEFT:
-				mm.safeMoveTo(hero,heroLocation.getX()-1,heroLocation.getY());
+				hm.move(Direction.LEFT);
 				break;
 			case CHARACTER_RIGHT:
-				mm.safeMoveTo(hero,heroLocation.getX()+1,heroLocation.getY());
+				hm.move(Direction.RIGHT);
+				break;
+			case CHARACTER_SPELL:
+				hm.sendSpell();
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
@@ -75,12 +76,9 @@ public class Controller implements IController,Observer {
 	public void start(){
 		if(this.model.loadLevel(1)){
 			this.model.getObservable().addObserver(this.view.getObserver());
-			this.clock = new Clock();
-			this.clock.addObserver(this);
-			Thread clockThread = new Thread(this.clock);
-			clockThread.start();
+			this.clock = new Clock(this);
+			this.clock.start();
 			this.view.openFrame();
-			this.model.flush();
 
 		} else {
 			System.err.println("Can't load level id:"+LEVELID);
@@ -90,12 +88,8 @@ public class Controller implements IController,Observer {
 
 	/**
 	 * Updated when a tick appen
-	 * @param observable
-	 * The observable object @see Clock
-	 * @param o
-	 * An object
      */
-	public void update(Observable observable, Object o) {
+	public void update() {
 		AIManager aim = AIManager.getInstance();
 		ILevel level = this.model.getLevel();
 		for(IEntity entity:level.getEntities()){
@@ -116,7 +110,7 @@ public class Controller implements IController,Observer {
 		IElement other = mm.hasCollision(element);
 		if(other == null)
 			return;
-		cm.performCollision(element);
+		cm.performCollision(element,other);
 	}
 
 	// GETTERS & SETTERS //

@@ -15,6 +15,10 @@ public class Door extends Element {
         super(x, y, "sprites/gate_open.png");
     }
 
+    /**
+     * Get the type of this element
+     * @return door
+     */
     public String getType() {
         return "door";
     }
