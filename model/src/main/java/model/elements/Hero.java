@@ -6,6 +6,7 @@ package model.elements;
 public class Hero extends Entity implements contract.IHero {
     /** The indicator of the capacity to the hero to launch a RAINBOW SPELLr <b>*o*</b> */
     private boolean spell = true;
+    private boolean alive = true;
     /** The score of the player */
    private Integer score = 0;
 
@@ -63,4 +64,14 @@ public class Hero extends Entity implements contract.IHero {
     public String getType() {
         return "hero";
     }
+
+	public boolean isAlive() {
+		return alive;
+	}
+
+	public void setAlive(boolean alive) {
+		this.alive = alive;
+	}
+    
+    
 }
