@@ -1,7 +1,6 @@
 package controller;
 
-import contract.IElement;
-import contract.IModel;
+import contract.*;
 
 class CollisionManager {
     private static CollisionManager ourInstance;
@@ -24,10 +23,77 @@ class CollisionManager {
     // METHODS //
 
     void performCollision(IElement element, IElement other){
-        other.getBehavior();
+        if(element.getBehavior() == null)
+            return;
+        switch (element.getBehavior()){
+            case DEATH:
+                performDeath(element,other);
+                break;
+            case MOREPOINT:
+                performMorePoint(element,other);
+                break;
+            case END:
+                performEnd(element,other);
+                break;
+            case UNLOCK:
+                performUnlock(element,other);
+                break;
+            case SPELL:
+                performSpell(element,other);
+                break;
+            default:
+                System.err.println("Not implemented behavior "+element.getBehavior().toString());
+                break;
+        }
+        if(element instanceof IItem){
+            this.model.getLevel().destroyElement(element);
+        }
     }
 
-    void performCrossedCollision(){
+    void performCrossedCollision(IElement element, IElement other){
+        if(element.getBehavior() != null)
+            this.performCollision(element,other);
+        if(other.getBehavior() != null)
+            this.performCollision(other,element);
+        System.out.println("Collision between "+element.getClass().getCanonicalName()+" and "+other.getClass().getCanonicalName()+" on X: "+element.getLocation().getX()+" Y: "+element.getLocation().getY());
+    }
 
+    void performDeath(IElement element, IElement other){
+        if(other instanceof IHero){
+            ((IHero) other).setAlive(false);
+        }
+    }
+
+    void performMorePoint(IElement element, IElement other){
+        if(other instanceof IHero){
+            ((IHero) other).setScore(((IHero) other).getScore()+100);
+        }
+    }
+
+    void performUnlock(IElement element, IElement other){
+        ILevel level = this.model.getLevel();
+        for (int y = 0; y < level.getDimention().getHeight(); y++)
+        {
+            for (int x = 0; x < level.getDimention().getWidth(); x++)
+            {
+                IElement ele = level.getElement(x,y);
+                if(ele instanceof IDoor){
+                    ((IDoor) ele).setUnlocked(true);
+                }
+            }
+        }
+    }
+
+    void performSpell(IElement element, IElement other){
+        if(other instanceof IHero){
+            ((IHero) other).setSpell(true);
+            this.model.getLevel().destroyElement(element);
+        } else if(other instanceof IMonster){
+            this.model.getLevel().destroyElement(other);
+        }
+    }
+
+    void performEnd(IElement element, IElement other){
+        //TODO Perform end
     }
 }

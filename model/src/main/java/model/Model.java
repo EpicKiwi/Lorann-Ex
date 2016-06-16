@@ -30,13 +30,15 @@ public class Model extends Observable implements IModel {
 
 	public boolean loadLevel(int Id){
 
-		DBConnection dbConnection = DBConnection.getInstance();
+		//DBConnection dbConnection = DBConnection.getInstance();
 
 		//TODO Implementer base de données
 		this.level = new Level(20,12,new Hero(1,1),1);
 		this.level.setElement(10,5,new VWall(10,5));
 		this.level.setElement(1,5,new VWall(1,5));
 		this.level.setElement(19,5,new VWall(19,5));
+		this.level.setElement(19,11,new Door(19,11));
+		this.level.setElement(19,0,new LifeBubble(19,0));
 		this.level.addEntity(new Monster(5,5, Direction.RIGHT));
 		this.level.addEntity(new Monster(11,5, Direction.LEFT));
 		this.level.addEntity(new Monster(12,6, Direction.LEFT));

@@ -1,5 +1,7 @@
 package model.elements;
 
+import contract.Behavior;
+
 /**
  * A bubble that open the door
  */
@@ -9,10 +11,11 @@ public class LifeBubble extends Item {
      *
      * @param x
      * @param y
-     * @param image
      */
-    public LifeBubble(int x, int y, String image) {
+    public LifeBubble(int x, int y) {
         super(x, y, "sprites/crystal_ball.png");
+        this.behavior = Behavior.UNLOCK;
+        this.permeable = true;
     }
 
     /**

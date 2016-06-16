@@ -67,6 +67,7 @@ public class Controller implements IController {
 				System.out.println("Not supported order : "+order.toString());
 				break;
 		}
+		performCollision(this.model.getLevel().getHero());
 		this.model.flush();
 	}
 
@@ -98,6 +99,7 @@ public class Controller implements IController {
 			}
 			performCollision(entity);
 		}
+		performCollision(level.getHero());
 		this.model.flush();
 	}
 
@@ -110,7 +112,7 @@ public class Controller implements IController {
 		IElement other = mm.hasCollision(element);
 		if(other == null)
 			return;
-		cm.performCollision(element,other);
+		cm.performCrossedCollision(element,other);
 	}
 
 	// GETTERS & SETTERS //

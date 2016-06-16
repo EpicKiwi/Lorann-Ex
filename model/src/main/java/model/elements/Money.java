@@ -1,5 +1,7 @@
 package model.elements;
 
+import contract.Behavior;
+
 /**
  * An item that give money to the hero
  */
@@ -13,6 +15,7 @@ public class Money extends Item {
      */
     public Money(int x, int y, String image) {
         super(x, y, "sprites/purse.png");
+        this.behavior = Behavior.MOREPOINT;
     }
 
     /**

@@ -185,7 +185,7 @@ public class Level implements IStockable, ILevel {
      * The entity
      */
     public ArrayList<IEntity> getEntities() {
-        return entities;
+        return (ArrayList<IEntity>) entities.clone();
     }
     /**
      * Set the entities of the level
@@ -214,6 +214,14 @@ public class Level implements IStockable, ILevel {
 
     public void createSpell(int x, int y, Direction direction) {
         this.addEntity(new Spell(x,y,direction));
+    }
+
+    public void destroyElement(IElement element){
+        if(element instanceof IEntity){
+            this.entities.remove(element);
+        } else {
+            this.setElement(element.getLocation().getX(),element.getLocation().getY(),null);
+        }
     }
 }
 

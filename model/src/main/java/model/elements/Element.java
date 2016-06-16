@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * An element of a level
  * @author Marie
  */
-public abstract class Element implements IStockable, IElement {
+public abstract class Element implements IElement {
 
     /** The behavior of the element */
     protected Behavior behavior;
