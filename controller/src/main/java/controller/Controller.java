@@ -100,7 +100,20 @@ public class Controller implements IController {
 			performCollision(entity);
 		}
 		performCollision(level.getHero());
+		updateSprites();
 		this.model.flush();
+	}
+
+	private void updateSprites(){
+		for(IEntity entity:this.model.getLevel().getEntities()){
+			if(entity.getSprite() instanceof IAnimatedSprite){
+				((IAnimatedSprite) entity.getSprite()).nextStep();
+			}
+		}
+
+		if(this.model.getLevel().getHero().getSprite() instanceof IAnimatedSprite){
+			((IAnimatedSprite) this.model.getLevel().getHero().getSprite()).nextStep();
+		}
 	}
 
 	/**

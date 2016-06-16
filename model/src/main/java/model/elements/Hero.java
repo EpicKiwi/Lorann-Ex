@@ -1,5 +1,7 @@
 package model.elements;
 
+import model.AnimatedSprite;
+
 /**
  * The hero of the game (Lorann)
  */
@@ -21,6 +23,17 @@ public class Hero extends Entity implements contract.IHero {
      */
     public Hero(int x, int y) {
         super(x, y, "sprites/lorann_l.png");
+        String imagesPaths[] = {
+                "sprites/lorann_b.png",
+                "sprites/lorann_bl.png",
+                "sprites/lorann_l.png",
+                "sprites/lorann_ul.png",
+                "sprites/lorann_u.png",
+                "sprites/lorann_ur.png",
+                "sprites/lorann_r.png",
+                "sprites/lorann_br.png",
+        };
+        this.sprite = new AnimatedSprite("sprites/lorann_b.png",imagesPaths);
     }
     // GETTER & SETTER
     /**
