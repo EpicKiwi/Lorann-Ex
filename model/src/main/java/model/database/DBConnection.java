@@ -1,7 +1,9 @@
 package model.database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import model.Level;
+
+import java.lang.String;
+import java.sql.*;
 import java.sql.SQLException;
 
 
@@ -10,7 +12,7 @@ import java.sql.SQLException;
  *
  * @author Marie
  */
-final class DBConnection {
+public final class DBConnection {
 	/** The instance. */
 	private static DBConnection	INSTANCE = null;
 
@@ -24,6 +26,25 @@ final class DBConnection {
 		this.open();
 	}
 
+	public Level find(final int id) {
+		Level level = new Level(id);
+
+		try {
+			final String sql = "{call affiche_elements_level(?)ID}";
+			final CallableStatement call = this.getConnection().prepareCall(sql);
+			call.setInt(1, id);
+			call.execute();
+			final ResultSet resultSet = call.getResultSet();
+			if (resultSet.first()) {
+				level = new Level(id, resultSet.getString("id"));
+
+			}
+			return level;
+		} catch (final SQLException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
 	/**
 	 * Gets the single instance of DBConnection.
 	 *
@@ -62,4 +83,6 @@ final class DBConnection {
 	public Connection getConnection() {
 		return this.connection;
 	}
+
+
 }

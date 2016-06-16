@@ -1,11 +1,6 @@
 package controller;
 
-import contract.IController;
-import contract.IModel;
-import contract.IView;
-import contract.Order;
-
-import java.util.ArrayList;
+import contract.*;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -22,7 +17,7 @@ public class Controller implements IController,Observer {
 	/** The model. */
 	private IModel	model;
 
-	private Thread clockThread;
+	/** The clock of the game */
 	private Clock clock;
 
 	public static int LEVELID = 1;
@@ -38,6 +33,9 @@ public class Controller implements IController,Observer {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
+		MoveManager.init(this.model);
+		AIManager.init(this.model);
+		CollisionManager.init(this.model);
 	}
 
 	/**
@@ -47,19 +45,28 @@ public class Controller implements IController,Observer {
 	 * The order to perform
      */
 	public void orderPerform(Order order) {
+		IHero hero = this.model.getLevel().getHero();
+		ILocation heroLocation = hero.getLocation();
+		MoveManager mm = MoveManager.getInstance();
+
 		switch (order){
 			case CHARACTER_DOWN:
+				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()+1);
 				break;
 			case CHARACTER_UP:
+				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()-1);
 				break;
 			case CHARACTER_LEFT:
+				mm.safeMoveTo(hero,heroLocation.getX()-1,heroLocation.getY());
 				break;
 			case CHARACTER_RIGHT:
+				mm.safeMoveTo(hero,heroLocation.getX()+1,heroLocation.getY());
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
 				break;
 		}
+		this.model.flush();
 	}
 
 	/**
@@ -67,14 +74,14 @@ public class Controller implements IController,Observer {
 	 */
 	public void start(){
 		if(this.model.loadLevel(1)){
-			/*this.model.getObservable().addObserver(this.view.getObserver());
-			this.view.openFrame();
-			this.model.flush();*/
-
+			this.model.getObservable().addObserver(this.view.getObserver());
 			this.clock = new Clock();
 			this.clock.addObserver(this);
-			this.clockThread = new Thread(this.clock);
-			this.clockThread.start();
+			Thread clockThread = new Thread(this.clock);
+			clockThread.start();
+			this.view.openFrame();
+			this.model.flush();
+
 		} else {
 			System.err.println("Can't load level id:"+LEVELID);
 
@@ -89,8 +96,27 @@ public class Controller implements IController,Observer {
 	 * An object
      */
 	public void update(Observable observable, Object o) {
-		System.out.println("Tick n°"+this.clock.getTickNumber());
-		this.model.onTick();
+		AIManager aim = AIManager.getInstance();
+		ILevel level = this.model.getLevel();
+		for(IEntity entity:level.getEntities()){
+			if(entity instanceof IAI){
+				aim.performAi((IAI) entity);
+			}
+			performCollision(entity);
+		}
+		this.model.flush();
+	}
+
+	/**
+	 * Perform the collision depending of the behavior
+	 */
+	private void performCollision(IElement element){
+		MoveManager mm = MoveManager.getInstance();
+		CollisionManager cm = CollisionManager.getInstance();
+		IElement other = mm.hasCollision(element);
+		if(other == null)
+			return;
+		cm.performCollision(element);
 	}
 
 	// GETTERS & SETTERS //

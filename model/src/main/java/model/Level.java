@@ -1,42 +1,41 @@
 package model;
 
-import com.sun.org.apache.regexp.internal.RE;
+
+import contract.*;
+
+import model.database.DBConnection;
 import model.database.IStockable;
 import model.elements.Element;
-import model.elements.Entity;
 import model.elements.Hero;
-
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
  *@author Marie
  * level of the game
  */
-public class Level implements IStockable {
+public class Level implements IStockable, ILevel {
 
     private int number;
     private boolean exit = false;
 
-    private ArrayList<Entity> entities;
+    private ArrayList<IEntity> entities;
     /**
-     * level of Element
+     * Interface of Element
      */
-    private Element elements[][];
-    /**
-     * level of hero
-     */
-
-    private Hero hero;
+    private IElement elements[][];
 
     /**
-     *level of dimention
+     * Interface of hero
      */
 
-    private Dimention dimention;
+    private IHero hero;
+
+    /**
+     * Interface of dimention
+     */
+    private IDimention dimention;
+    
 
     /**
      * Localisation of elements
@@ -49,24 +48,21 @@ public class Level implements IStockable {
         this.dimention = new Dimention(width,height);
         this.hero = hero;
         this.number = number;
+        this.elements = new Element[height][width];
+        this.entities = new ArrayList<IEntity>();
+
     }
 
-    public Level(Dimention dimentation, Hero hero, int number) {
-        this.dimention = dimentation;
-        this.hero = hero;
-        this.number = number;
+    public Level(int id, String id1) {
+    }
+
+    public Level(int id) {
+
     }
 
 
-    public boolean setElement(Integer x, Integer y, Element element){
+    public boolean setElement(Integer x, Integer y, IElement element){
         return false;
-    }
-    /**
-     * Number of level
-     * @param
-     */
-    private Integer number(){
-        return null;
     }
 
     /**
@@ -75,25 +71,22 @@ public class Level implements IStockable {
      */
     public void load(ResultSet raw) {
 
+        //TODO Charger le niveau ici
     }
-
-    //resultSet element
-
-
 
     /**
      * Add the entity
      * @param entity
      */
-
-    public void addEntity(Entity entity){
+    public void addEntity(IEntity entity){
         this.entities.add(entity);
     }
+
     /**
      * Remove the entity
      * @param entity
      */
-    public void removeEntity(Entity entity){
+    public void removeEntity(IEntity entity){
         this.entities.remove(entity);
     }
 
@@ -127,7 +120,7 @@ public class Level implements IStockable {
      * @return
      * The dimention
      */
-    public Dimention getDimention() {
+    public IDimention getDimention() {
         return dimention;
     }
     /**
@@ -135,7 +128,7 @@ public class Level implements IStockable {
      * @param dimention
      * The dimention
      */
-    public void setDimention(Dimention dimention) {
+    public void setDimention(IDimention dimention) {
         this.dimention = dimention;
     }
     /**
@@ -143,7 +136,7 @@ public class Level implements IStockable {
      * @return
      * The Hero
      */
-    public Hero getHero() {
+    public IHero getHero() {
         return hero;
     }
     /**
@@ -151,11 +144,11 @@ public class Level implements IStockable {
      * @param hero
      * The hero
      */
-    public void setHero(Hero hero) {
+    public void setHero(IHero hero) {
         this.hero = hero;
     }
 
-    public Element[][] getElements() {
+    public IElement[][] getElements() {
         return elements;
     }
     /**
@@ -163,7 +156,7 @@ public class Level implements IStockable {
     * @return
      *The element
     */
-    public void setElements(Element[][] elements) {
+    public void setElements(IElement[][] elements) {
         this.elements = elements;
     }
     /**
@@ -171,7 +164,7 @@ public class Level implements IStockable {
      * @return
      * The element
      */
-    public Element getElement(int x, int y){
+    public IElement getElement(int x, int y){
         return this.elements[y][x];
     }
 
@@ -183,16 +176,15 @@ public class Level implements IStockable {
      * localisation y
      * @param element
      */
-    public void setElement(int x, int y, Element element){
+    public void setElement(int x, int y, IElement element){
         this.elements[y][x] = element;
-
     }
     /**
      * Get the entities of the level
      * @return
      * The entity
      */
-    public ArrayList<Entity> getEntities() {
+    public ArrayList<IEntity> getEntities() {
         return entities;
     }
     /**
@@ -200,7 +192,7 @@ public class Level implements IStockable {
      * @param entities
      * The entity
      */
-    public void setEntities(ArrayList<Entity> entities) {
+    public void setEntities(ArrayList<IEntity> entities) {
         this.entities = entities;
     }
     /**

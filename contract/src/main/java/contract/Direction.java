@@ -1,4 +1,4 @@
-package model;
+package contract;
 
 /**
  * @author Marie

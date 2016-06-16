@@ -14,4 +14,8 @@ public class Door extends Element {
     public Door(int x, int y, String image) {
         super(x, y, "sprites/gate_open.png");
     }
+
+    public String getType() {
+        return "door";
+    }
 }

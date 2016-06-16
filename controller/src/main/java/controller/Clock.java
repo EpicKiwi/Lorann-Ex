@@ -37,7 +37,6 @@ public class Clock extends Observable implements Runnable {
      * The method executed in the new thread
      */
     public void run() {
-        System.out.println("Clock started");
         while(true) {
             this.setChanged();
             this.notifyObservers(stopped);

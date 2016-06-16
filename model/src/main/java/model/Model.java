@@ -1,14 +1,12 @@
 package model;
 
-import java.awt.*;
-import java.sql.Connection;
-import java.util.Observable;
 
+import java.util.Observable;
 import contract.IElement;
+import contract.IEntity;
 import contract.IModel;
-import model.elements.HWall;
-import model.elements.Hero;
-import model.elements.Monster;
+import model.elements.*;
+import model.database.DBConnection;
 
 /**
  * The Class Model.
@@ -16,10 +14,6 @@ import model.elements.Monster;
  * @author Marie
  */
 public class Model extends Observable implements IModel {
-	/**
-	 * Model of connection
-	 */
-	private Connection connection;
 
 	/**
 	 * The level
@@ -35,10 +29,11 @@ public class Model extends Observable implements IModel {
 
 
 	public boolean loadLevel(int Id){
-		//TODO Implementer base de données
-		this.level = new Level(12,20,new Hero(1,1),1);
-		this.level.setElement(0,0,new HWall(0,0));
-		this.level.addEntity(new Monster(5,5));
+		DBConnection dbConnection = DBConnection.getInstance();
+
+
+
+
 		return true;
 	}
 
@@ -51,10 +46,8 @@ public class Model extends Observable implements IModel {
 	}
 
 	public void flush() {
-	}
-
-	public void onTick(long tickNumber){
-		System.out.println("Model Tick");
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 	public Observable getObservable() {
@@ -67,5 +60,9 @@ public class Model extends Observable implements IModel {
 
 	public IElement[][] getElements(){
 		return this.level.getElements();
+	}
+
+	public IEntity getHero(){
+		return this.level.getHero();
 	}
 }

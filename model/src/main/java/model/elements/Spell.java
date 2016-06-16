@@ -1,10 +1,11 @@
 package model.elements;
 
-import model.pathAi.PathAI;
+import contract.AIType;
 import model.AnimatedSprite;
-import model.Direction;
+import contract.Direction;
 import model.Sprite;
-import model.pathAi.Straight;
+
+import static contract.AIType.STRAIGHT;
 
 /**
  *@Marie
@@ -22,7 +23,7 @@ public class Spell extends AI{
      * The direction of the spell
      */
     public Spell(int x, int y, Direction direction) {
-        super(x, y, new Sprite("sprites/fireball_1.png"));
+        super(x, y,"sprites/fireball_1.png");
         String imagesPaths[] = {
                 "sprites/fireball_1.png",
                 "sprites/fireball_2.png",
@@ -31,6 +32,11 @@ public class Spell extends AI{
                 "sprites/fireball_5.png"
         };
         this.sprite = new AnimatedSprite("sprites/fireball_1.png",imagesPaths);
-        this.path = new Straight(this);
+        this.direction = direction;
+        this.aiType = STRAIGHT;
+    }
+
+    public String getType() {
+        return "spell";
     }
 }

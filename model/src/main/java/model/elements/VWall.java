@@ -16,4 +16,8 @@ public class VWall extends Wall
     public VWall(int x, int y) {
         super(x, y, "sprites/vertical_bone.png");
     }
+
+    public String getType() {
+        return "vertical-wall";
+    }
 }

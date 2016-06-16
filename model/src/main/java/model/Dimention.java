@@ -4,7 +4,7 @@ package model;
  *@author Marie
  * Dimention
  */
-public class Dimention {
+public class Dimention implements contract.IDimention {
     private int width;
     private int height;
 

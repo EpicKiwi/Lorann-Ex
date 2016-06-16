@@ -14,4 +14,8 @@ public class LifeBubble extends Item {
     public LifeBubble(int x, int y, String image) {
         super(x, y, "sprites/crystal_ball.png");
     }
+
+    public String getType() {
+        return "life-bubble";
+    }
 }

@@ -1,8 +1,5 @@
 package model.database;
 
-//import java.util.logging.Level;
-
-import model.elements.Element;
 
 import java.sql.*;
 
@@ -47,21 +44,6 @@ public class DAO {
         return null;
     }
 
-    // ResultSet
-    ResultSet résultats = null;
-    String requete = ("SELECT * FROM element");
-
-
-    { //un objet de la classe statement permet d'envoyer des requetes SQL a base; s'ffectue a partir d'une instance de la classe connection
-        Statement stmt = con.createStatement();
-        try {
-           ResultSet résultats = stmt.executeQuery("SELECT * FROM element");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            (SQLException e)
-        }
-
-    }
 
     }
 
