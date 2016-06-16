@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
@@ -23,6 +24,8 @@ class GamePanel extends JPanel implements Observer
 	
 	private IModel model;
 	
+	
+	Font f;
 	
 	/**
 	 * constructor of this class
@@ -66,8 +69,13 @@ class GamePanel extends JPanel implements Observer
 			g.drawString("GAME OVER", GameFrame.HEIGHT/2, GameFrame.WIDTH/2);
 		}
 		
-		g.drawString(model.getLevel().getHero().getScore().toString(), 0, 0);
-		g.drawString("Coucou je suis Baptiste et je teste le draw", 200, 200);
+		
+		g.setColor(Color.YELLOW);
+		f = new Font ("Consola", Font.BOLD, 20);
+		g.setFont(f);
+		
+		g.drawString("Score : "+model.getLevel().getHero().getScore().toString(), 20, 414);
+		//g.drawString("Coucou je suis Baptiste et je teste le draw", 30, 400);
 	}
 
 	/**
