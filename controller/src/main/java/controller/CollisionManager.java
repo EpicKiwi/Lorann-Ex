@@ -3,17 +3,17 @@ package controller;
 import contract.IElement;
 import contract.IModel;
 
-public class CollisionManager {
+class CollisionManager {
     private static CollisionManager ourInstance;
     private IModel model;
 
-    public static CollisionManager getInstance() {
+    static CollisionManager getInstance() {
         if(ourInstance == null)
             System.err.println("Move manager not initialized");
         return ourInstance;
     }
 
-    public static void init(IModel model){
+    static void init(IModel model){
         ourInstance = new CollisionManager(model);
     }
 
@@ -23,7 +23,11 @@ public class CollisionManager {
 
     // METHODS //
 
-    void performCollision(IElement element){
-        //TODO Perform collision
+    void performCollision(IElement element, IElement other){
+        other.getBehavior();
+    }
+
+    void performCrossedCollision(){
+
     }
 }
