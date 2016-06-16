@@ -12,7 +12,7 @@ public class Dimention {
         this.width = width;
         this.height = height;
     }
-
+    // GETTER & SETTER
     /**
      * Get the width of the dimention
      * @return

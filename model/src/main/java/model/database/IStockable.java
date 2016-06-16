@@ -18,5 +18,12 @@ public interface IStockable {
      * Get the name of the table
      * @return
      */
+
     String getTableName();
+    /**
+     * Get the Query / element of the table
+    * @return
+     */
+    String getLoadQuery(int id);
+
 }

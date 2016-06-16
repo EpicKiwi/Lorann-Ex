@@ -16,13 +16,12 @@ public class Hero extends Entity {
      *position x
      * @param y
      * position y
-     * @param image
      * image hero
      */
     public Hero(int x, int y) {
         super(x, y, "sprites/lorann_l.png");
     }
-
+    // GETTER & SETTER
     /**
      * Get the score of hero
      * @return

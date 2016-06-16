@@ -1,11 +1,15 @@
 package model;
 
+import com.sun.org.apache.regexp.internal.RE;
 import model.database.IStockable;
 import model.elements.Element;
 import model.elements.Entity;
 import model.elements.Hero;
 
+import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -33,7 +37,7 @@ public class Level implements IStockable {
      */
 
     private Dimention dimention;
-    
+
     /**
      * Localisation of elements
      * @param width
@@ -72,6 +76,11 @@ public class Level implements IStockable {
     public void load(ResultSet raw) {
 
     }
+
+    //resultSet element
+
+
+
     /**
      * Add the entity
      * @param entity
@@ -91,6 +100,11 @@ public class Level implements IStockable {
     public String getTableName() {
         return ("level");
     }
+
+    public String getLoadQuery(int id) {
+        return null;
+    }
+    //GETTER & SETTER
 
     /**
      * Get the number of level
