@@ -110,7 +110,7 @@ public class Controller implements IController {
 		IElement other = mm.hasCollision(element);
 		if(other == null)
 			return;
-		cm.performCollision(element);
+		cm.performCollision(element,other);
 	}
 
 	// GETTERS & SETTERS //
