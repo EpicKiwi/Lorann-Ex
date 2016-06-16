@@ -152,6 +152,10 @@ class GameFrame extends JFrame implements KeyListener
 			case KeyEvent.VK_SPACE:
 			this.controller.orderPerform(Order.CHARACTER_SPELL);
 			break;
+
+			case KeyEvent.VK_R:
+				this.controller.orderPerform(Order.RETRY);
+				break;
 				
 		}
 	}
