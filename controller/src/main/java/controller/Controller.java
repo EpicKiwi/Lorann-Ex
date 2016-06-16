@@ -36,6 +36,7 @@ public class Controller implements IController {
 		MoveManager.init(this.model);
 		AIManager.init(this.model);
 		CollisionManager.init(this.model);
+		HeroManager.init(this.model);
 	}
 
 	/**
@@ -45,22 +46,22 @@ public class Controller implements IController {
 	 * The order to perform
      */
 	public void orderPerform(Order order) {
-		IHero hero = this.model.getLevel().getHero();
-		ILocation heroLocation = hero.getLocation();
-		MoveManager mm = MoveManager.getInstance();
-
+		HeroManager hm = HeroManager.getInstance();
 		switch (order){
 			case CHARACTER_DOWN:
-				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()+1);
+				hm.move(Direction.DOWN);
 				break;
 			case CHARACTER_UP:
-				mm.safeMoveTo(hero,heroLocation.getX(),heroLocation.getY()-1);
+				hm.move(Direction.UP);
 				break;
 			case CHARACTER_LEFT:
-				mm.safeMoveTo(hero,heroLocation.getX()-1,heroLocation.getY());
+				hm.move(Direction.LEFT);
 				break;
 			case CHARACTER_RIGHT:
-				mm.safeMoveTo(hero,heroLocation.getX()+1,heroLocation.getY());
+				hm.move(Direction.RIGHT);
+				break;
+			case CHARACTER_SPELL:
+				hm.sendSpell();
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
@@ -78,7 +79,6 @@ public class Controller implements IController {
 			this.clock = new Clock(this);
 			this.clock.start();
 			this.view.openFrame();
-			this.model.flush();
 
 		} else {
 			System.err.println("Can't load level id:"+LEVELID);
