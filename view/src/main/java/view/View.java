@@ -25,7 +25,7 @@ public class View implements IView
 	private GameFrame frame;
 	
 	
-	private IController controller;
+	
 	
 	
 	/**
@@ -81,6 +81,6 @@ public class View implements IView
      */
 	public void setController(IController controller) 
 	{
-		
+		this.frame.setController(controller);
 	}
 }

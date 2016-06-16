@@ -11,7 +11,7 @@ public class Clock extends Observable implements Runnable {
     /** Representing if the clock is stopped or started */
     private boolean stopped;
     /** The default interval between two ticks */
-    public static int DEFAULT_TICK_INTERVAL = 500;
+    public static int DEFAULT_TICK_INTERVAL = 100;
 
     /**
      * Instantiates a new Clock
