@@ -9,7 +9,7 @@ import java.util.Observer;
  *
  * @author Baptiste
  */
-public class Controller implements IController,Observer {
+public class Controller implements IController {
 
 	/** The view. */
 	private IView	view;
@@ -75,10 +75,8 @@ public class Controller implements IController,Observer {
 	public void start(){
 		if(this.model.loadLevel(1)){
 			this.model.getObservable().addObserver(this.view.getObserver());
-			this.clock = new Clock();
-			this.clock.addObserver(this);
-			Thread clockThread = new Thread(this.clock);
-			clockThread.start();
+			this.clock = new Clock(this);
+			this.clock.start();
 			this.view.openFrame();
 			this.model.flush();
 
@@ -90,12 +88,8 @@ public class Controller implements IController,Observer {
 
 	/**
 	 * Updated when a tick appen
-	 * @param observable
-	 * The observable object @see Clock
-	 * @param o
-	 * An object
      */
-	public void update(Observable observable, Object o) {
+	public void update() {
 		AIManager aim = AIManager.getInstance();
 		ILevel level = this.model.getLevel();
 		for(IEntity entity:level.getEntities()){

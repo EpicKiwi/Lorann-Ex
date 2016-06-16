@@ -1,8 +1,10 @@
 package controller;
 
+import contract.IController;
+
 import java.util.Observable;
 
-public class Clock extends Observable implements Runnable {
+public class Clock extends Thread {
 
     /** The number of ticks since the beginning of the game */
     private int tickNumber;
@@ -11,14 +13,16 @@ public class Clock extends Observable implements Runnable {
     /** Representing if the clock is stopped or started */
     private boolean stopped;
     /** The default interval between two ticks */
-    public static int DEFAULT_TICK_INTERVAL = 500;
+    public static int DEFAULT_TICK_INTERVAL = 100;
+    private Controller controller;
 
     /**
      * Instantiates a new Clock
      */
-    public Clock() {
+    public Clock(Controller controller) {
         this.tickNumber = 0;
         this.setTickInterval(DEFAULT_TICK_INTERVAL);
+        this.controller = controller;
     }
 
     /**
@@ -38,8 +42,7 @@ public class Clock extends Observable implements Runnable {
      */
     public void run() {
         while(true) {
-            this.setChanged();
-            this.notifyObservers(stopped);
+            this.controller.update();
             try {
                 Thread.sleep(this.tickInterval);
             } catch (InterruptedException e) {
