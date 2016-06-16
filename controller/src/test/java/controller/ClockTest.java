@@ -15,7 +15,7 @@ public class ClockTest {
 
     @Before
     public void setUp() throws Exception {
-        this.clock = new Clock();
+        this.clock = new Clock(null);
     }
 
     @Test
