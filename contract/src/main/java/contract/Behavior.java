@@ -4,5 +4,6 @@ public enum Behavior {
     DEATH,
     MOREPOINT,
     UNLOCK,
-    END
+    END,
+    SPELL
 }

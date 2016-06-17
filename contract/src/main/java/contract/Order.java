@@ -9,5 +9,6 @@ public enum Order {
     CHARACTER_DOWN,
     CHARACTER_LEFT,
     CHARACTER_RIGHT,
-    CHARACTER_SPELL
+    CHARACTER_SPELL,
+    RETRY
 }

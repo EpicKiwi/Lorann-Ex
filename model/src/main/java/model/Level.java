@@ -2,7 +2,6 @@ package model;
 
 
 import contract.*;
-import model.database.IStockable;
 import model.elements.Element;
 import model.elements.Hero;
 import model.elements.Spell;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
  *@author Marie
  * level of the game
  */
-public class Level implements IStockable, ILevel {
+public class Level implements ILevel {
 
     private int number;
     private boolean exit = false;
@@ -35,6 +34,11 @@ public class Level implements IStockable, ILevel {
      * Interface of dimention
      */
     private IDimention dimention;
+
+    /**
+     * Indicate if the level is finished
+     */
+    private boolean finished;
     
 
     /**
@@ -63,15 +67,6 @@ public class Level implements IStockable, ILevel {
 
     public boolean setElement(Integer x, Integer y, IElement element){
         return false;
-    }
-
-    /**
-     * All data storage of raw in the data base
-     * @param raw
-     */
-    public void load(ResultSet raw) {
-
-        //TODO Charger le niveau ici
     }
 
     /**
@@ -185,7 +180,7 @@ public class Level implements IStockable, ILevel {
      * The entity
      */
     public ArrayList<IEntity> getEntities() {
-        return entities;
+        return (ArrayList<IEntity>) entities.clone();
     }
     /**
      * Set the entities of the level
@@ -212,8 +207,24 @@ public class Level implements IStockable, ILevel {
         this.exit = exit;
     }
 
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
     public void createSpell(int x, int y, Direction direction) {
         this.addEntity(new Spell(x,y,direction));
+    }
+
+    public void destroyElement(IElement element){
+        if(element instanceof IEntity){
+            this.entities.remove(element);
+        } else {
+            this.setElement(element.getLocation().getX(),element.getLocation().getY(),null);
+        }
     }
 }
 

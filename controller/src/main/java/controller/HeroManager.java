@@ -28,6 +28,8 @@ class HeroManager {
 
     public boolean move(Direction direction){
         IHero h = this.model.getLevel().getHero();
+        if(!h.isAlive())
+            return false;
         int nextX = h.getLocation().getX();
         int nextY = h.getLocation().getY();
         switch (direction){
@@ -53,6 +55,8 @@ class HeroManager {
 
     public void sendSpell(){
         IHero h = this.model.getLevel().getHero();
+        if(!h.isAlive())
+            return;
         if(!h.isSpell())
             return;
         int spellX = h.getLocation().getX();
@@ -77,5 +81,10 @@ class HeroManager {
         if(mm.canMoveOn(spellX,spellY))
             this.model.getLevel().createSpell(spellX,spellY,h.getDirection());
         h.setSpell(false);
+    }
+
+    void die(){
+        IHero h = this.model.getLevel().getHero();
+
     }
 }

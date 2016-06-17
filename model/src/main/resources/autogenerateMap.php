@@ -8,7 +8,7 @@
 			$index = 0;
 			while($index < 20){
 				if($buffer[$index] != " "){
-					echo "INSERT INTO elementMap VALUES (NULL, '1', '".$buffer[$index]."', '$index','$x');<br>";
+					echo "INSERT INTO element VALUES (NULL, '1', '".$buffer[$index]."', '$index','$x');\n";
 				}
 				$index++;
 			}

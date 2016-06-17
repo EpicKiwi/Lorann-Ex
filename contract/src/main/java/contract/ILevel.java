@@ -38,4 +38,10 @@ public interface ILevel {
     void setExit(boolean exit);
 
     void createSpell(int x, int y, Direction direction);
+
+    public void destroyElement(IElement element);
+
+    public boolean isFinished();
+
+    public void setFinished(boolean finished);
 }

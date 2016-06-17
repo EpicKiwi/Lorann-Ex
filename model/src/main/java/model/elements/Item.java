@@ -3,7 +3,7 @@ package model.elements;
 /**
  * A destroyable item
  */
-public abstract class Item extends Element {
+public abstract class Item extends Element implements contract.IItem {
     /**
      * location and image Item
      * @param x
@@ -12,5 +12,6 @@ public abstract class Item extends Element {
      */
     public Item(int x, int y, String image) {
         super(x, y, image);
+        this.permeable = true;
     }
 }
