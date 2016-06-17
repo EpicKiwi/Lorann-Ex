@@ -20,6 +20,9 @@ public class Controller implements IController {
 	/** The clock of the game */
 	private Clock clock;
 
+	/**
+	 * The level of the game
+	 */
 	public static int LEVELID = 3;
 
 	/**
@@ -107,6 +110,9 @@ public class Controller implements IController {
 		this.model.flush();
 	}
 
+	/**
+	 * Update the sprites
+	 */
 	private void updateSprites(){
 		for(IEntity entity:this.model.getLevel().getEntities()){
 			if(entity.getSprite() instanceof IAnimatedSprite){

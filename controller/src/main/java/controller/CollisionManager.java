@@ -22,6 +22,11 @@ class CollisionManager {
 
     // METHODS //
 
+    /**
+     * All the collision of the game
+     * @param element
+     * @param other
+     */
     void performCollision(IElement element, IElement other){
         if(element.getBehavior() == null)
             return;

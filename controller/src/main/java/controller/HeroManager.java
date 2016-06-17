@@ -26,6 +26,11 @@ class HeroManager {
 
     // METHODS //
 
+    /**
+     * Direction of the hero
+     * @param direction
+     * @return
+     */
     public boolean move(Direction direction){
         IHero h = this.model.getLevel().getHero();
         if(!h.isAlive() || this.model.getLevel().isFinished())
@@ -53,6 +58,9 @@ class HeroManager {
         return mm.safeMoveTo(h,nextX,nextY);
     }
 
+    /**
+     * Spell of the hero
+     */
     public void sendSpell(){
         IHero h = this.model.getLevel().getHero();
         if(!h.isAlive())
@@ -81,10 +89,5 @@ class HeroManager {
         if(mm.canMoveOn(spellX,spellY))
             this.model.getLevel().createSpell(spellX,spellY,h.getDirection());
         h.setSpell(false);
-    }
-
-    void die(){
-        IHero h = this.model.getLevel().getHero();
-
     }
 }
