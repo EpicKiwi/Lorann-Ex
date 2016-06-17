@@ -16,14 +16,6 @@ public class HWall extends Wall{
         super(x, y, "sprites/horizontal_bone.png");
     }
 
-    /**
-     * Get the type of the element
-     * @return horizontal-wall
-     */
-    public String getType() {
-        return "horizontal-wall";
-    }
-
     public String getLoadQuery(int id) {
         return null;
     }

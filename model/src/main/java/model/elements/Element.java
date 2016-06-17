@@ -76,7 +76,7 @@ public abstract class Element implements IElement {
         this.sprite = sprite;
     }
 
-    public abstract String getType();
+  
 
     /**
      * Executed when an entity have the same position in the world

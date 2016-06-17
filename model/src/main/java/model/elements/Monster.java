@@ -57,14 +57,6 @@ public class Monster extends AI implements contract.IMonster {
         }
     }
 
-    /**
-     * Get the type of the element
-     * @return monster
-     */
-    public String getType() {
-        return "monster";
-    }
-
     public int getValue(){
         return this.value;
     }
