@@ -64,21 +64,25 @@ class CollisionManager {
     }
 
     void performMorePoint(IElement element, IElement other){
-        if(other instanceof IHero){
-            ((IHero) other).setScore(((IHero) other).getScore()+100);
+        if(other instanceof IHero && element instanceof IValuable){
+            ((IHero) other).setScore(((IHero) other).getScore()+((IValuable) element).getValue());
         }
     }
 
     void performUnlock(IElement element, IElement other){
-        ILevel level = this.model.getLevel();
-        for (int y = 0; y < level.getDimention().getHeight(); y++)
-        {
-            for (int x = 0; x < level.getDimention().getWidth(); x++)
-            {
-                IElement ele = level.getElement(x,y);
-                if(ele instanceof IDoor){
-                    ((IDoor) ele).setUnlocked(true);
+        if(other instanceof IHero) {
+            ILevel level = this.model.getLevel();
+            for (int y = 0; y < level.getDimention().getHeight(); y++) {
+                for (int x = 0; x < level.getDimention().getWidth(); x++) {
+                    IElement ele = level.getElement(x, y);
+                    if (ele instanceof IDoor) {
+                        ((IDoor) ele).setUnlocked(true);
+                    }
                 }
+            }
+            if(element instanceof IValuable) {
+                IHero h = this.model.getLevel().getHero();
+                h.setScore(h.getScore() + ((IValuable) element).getValue());
             }
         }
     }
@@ -89,13 +93,16 @@ class CollisionManager {
             this.model.getLevel().destroyElement(element);
         } else if(other instanceof IMonster){
             this.model.getLevel().destroyElement(other);
-            //TODO gagner des points lors de la destruction des monstres
+            IHero h = this.model.getLevel().getHero();
+            h.setScore(h.getScore() + ((IMonster) other).getValue());
         }
     }
 
     void performEnd(IElement element, IElement other){
-        if(other instanceof IHero){
+        if(other instanceof IHero && !this.model.getLevel().isFinished()){
             this.model.getLevel().setFinished(true);
+            IHero h = this.model.getLevel().getHero();
+            h.setScore(h.getScore() + this.model.getLevel().getValue());
         }
     }
 }

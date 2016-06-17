@@ -226,5 +226,9 @@ public class Level implements ILevel {
             this.setElement(element.getLocation().getX(),element.getLocation().getY(),null);
         }
     }
+
+    public int getValue() {
+        return 1000;
+    }
 }
 

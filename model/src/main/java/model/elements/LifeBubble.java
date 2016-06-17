@@ -1,11 +1,12 @@
 package model.elements;
 
 import contract.Behavior;
+import contract.IValuable;
 
 /**
  * A bubble that open the door
  */
-public class LifeBubble extends Item {
+public class LifeBubble extends Item implements IValuable {
     /**
      * location and image LifeBubble
      *
@@ -24,5 +25,9 @@ public class LifeBubble extends Item {
      */
     public String getType() {
         return "life-bubble";
+    }
+
+    public int getValue() {
+        return 75;
     }
 }

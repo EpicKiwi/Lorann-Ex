@@ -1,11 +1,12 @@
 package model.elements;
 
 import contract.Behavior;
+import contract.IValuable;
 
 /**
  * An item that give money to the hero
  */
-public class Money extends Item {
+public class Money extends Item implements IValuable {
     /**
      * location and image Money
      *
@@ -23,5 +24,9 @@ public class Money extends Item {
      */
     public String getType() {
         return "money";
+    }
+
+    public int getValue() {
+        return 100;
     }
 }

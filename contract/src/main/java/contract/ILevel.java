@@ -2,7 +2,7 @@ package contract;
 
 import java.util.ArrayList;
 
-public interface ILevel {
+public interface ILevel extends IValuable {
     boolean setElement(Integer x, Integer y, IElement element);
 
     void addEntity(IEntity entity);
