@@ -19,14 +19,6 @@ public class LifeBubble extends Item implements IValuable {
         this.permeable = true;
     }
 
-    /**
-     * Get the type of the element
-     * @return life-bubble
-     */
-    public String getType() {
-        return "life-bubble";
-    }
-
     public int getValue() {
         return 75;
     }

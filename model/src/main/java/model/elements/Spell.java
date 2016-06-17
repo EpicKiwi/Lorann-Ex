@@ -38,11 +38,4 @@ public class Spell extends AI{
         this.behavior = Behavior.SPELL;
     }
 
-    /**
-     * Get the type of the element
-     * @return spell
-     */
-    public String getType() {
-        return "spell";
-    }
 }
