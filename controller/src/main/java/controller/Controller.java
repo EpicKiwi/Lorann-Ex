@@ -21,7 +21,7 @@ public class Controller implements IController {
 	private Clock clock;
 
 	/** The cost of a retry */
-	private static int RETRY_COST = 350
+	private static int RETRY_COST = 350;
 
 	/**
 	 * The level of the game
@@ -71,8 +71,7 @@ public class Controller implements IController {
 				break;
 			case RETRY:
 				IHero h = model.getLevel().getHero();
-				if(h.getScore() > 0)
-					h.setScore(h.getScore() - RETRY_COST);
+				h.setScore(h.getScore() - RETRY_COST);
 				this.model.loadLevel(this.model.getLevel().getId());
 				break;
 			default:
