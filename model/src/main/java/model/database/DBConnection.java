@@ -30,7 +30,7 @@ public final class DBConnection {
 		Level level = new Level(id);
 
 		try {
-			final String sql = "{call affiche_elements_level(?)ID}";
+			final String sql = "{call lvl(?)ID}";
 			final CallableStatement call = this.getConnection().prepareCall(sql);
 			call.setInt(1, id);
 			call.execute();
