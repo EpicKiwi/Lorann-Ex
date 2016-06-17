@@ -19,5 +19,6 @@ public interface IModel{
 	Observable getObservable();
 	ILevel getLevel();
 	boolean loadAllLevels();
+	boolean loadNextLevel();
 	ArrayList<Integer> getLevelsId();
 }

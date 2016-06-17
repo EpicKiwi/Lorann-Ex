@@ -50,4 +50,12 @@ public class DBConnectionTest {
         }
     }
 
+    @Test
+    public void findAllLevels() throws Exception {
+        ResultSet res = tst.findAllLevels();
+        assertNotNull(res);
+        if(!res.first()){
+            fail("No result for levels");
+        }
+    }
 }

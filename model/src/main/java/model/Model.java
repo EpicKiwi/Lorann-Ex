@@ -24,11 +24,21 @@ public class Model extends Observable implements IModel {
 	private Level level;
 
 	/**
+	 * The hero of the game
+	 */
+	private Hero hero;
+
+	/**
 	 * The IDs of the levels
 	 */
 	private ArrayList<Integer> levelsId;
 
+	public Model() {
+		this.hero = new Hero(1,1);
+	}
+
 	/** Instantiates a new model. */
+
 
 	public boolean loadAllLevels(){
 		DBConnection dbConnection = DBConnection.getInstance();
@@ -49,10 +59,12 @@ public class Model extends Observable implements IModel {
 
 	public boolean loadLevel(int id){
 		DBConnection dbConnection = DBConnection.getInstance();
+		this.hero.setAlive(true);
+		this.hero.setSpell(true);
 		try {
 			ResultSet rawLevel = dbConnection.findLevel(id);
 			if(rawLevel.first()){
-				this.level = new Level(rawLevel.getInt(1),rawLevel.getInt(3),rawLevel.getInt(4),new Hero(0,0),rawLevel.getInt(2));
+				this.level = new Level(rawLevel.getInt(1),rawLevel.getInt(3),rawLevel.getInt(4),this.hero,rawLevel.getInt(2));
             } else {
 				System.err.println("The level "+id+" doesn't exists");
 				this.loadSafetyLevel();
@@ -89,6 +101,15 @@ public class Model extends Observable implements IModel {
 			return false;
 		}
 		return true;
+	}
+
+	public boolean loadNextLevel(){
+		int lastIndex = this.levelsId.indexOf(this.level.getId());
+		if((lastIndex+1) < this.levelsId.size()) {
+			this.loadLevel(this.levelsId.get(lastIndex+1));
+			return true;
+		}
+		return false;
 	}
 
 	public void loadSafetyLevel(){

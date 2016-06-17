@@ -67,7 +67,7 @@ public class Controller implements IController {
 				hm.sendSpell();
 				break;
 			case RETRY:
-				this.model.loadLevel(LEVELID);
+				this.model.loadLevel(this.model.getLevel().getId());
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());

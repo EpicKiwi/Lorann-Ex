@@ -108,6 +108,7 @@ class CollisionManager {
             this.model.getLevel().setFinished(true);
             IHero h = this.model.getLevel().getHero();
             h.setScore(h.getScore() + this.model.getLevel().getValue());
+            this.model.loadNextLevel();
         }
     }
 }
