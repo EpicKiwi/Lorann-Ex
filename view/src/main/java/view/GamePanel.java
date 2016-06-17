@@ -73,14 +73,20 @@ class GamePanel extends JPanel implements Observer
 
 		g.drawString("R to retry", 525, 414);
 
-		if(!this.model.getLevel().getHero().isAlive()) {
+		if(!this.model.getLevel().getHero().isAlive()) 
+		{
 			g.drawString("GAME OVER", 250, 414);
 		}
-
+		
+		if(this.model.getLevel().isFinished())
+		{
+			g.drawString("SUCCESS !", 265, 232);
+		}
+		
 		g.setColor(Color.YELLOW);
 
 		g.drawString("Score : "+model.getLevel().getHero().getScore().toString(), 20, 414);
-		//g.drawString("Coucou je suis Baptiste et je teste le draw", 30, 400);
+		
 	}
 
 	/**
