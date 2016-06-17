@@ -1,5 +1,6 @@
 package model.elements;
 
+import contract.Behavior;
 import contract.IDoor;
 import contract.ISprite;
 import model.Sprite;
@@ -26,6 +27,7 @@ public class Door extends Element implements IDoor {
         this.unlocked = false;
         this.lockedSprite = new Sprite("sprites/gate_closed.png");
         this.permeable = true;
+        this.behavior = Behavior.DEATH;
     }
 
     /**
@@ -51,5 +53,7 @@ public class Door extends Element implements IDoor {
 
     public void setUnlocked(boolean unlocked) {
         this.unlocked = unlocked;
+        if(this.unlocked)
+            this.behavior = Behavior.END;
     }
 }

@@ -35,6 +35,11 @@ public class Level implements IStockable, ILevel {
      * Interface of dimention
      */
     private IDimention dimention;
+
+    /**
+     * Indicate if the level is finished
+     */
+    private boolean finished;
     
 
     /**
@@ -210,6 +215,14 @@ public class Level implements IStockable, ILevel {
      */
     public void setExit(boolean exit) {
         this.exit = exit;
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     public void createSpell(int x, int y, Direction direction) {

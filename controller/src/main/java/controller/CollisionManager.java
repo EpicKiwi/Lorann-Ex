@@ -94,6 +94,8 @@ class CollisionManager {
     }
 
     void performEnd(IElement element, IElement other){
-        //TODO Perform end
+        if(other instanceof IHero){
+            this.model.getLevel().setFinished(true);
+        }
     }
 }
