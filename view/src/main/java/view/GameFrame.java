@@ -57,7 +57,7 @@ class GameFrame extends JFrame implements KeyListener
 		this.panel = new GamePanel();
 		this.panel.setBackground(Color.BLACK);
 		this.setContentPane(this.panel);
-		//this.setResizable(resizable = false);
+		this.setResizable(false);
 		
 		this.addKeyListener(this);
 	}
