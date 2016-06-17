@@ -12,6 +12,7 @@ public class ModelTest {
     @Before
     public void setUp() throws Exception {
         this.model = new Model();
+        this.model.loadLevel(0);
     }
 
     @Test

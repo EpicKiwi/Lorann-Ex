@@ -1,7 +1,5 @@
 package model.database;
 
-import model.Level;
-
 import java.lang.String;
 import java.sql.*;
 import java.sql.SQLException;
