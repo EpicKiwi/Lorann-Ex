@@ -48,7 +48,6 @@ public class Model extends Observable implements IModel {
 			while(res.next()){
 				levelsId.add(res.getInt(1));
 			}
-			System.out.println(levelsId.toString());
 		} catch (SQLException e) {
 			System.err.println("SQL error : "+e.getMessage());
 			e.printStackTrace();
@@ -59,8 +58,6 @@ public class Model extends Observable implements IModel {
 
 	public boolean loadLevel(int id){
 		DBConnection dbConnection = DBConnection.getInstance();
-		this.hero.setAlive(true);
-		this.hero.setSpell(true);
 		try {
 			ResultSet rawLevel = dbConnection.findLevel(id);
 			if(rawLevel.first()){
@@ -100,6 +97,8 @@ public class Model extends Observable implements IModel {
 			this.loadSafetyLevel();
 			return false;
 		}
+		this.hero.setAlive(true);
+		this.hero.setSpell(true);
 		return true;
 	}
 
