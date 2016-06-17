@@ -26,25 +26,23 @@ public final class DBConnection {
 		this.open();
 	}
 
-	public Level find(final int id) {
-		Level level = new Level(id);
 
-		try {
-			final String sql = "{call affiche_elements_level(?)ID}";
-			final CallableStatement call = this.getConnection().prepareCall(sql);
-			call.setInt(1, id);
-			call.execute();
-			final ResultSet resultSet = call.getResultSet();
-			if (resultSet.first()) {
-				level = new Level(id, resultSet.getString("id"));
-
-			}
-			return level;
-		} catch (final SQLException e){
-			e.printStackTrace();
-		}
-		return null;
+	public ResultSet findLevel(int id) throws SQLException {
+		final String sql = "{CALL get_level_by_id(?)}";
+		final CallableStatement call = this.getConnection().prepareCall(sql);
+		call.setInt(1, id);
+		call.execute();
+		return call.getResultSet();
 	}
+
+	public ResultSet findElements(int levelId) throws SQLException{
+		final String sql = "{CALL get_elements_by_level(?)}";
+		final CallableStatement call = this.getConnection().prepareCall(sql);
+		call.setInt(1, levelId);
+		call.execute();
+		return call.getResultSet();
+	}
+
 	/**
 	 * Gets the single instance of DBConnection.
 	 *
@@ -66,6 +64,7 @@ public final class DBConnection {
 		final DBProperties dbProperties = new DBProperties();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("Connecting database url: "+dbProperties.getUrl()+" user: "+dbProperties.getLogin());
 			this.connection = DriverManager.getConnection(dbProperties.getUrl(), dbProperties.getLogin(), dbProperties.getPassword());
 		} catch (final ClassNotFoundException e) {
 			e.printStackTrace();

@@ -20,7 +20,7 @@ public class Controller implements IController {
 	/** The clock of the game */
 	private Clock clock;
 
-	public static int LEVELID = 1;
+	public static int LEVELID = 0;
 
 	/**
 	 * Instantiates a new controller.
@@ -64,7 +64,7 @@ public class Controller implements IController {
 				hm.sendSpell();
 				break;
 			case RETRY:
-				this.model.loadLevel(1);
+				this.model.loadLevel(LEVELID);
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
@@ -78,7 +78,7 @@ public class Controller implements IController {
 	 * Begin the game
 	 */
 	public void start(){
-		if(this.model.loadLevel(1)){
+		if(this.model.loadLevel(LEVELID)){
 			this.model.getObservable().addObserver(this.view.getObserver());
 			this.clock = new Clock(this);
 			this.clock.start();

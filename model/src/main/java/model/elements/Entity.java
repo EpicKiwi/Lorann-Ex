@@ -63,9 +63,4 @@ public abstract class Entity extends Element implements IEntity {
         this.direction = direction;
     }
 
-    @Override
-    public void load(ResultSet raw) throws SQLException {
-        super.load(raw);
-        this.direction = Direction.valueOf(raw.getString(5));
-    }
 }
