@@ -30,7 +30,7 @@ class MoveManager {
     IElement hasCollision(IElement element){
         ILocation elementLocation = element.getLocation();
         for(IEntity entity: this.model.getLevel().getEntities()){
-            if(elementLocation.equals(entity.getLocation())){
+            if(elementLocation.getX() == entity.getLocation().getX() && elementLocation.getY() == entity.getLocation().getY() && element != entity){
                 return entity;
             }
         }

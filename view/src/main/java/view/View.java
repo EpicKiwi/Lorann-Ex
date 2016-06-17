@@ -1,13 +1,9 @@
 package view;
 
 
-import java.awt.event.KeyEvent;
 import java.util.Observer;
 
-import javax.swing.SwingUtilities;
-
 import contract.IController;
-import contract.IModel;
 
 import contract.IView;
 
@@ -35,9 +31,9 @@ public class View implements IView
 	}
 	
 	
-/**
- * update methode from IView inteface	
- */
+	/**
+	 * update methode from IView inteface
+	 */
 	public void repaint()
 	{
 		

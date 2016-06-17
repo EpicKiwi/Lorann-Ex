@@ -34,6 +34,11 @@ public class Level implements ILevel {
      * Interface of dimention
      */
     private IDimention dimention;
+
+    /**
+     * Indicate if the level is finished
+     */
+    private boolean finished;
     
 
     /**
@@ -175,7 +180,7 @@ public class Level implements ILevel {
      * The entity
      */
     public ArrayList<IEntity> getEntities() {
-        return entities;
+        return (ArrayList<IEntity>) entities.clone();
     }
     /**
      * Set the entities of the level
@@ -202,8 +207,24 @@ public class Level implements ILevel {
         this.exit = exit;
     }
 
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
     public void createSpell(int x, int y, Direction direction) {
         this.addEntity(new Spell(x,y,direction));
+    }
+
+    public void destroyElement(IElement element){
+        if(element instanceof IEntity){
+            this.entities.remove(element);
+        } else {
+            this.setElement(element.getLocation().getX(),element.getLocation().getY(),null);
+        }
     }
 }
 

@@ -63,10 +63,14 @@ public class Controller implements IController {
 			case CHARACTER_SPELL:
 				hm.sendSpell();
 				break;
+			case RETRY:
+				this.model.loadLevel(1);
+				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
 				break;
 		}
+		performCollision(this.model.getLevel().getHero());
 		this.model.flush();
 	}
 
@@ -98,7 +102,21 @@ public class Controller implements IController {
 			}
 			performCollision(entity);
 		}
+		performCollision(level.getHero());
+		updateSprites();
 		this.model.flush();
+	}
+
+	private void updateSprites(){
+		for(IEntity entity:this.model.getLevel().getEntities()){
+			if(entity.getSprite() instanceof IAnimatedSprite){
+				((IAnimatedSprite) entity.getSprite()).nextStep();
+			}
+		}
+
+		if(this.model.getLevel().getHero().getSprite() instanceof IAnimatedSprite){
+			((IAnimatedSprite) this.model.getLevel().getHero().getSprite()).nextStep();
+		}
 	}
 
 	/**
@@ -110,7 +128,7 @@ public class Controller implements IController {
 		IElement other = mm.hasCollision(element);
 		if(other == null)
 			return;
-		cm.performCollision(element,other);
+		cm.performCrossedCollision(element,other);
 	}
 
 	// GETTERS & SETTERS //

@@ -1,6 +1,7 @@
 package model.elements;
 
 import contract.AIType;
+import contract.Behavior;
 import model.AnimatedSprite;
 import contract.Direction;
 import model.Sprite;
@@ -34,6 +35,7 @@ public class Spell extends AI{
         this.sprite = new AnimatedSprite("sprites/fireball_1.png",imagesPaths);
         this.direction = direction;
         this.aiType = STRAIGHT;
+        this.behavior = Behavior.SPELL;
     }
 
     /**
