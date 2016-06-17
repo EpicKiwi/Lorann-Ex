@@ -36,6 +36,31 @@ public class Model extends Observable implements IModel {
 				System.err.println("The level "+id+" doesn't exists");
 				this.loadSafetyLevel();
 			}
+			ResultSet rawElements = dbConnection.findElements(id);
+			while(rawElements.next()){
+				if(rawElements.getString(2).equals("cross-wall")) {
+					this.level.setElement(rawElements.getInt(3),rawElements.getInt(4),new Cross(rawElements.getInt(3),rawElements.getInt(4)));
+				} else if(rawElements.getString(2).equals("vertical-wall")) {
+					this.level.setElement(rawElements.getInt(3),rawElements.getInt(4),new VWall(rawElements.getInt(3),rawElements.getInt(4)));
+				} else if(rawElements.getString(2).equals("horizontal-wall")) {
+					this.level.setElement(rawElements.getInt(3),rawElements.getInt(4),new HWall(rawElements.getInt(3),rawElements.getInt(4)));
+				} else if(rawElements.getString(2).equals("door")) {
+					this.level.setElement(rawElements.getInt(3),rawElements.getInt(4),new Door(rawElements.getInt(3),rawElements.getInt(4)));
+				} else if(rawElements.getString(2).equals("life-bubble")) {
+					this.level.setElement(rawElements.getInt(3),rawElements.getInt(4),new LifeBubble(rawElements.getInt(3),rawElements.getInt(4)));
+				} else if(rawElements.getString(2).equals("money")) {
+					this.level.setElement(rawElements.getInt(3),rawElements.getInt(4),new Money(rawElements.getInt(3),rawElements.getInt(4)));
+				} else if(rawElements.getString(2).equals("hero")) {
+					ILocation loc = this.level.getHero().getLocation();
+					loc.setX(rawElements.getInt(3));
+					loc.setY(rawElements.getInt(4));
+					this.level.getHero().setDirection(Direction.valueOf(rawElements.getString(5)));
+				} else if(rawElements.getString(2).equals("monster")) {
+					this.level.addEntity(new Monster(rawElements.getInt(3),rawElements.getInt(4),Direction.valueOf(rawElements.getString(5))));
+				} else {
+						System.err.println("Unsupported element "+rawElements.getString(2)+" at "+rawElements.getInt(3)+":"+rawElements.getInt(4));
+				}
+			}
 		} catch (SQLException e) {
 			System.err.println("SQL error : "+e.getMessage());
 			e.printStackTrace();

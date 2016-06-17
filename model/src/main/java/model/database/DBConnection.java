@@ -34,7 +34,7 @@ public final class DBConnection {
 		return call.getResultSet();
 	}
 
-	public ResultSet findElement(int levelId) throws SQLException{
+	public ResultSet findElements(int levelId) throws SQLException{
 		final String sql = "{CALL get_elements_by_level(?)}";
 		final CallableStatement call = this.getConnection().prepareCall(sql);
 		call.setInt(1, levelId);
