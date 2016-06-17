@@ -4,5 +4,6 @@ public enum AIType {
     STRAIGHT,
     DIAGONAL,
     RANDOM,
-    NOTHING
+    NOTHING,
+    FOLLOW
 }

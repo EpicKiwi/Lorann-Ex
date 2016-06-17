@@ -20,7 +20,7 @@ public class Controller implements IController {
 	/** The clock of the game */
 	private Clock clock;
 
-	public static int LEVELID = 4;
+	public static int LEVELID = 3;
 
 	/**
 	 * Instantiates a new controller.

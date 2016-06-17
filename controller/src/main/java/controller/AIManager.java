@@ -4,10 +4,13 @@ import contract.Direction;
 import contract.IAI;
 import contract.IModel;
 
+import java.util.Random;
+
 class AIManager {
     private static AIManager ourInstance;
     private IModel model;
     private MoveManager mm;
+    private static Random random;
 
     public static AIManager getInstance() {
         if(ourInstance == null)
@@ -17,6 +20,7 @@ class AIManager {
 
     public static void init(IModel model){
         ourInstance = new AIManager(model);
+        random = new Random();
     }
 
     private AIManager(IModel model) {
@@ -36,6 +40,9 @@ class AIManager {
                 break;
             case RANDOM:
                 this.performRandom(entity);
+                break;
+            case FOLLOW:
+                this.performFollow(entity);
                 break;
         }
     }
@@ -132,6 +139,18 @@ class AIManager {
     }
 
     void performRandom(IAI ai){
-        //TODO Random AI
+        int nextX;
+        int nextY;
+        do{
+            nextX = ai.getLocation().getX();
+            nextY = ai.getLocation().getY();
+            nextX += random.nextInt(3)-1;
+            nextY += random.nextInt(3)-1;
+        }while(!this.mm.canMoveOn(nextX, nextY));
+        mm.safeMoveTo(ai,nextX,nextY);
+    }
+
+    void performFollow(IAI ai){
+        //TODO pathfinding
     }
 }
