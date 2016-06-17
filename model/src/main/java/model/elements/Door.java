@@ -53,7 +53,14 @@ public class Door extends Element implements IDoor {
 
     public void setUnlocked(boolean unlocked) {
         this.unlocked = unlocked;
+    }
+
+    @Override
+    public Behavior getBehavior() {
         if(this.unlocked)
             this.behavior = Behavior.END;
+        else
+            this.behavior = Behavior.DEATH;
+        return this.behavior;
     }
 }

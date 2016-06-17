@@ -80,7 +80,7 @@ class GamePanel extends JPanel implements Observer
 		
 		if(this.model.getLevel().isFinished())
 		{
-			g.drawString("SUCCESS !", 265, 232);
+			g.drawString("SUCCESS !", this.getWidth()/2-45, this.getHeight()/2-32);
 		}
 		
 		g.setColor(Color.YELLOW);

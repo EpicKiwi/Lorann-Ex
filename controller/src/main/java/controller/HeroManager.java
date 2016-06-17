@@ -28,7 +28,7 @@ class HeroManager {
 
     public boolean move(Direction direction){
         IHero h = this.model.getLevel().getHero();
-        if(!h.isAlive())
+        if(!h.isAlive() || this.model.getLevel().isFinished())
             return false;
         int nextX = h.getLocation().getX();
         int nextY = h.getLocation().getY();

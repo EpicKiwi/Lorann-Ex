@@ -89,6 +89,7 @@ class CollisionManager {
             this.model.getLevel().destroyElement(element);
         } else if(other instanceof IMonster){
             this.model.getLevel().destroyElement(other);
+            //TODO gagner des points lors de la destruction des monstres
         }
     }
 
