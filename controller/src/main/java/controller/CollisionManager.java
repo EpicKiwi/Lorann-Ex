@@ -55,7 +55,6 @@ class CollisionManager {
             this.performCollision(element,other);
         if(other.getBehavior() != null)
             this.performCollision(other,element);
-        System.out.println("Collision between "+element.getClass().getCanonicalName()+" and "+other.getClass().getCanonicalName()+" on X: "+element.getLocation().getX()+" Y: "+element.getLocation().getY());
     }
 
     void performDeath(IElement element, IElement other){
