@@ -104,11 +104,14 @@ class CollisionManager {
     }
 
     void performEnd(IElement element, IElement other){
-        if(other instanceof IHero && !this.model.getLevel().isFinished()){
-            this.model.getLevel().setFinished(true);
-            IHero h = this.model.getLevel().getHero();
-            h.setScore(h.getScore() + this.model.getLevel().getValue());
-            this.model.loadNextLevel();
+        if(other instanceof IHero){
+            if(!this.model.getLevel().isFinished()) {
+                this.model.getLevel().setFinished(true);
+                IHero h = this.model.getLevel().getHero();
+                h.setScore(h.getScore() + this.model.getLevel().getValue());
+            } else {
+                this.model.loadNextLevel();
+            }
         }
     }
 }
