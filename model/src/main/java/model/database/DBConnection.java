@@ -45,6 +45,7 @@ public final class DBConnection {
 		}
 		return null;
 	}
+
 	/**
 	 * Gets the single instance of DBConnection.
 	 *

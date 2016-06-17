@@ -2,7 +2,6 @@ package model;
 
 
 import contract.*;
-import model.database.IStockable;
 import model.elements.Element;
 import model.elements.Hero;
 import model.elements.Spell;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
  *@author Marie
  * level of the game
  */
-public class Level implements IStockable, ILevel {
+public class Level implements ILevel {
 
     private int number;
     private boolean exit = false;
@@ -63,15 +62,6 @@ public class Level implements IStockable, ILevel {
 
     public boolean setElement(Integer x, Integer y, IElement element){
         return false;
-    }
-
-    /**
-     * All data storage of raw in the data base
-     * @param raw
-     */
-    public void load(ResultSet raw) {
-
-        //TODO Charger le niveau ici
     }
 
     /**

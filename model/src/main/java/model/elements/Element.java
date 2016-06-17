@@ -3,7 +3,6 @@ package model.elements;
 import contract.*;
 import model.Location;
 import model.Sprite;
-import model.database.IStockable;
 
 import java.awt.*;
 import java.sql.ResultSet;
@@ -13,7 +12,7 @@ import java.sql.SQLException;
  * An element of a level
  * @author Marie
  */
-public abstract class Element implements IStockable, IElement {
+public abstract class Element implements IElement {
 
     /** The behavior of the element */
     protected Behavior behavior;
@@ -155,13 +154,6 @@ public abstract class Element implements IStockable, IElement {
      */
     public boolean isPermeable() {
         return permeable;
-    }/**
-     * Loading the result raw  in the database
-     * @param raw
-     */
-
-    public void load(ResultSet raw) throws SQLException {
-        this.setLocation(raw.getInt(3),raw.getInt(4));
     }
 
     /**
@@ -170,13 +162,5 @@ public abstract class Element implements IStockable, IElement {
      */
     public Image getImage() {
         return this.sprite.getImage();
-    }
-
-    /**
-     * Get the name of the table
-     * @return
-     */
-    public String getTableName() {
-        return "element";
     }
 }
