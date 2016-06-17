@@ -7,8 +7,8 @@ import model.AnimatedSprite;
  */
 public class Hero extends Entity implements contract.IHero {
     /** The indicator of the capacity to the hero to launch a RAINBOW SPELLr <b>*o*</b> */
-    private boolean spell = true;
-    private boolean alive = true;
+    private boolean spell;
+    private boolean alive;
     /** The score of the player */
    private Integer score = 0;
 
@@ -34,6 +34,8 @@ public class Hero extends Entity implements contract.IHero {
                 "sprites/lorann_br.png",
         };
         this.sprite = new AnimatedSprite("sprites/lorann_b.png",imagesPaths);
+        this.spell = true;
+        this.alive = true;
     }
     // GETTER & SETTER
     /**
