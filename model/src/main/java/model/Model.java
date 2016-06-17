@@ -5,6 +5,7 @@ import contract.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Observable;
 
 import model.elements.*;
@@ -22,16 +23,36 @@ public class Model extends Observable implements IModel {
 	 */
 	private Level level;
 
+	/**
+	 * The IDs of the levels
+	 */
+	private ArrayList<Integer> levelsId;
+
 	/** Instantiates a new model. */
 
+	public boolean loadAllLevels(){
+		DBConnection dbConnection = DBConnection.getInstance();
+		try {
+			ResultSet res = dbConnection.findAllLevels();
+			this.levelsId = new ArrayList<Integer>();
+			while(res.next()){
+				levelsId.add(res.getInt(1));
+			}
+			System.out.println(levelsId.toString());
+		} catch (SQLException e) {
+			System.err.println("SQL error : "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 
 	public boolean loadLevel(int id){
-
 		DBConnection dbConnection = DBConnection.getInstance();
 		try {
 			ResultSet rawLevel = dbConnection.findLevel(id);
 			if(rawLevel.first()){
-				this.level = new Level(rawLevel.getInt(3),rawLevel.getInt(4),new Hero(0,0),rawLevel.getInt(2));
+				this.level = new Level(rawLevel.getInt(1),rawLevel.getInt(3),rawLevel.getInt(4),new Hero(0,0),rawLevel.getInt(2));
             } else {
 				System.err.println("The level "+id+" doesn't exists");
 				this.loadSafetyLevel();
@@ -65,12 +86,13 @@ public class Model extends Observable implements IModel {
 			System.err.println("SQL error : "+e.getMessage());
 			e.printStackTrace();
 			this.loadSafetyLevel();
+			return false;
 		}
 		return true;
 	}
 
 	public void loadSafetyLevel(){
-		this.level = new Level(20,12,new Hero(1,1),1);
+		this.level = new Level(-1,20,12,new Hero(1,1),1);
 		this.level.setElement(10,5,new VWall(10,5));
 		this.level.setElement(1,5,new VWall(1,5));
 		this.level.setElement(19,5,new VWall(19,5));
@@ -142,5 +164,9 @@ public class Model extends Observable implements IModel {
 	 */
 	public IEntity getHero(){
 		return this.level.getHero();
+	}
+
+	public ArrayList<Integer> getLevelsId() {
+		return levelsId;
 	}
 }

@@ -1,6 +1,7 @@
 package contract;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Observable;
 
 /**
@@ -17,4 +18,6 @@ public interface IModel{
 	void flush();
 	Observable getObservable();
 	ILevel getLevel();
+	boolean loadAllLevels();
+	ArrayList<Integer> getLevelsId();
 }

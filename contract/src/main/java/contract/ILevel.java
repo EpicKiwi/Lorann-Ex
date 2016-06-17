@@ -44,4 +44,8 @@ public interface ILevel extends IValuable {
     public boolean isFinished();
 
     public void setFinished(boolean finished);
+
+    int getId();
+
+    void setId(int id);
 }

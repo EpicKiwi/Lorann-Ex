@@ -41,6 +41,14 @@ public final class DBConnection {
 		return call.getResultSet();
 	}
 
+	public ResultSet findAllLevels() throws SQLException{
+		final String sql = "{CALL get_levels()}";
+		final CallableStatement call = this.getConnection().prepareCall(sql);
+		call.execute();
+		return call.getResultSet();
+	}
+
+
 	/**
 	 * Gets the single instance of DBConnection.
 	 *

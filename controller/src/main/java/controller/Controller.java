@@ -81,14 +81,14 @@ public class Controller implements IController {
 	 * Begin the game
 	 */
 	public void start(){
-		if(this.model.loadLevel(LEVELID)){
+		if(this.model.loadAllLevels()){
+			this.model.loadLevel(this.model.getLevelsId().get(0));
 			this.model.getObservable().addObserver(this.view.getObserver());
 			this.clock = new Clock(this);
 			this.clock.start();
 			this.view.openFrame();
-
 		} else {
-			System.err.println("Can't load level id:"+LEVELID);
+			System.err.println("Can't load levels");
 
 		}
 	}

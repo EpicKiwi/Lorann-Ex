@@ -19,6 +19,12 @@ public class Level implements ILevel {
     private boolean exit = false;
 
     private ArrayList<IEntity> entities;
+
+    /**
+     * The database ID of the level
+     */
+    private int id;
+
     /**
      * Interface of Element
      */
@@ -48,13 +54,13 @@ public class Level implements ILevel {
      * @param hero
      *
      */
-    public Level(int width, int height, Hero hero, int number) {
+    public Level(int id,int width, int height, Hero hero, int number) {
         this.dimention = new Dimention(width,height);
         this.hero = hero;
         this.number = number;
         this.elements = new Element[height][width];
         this.entities = new ArrayList<IEntity>();
-
+        this.id = id;
     }
 
     public Level(int id, String id1) {
@@ -229,6 +235,14 @@ public class Level implements ILevel {
 
     public int getValue() {
         return 1000;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 
