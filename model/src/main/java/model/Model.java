@@ -3,6 +3,8 @@ package model;
 
 import contract.*;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Observable;
 
 import model.elements.*;
@@ -20,19 +22,29 @@ public class Model extends Observable implements IModel {
 	 */
 	private Level level;
 
-	/**
-	 * Model of Hero
-	 */
-	private Hero hero;
-
 	/** Instantiates a new model. */
 
 
-	public boolean loadLevel(int Id){
+	public boolean loadLevel(int id){
 
 		DBConnection dbConnection = DBConnection.getInstance();
+		try {
+			ResultSet rawLevel = dbConnection.findLevel(id);
+			if(rawLevel.first()){
+				this.level = new Level(rawLevel.getInt(3),rawLevel.getInt(4),new Hero(0,0),rawLevel.getInt(2));
+            } else {
+				System.err.println("The level "+id+" doesn't exists");
+				this.loadSafetyLevel();
+			}
+		} catch (SQLException e) {
+			System.err.println("SQL error : "+e.getMessage());
+			e.printStackTrace();
+			this.loadSafetyLevel();
+		}
+		return true;
+	}
 
-		//TODO Implementer base de données
+	public void loadSafetyLevel(){
 		this.level = new Level(20,12,new Hero(1,1),1);
 		this.level.setElement(10,5,new VWall(10,5));
 		this.level.setElement(1,5,new VWall(1,5));
@@ -45,8 +57,6 @@ public class Model extends Observable implements IModel {
 		AI ele = new Monster(10,10, Direction.TOPRIGHT);
 		ele.setAiType(AIType.DIAGONAL);
 		this.level.addEntity(ele);
-
-		return true;
 	}
 
 	/**
