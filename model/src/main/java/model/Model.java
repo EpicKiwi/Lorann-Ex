@@ -140,7 +140,7 @@ public class Model extends Observable implements IModel {
 	
 	/**
 	 * Get the level
-	 * @return
+	 * @return The current level
 	 */
 	public Level getLevel(){
 		return this.level;
@@ -156,7 +156,7 @@ public class Model extends Observable implements IModel {
 	
 	/**
 	 * Get the observable
-	 * @return
+	 * @return The Observable object of the model
 	 */
 	public Observable getObservable() {
 		return this;
@@ -164,7 +164,7 @@ public class Model extends Observable implements IModel {
 	
 	/**
 	 * Get the element of a specific position
-	 * @return
+	 * @return The element at this position or null
 	 */
 	public IElement getElement(int x, int y) {
 		return this.level.getElement(x,y);
@@ -172,7 +172,7 @@ public class Model extends Observable implements IModel {
 
 	/**
 	 * Get element of the board
-	 * @return
+	 * @return A double array of the elements
 	 */
 	public IElement[][] getElements(){
 		return this.level.getElements();
@@ -180,7 +180,7 @@ public class Model extends Observable implements IModel {
 
 	/**
 	 * Get the hero
-	 * @return
+	 * @return The current hero of the level
 	 */
 	public IEntity getHero(){
 		return this.level.getHero();

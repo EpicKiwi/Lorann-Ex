@@ -154,16 +154,13 @@ public class Level implements ILevel {
     }
     /**
      * Set the element of the level
-    * @return
-     *The element
     */
     public void setElements(IElement[][] elements) {
         this.elements = elements;
     }
     /**
      * Get the element of level
-     * @return
-     * The element
+     * @return The element
      */
     public IElement getElement(int x, int y){
         return this.elements[y][x];

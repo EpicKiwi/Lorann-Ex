@@ -8,7 +8,7 @@ import model.Sprite;
 import static contract.AIType.*;
 
 /**
- *@Marie
+ *@author Marie
  * Monster of the game
  */
 public class Monster extends AI implements contract.IMonster {

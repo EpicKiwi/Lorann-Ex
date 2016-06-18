@@ -101,7 +101,7 @@ class GameFrame extends JFrame implements KeyListener
 	
 	/**
 	 * geter from the Controller class
-	 * @return
+	 * @return The controller of the frame
 	 */
 	public IController getController() 
 	{
