@@ -33,12 +33,10 @@ public class Model extends Observable implements IModel {
 	 */
 	private ArrayList<Integer> levelsId;
 
+	/** Instantiates a new model. */
 	public Model() {
 		this.hero = new Hero(1,1);
 	}
-
-	/** Instantiates a new model. */
-
 
 	public boolean loadAllLevels(){
 		DBConnection dbConnection = DBConnection.getInstance();
@@ -111,7 +109,7 @@ public class Model extends Observable implements IModel {
 		return false;
 	}
 
-	public void loadSafetyLevel(){
+	protected void loadSafetyLevel(){
 		this.level = new Level(-1,20,12,new Hero(1,1),1);
 		this.level.setElement(10,5,new VWall(10,5));
 		this.level.setElement(1,5,new VWall(1,5));
@@ -131,13 +129,6 @@ public class Model extends Observable implements IModel {
 		this.level.addEntity(ele);
 	}
 
-	/**
-	 * Save the level
-	 */
-	public boolean saveLevel()	{
-		return true;
-	}
-	
 	/**
 	 * Get the level
 	 * @return The current level
@@ -183,7 +174,7 @@ public class Model extends Observable implements IModel {
 	 * @return The current hero of the level
 	 */
 	public IEntity getHero(){
-		return this.level.getHero();
+		return this.hero;
 	}
 
 	public ArrayList<Integer> getLevelsId() {
