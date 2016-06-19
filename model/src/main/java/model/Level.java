@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 public class Level implements ILevel {
 
+
     private int number;
     private boolean exit = false;
 
@@ -63,18 +64,6 @@ public class Level implements ILevel {
         this.id = id;
     }
 
-    public Level(int id, String id1) {
-    }
-
-    public Level(int id) {
-
-    }
-
-
-    public boolean setElement(Integer x, Integer y, IElement element){
-        return false;
-    }
-
     /**
      * Add the entity
      * @param entity
@@ -89,10 +78,6 @@ public class Level implements ILevel {
      */
     public void removeEntity(IEntity entity){
         this.entities.remove(entity);
-    }
-
-    public String getTableName() {
-        return ("level");
     }
 
     public String getLoadQuery(int id) {
@@ -177,6 +162,7 @@ public class Level implements ILevel {
     public void setElement(int x, int y, IElement element){
         this.elements[y][x] = element;
     }
+
     /**
      * Get the entities of the level
      * @return

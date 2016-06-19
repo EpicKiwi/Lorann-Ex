@@ -84,4 +84,5 @@ public class ModelTest implements Observer {
         assertNotNull("Hero can't be null",t.getHero());
         assertTrue("Hero should be an instance of Hero",t.getHero() instanceof Hero);
     }
+
 }
