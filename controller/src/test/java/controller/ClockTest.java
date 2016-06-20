@@ -1,5 +1,6 @@
-package controller;
+package java.controller;
 
+import controller.Clock;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,7 +38,7 @@ public class ClockTest {
 
     @Test
     public void run() throws Exception {
-        //this.clock.run();
-        //assertEquals(1,this.clock.getTickNumber());
+        this.clock.run();
+        assertEquals(1,this.clock.getTickNumber());
     }
 }
