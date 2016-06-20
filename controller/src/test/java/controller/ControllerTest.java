@@ -4,6 +4,11 @@ import controller.Controller;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The test class of the class Controller
+ * @see Controller
+ */
+
 import static org.junit.Assert.*;
 
 public class ControllerTest {
@@ -18,8 +23,8 @@ public class ControllerTest {
 
     @Test
     public void orderPerform() throws Exception {
-        controller.orderPerform(6);
-        assertNotNull("Press a button", controller.orderPerform(6));
+        controller.orderPerform();
+        assertNotNull("Press a button", controller.orderPerform());
         assertTrue("You have to press a button to move", controller.orderPerform());
         assertFalse("Unrecognized key", controller.orderPerform());
 
@@ -38,18 +43,19 @@ public class ControllerTest {
 
     @Test
     public void performCollision() throws Exception {
-        //assertFalse("You can't continue the game", controller.equals(false));
-        //assertTrue("You can still continue the game", controller.equals(true));
+        assertNotNull("Collision can't be null", controller);
 
     }
 
     @Test
     public void setView() throws Exception {
+        assertNotNull("Set the view can't be null", controller);
 
     }
 
     @Test
     public void setModel() throws Exception {
+        assertNotNull("set model can't be null", controller);
 
     }
 

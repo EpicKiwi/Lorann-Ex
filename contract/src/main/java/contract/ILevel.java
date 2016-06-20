@@ -87,4 +87,5 @@ public interface ILevel extends IValuable {
      */
      void setFinished(boolean finished);
 
+    int getId();
 }

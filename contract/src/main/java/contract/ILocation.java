@@ -1,9 +1,6 @@
 package contract;
 
 /**
- * Created by baptiste on 15/06/16.
- */
-/**
  * The Interface ILocation
  *
  * @author Baptiste

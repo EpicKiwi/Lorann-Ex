@@ -5,8 +5,6 @@ import contract.*;
 import model.elements.Element;
 import model.elements.Hero;
 import model.elements.Spell;
-
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
