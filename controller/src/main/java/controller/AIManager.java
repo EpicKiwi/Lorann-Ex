@@ -201,7 +201,11 @@ class AIManager {
         }
         this.stepInDirection(ai);
     }
-
+/**
+ * Make a step in a direction
+ * @param entity
+ * @return
+ */
     boolean stepInDirection(IEntity entity){
         int nextX = entity.getLocation().getX();
         int nextY = entity.getLocation().getY();
