@@ -1,16 +1,25 @@
 package controller.mock;
 
 import contract.IElement;
+import contract.IHero;
 import contract.ILevel;
 import contract.IModel;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Marie on 20/06/2016.
  */
-public class modelmock implements IModel {
+public class ModelMock extends Observable implements IModel {
+
+    IHero h;
+
+    public ModelMock() {
+        h = new HeroMock();
+    }
+
     public boolean loadLevel(int id) {
         return false;
     }
@@ -23,16 +32,15 @@ public class modelmock implements IModel {
         return new IElement[0][];
     }
 
-    public void flush() {
-
-    }
+    public void flush() {}
 
     public Observable getObservable() {
-        return null;
+        return this;
     }
 
     public ILevel getLevel() {
-        return null;
+        ILevel l = new LevelMock(this.h);
+        return l;
     }
 
     public boolean loadAllLevels() {
