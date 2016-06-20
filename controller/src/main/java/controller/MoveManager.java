@@ -37,6 +37,12 @@ class MoveManager {
         return this.model.getLevel().getElements()[elementLocation.getY()][elementLocation.getX()];
     }
 
+    /**
+     * Tell if a movement is possible or not
+     * @param x
+     * @param y
+     * @return
+     */
     boolean canMoveOn(int x, int y){
         IDimention levelDimentions = this.model.getLevel().getDimention();
         if(x > levelDimentions.getWidth()-1 || x < 0)
@@ -49,6 +55,13 @@ class MoveManager {
         return true;
     }
 
+    /**
+     * Allow to move to another position
+     * @param entity
+     * @param x
+     * @param y
+     * @return
+     */
     boolean safeMoveTo(IEntity entity, int x, int y){
         if(canMoveOn(x,y)) {
             entity.moveTo(x,y);

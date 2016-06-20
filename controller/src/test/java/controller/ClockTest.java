@@ -37,7 +37,7 @@ public class ClockTest {
 
     @Test
     public void run() throws Exception {
-        //this.clock.run();
-        //assertEquals(1,this.clock.getTickNumber());
+        this.clock.run();
+        assertEquals(1,this.clock.getTickNumber());
     }
 }

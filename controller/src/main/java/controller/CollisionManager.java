@@ -54,26 +54,46 @@ class CollisionManager {
             this.model.getLevel().destroyElement(element);
         }
     }
-
+    
+	/**
+	 * Collision between elements
+	 * @param element
+	 * @param other
+	 */
     void performCrossedCollision(IElement element, IElement other){
         if(element.getBehavior() != null)
             this.performCollision(element,other);
         if(other.getBehavior() != null)
             this.performCollision(other,element);
     }
-
+    
+	/**
+	 * Method for when the hero die
+	 * @param element
+	 * @param other
+	 */
     void performDeath(IElement element, IElement other){
         if(other instanceof IHero){
             ((IHero) other).setAlive(false);
         }
     }
 
+    /**
+     * Add point to the score
+     * @param element
+     * @param other
+     */
     void performMorePoint(IElement element, IElement other){
         if(other instanceof IHero && element instanceof IValuable){
             ((IHero) other).setScore(((IHero) other).getScore()+((IValuable) element).getValue());
         }
     }
 
+    /**
+     * Unlock all the doors in the level
+     * @param element
+     * @param other
+     */
     void performUnlock(IElement element, IElement other){
         if(other instanceof IHero) {
             ILevel level = this.model.getLevel();
@@ -92,6 +112,11 @@ class CollisionManager {
         }
     }
 
+    /**
+     * The spell destroy the monster
+     * @param element
+     * @param other
+     */
     void performSpell(IElement element, IElement other){
         if(other instanceof IHero){
             ((IHero) other).setSpell(true);
@@ -103,6 +128,11 @@ class CollisionManager {
         }
     }
 
+    /**
+     * End the level and load the next one
+     * @param element
+     * @param other
+     */
     void performEnd(IElement element, IElement other){
         if(other instanceof IHero){
             if(!this.model.getLevel().isFinished()) {

@@ -1,9 +1,14 @@
 package contract;
 
 /**
- * Created by baptiste on 15/06/16.
+ * The Interface IAI
+ *
+ * @author Baptiste
  */
 public interface IAI extends IEntity {
     AIType getAiType();
+    /**
+     * Set a type of AI
+     */
     void setAiType(AIType aiType);
 }

@@ -1,6 +1,5 @@
 package model;
 
-import contract.Direction;
 import model.elements.*;
 import model.elements.mocks.ElementMock;
 import model.elements.mocks.EntityMock;
