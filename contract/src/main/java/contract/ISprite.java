@@ -3,8 +3,13 @@ package contract;
 import java.awt.*;
 
 /**
- * Created by baptiste on 15/06/16.
+ * The Interface ISprite
+ *
+ * @author Baptiste
  */
 public interface ISprite {
+    /**
+     * Get the image for the game in general
+     */
     Image getImage();
 }

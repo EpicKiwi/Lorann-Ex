@@ -1,8 +1,14 @@
 package contract;
 
 /**
- * Created by baptiste on 16/06/16.
+ * The Interface IMonster
+ *
+ * @author Baptiste
  */
 public interface IMonster extends IAI, IValuable {
+    /**
+     * Get the value in the game in general
+     * @return
+     */
     int getValue();
 }
