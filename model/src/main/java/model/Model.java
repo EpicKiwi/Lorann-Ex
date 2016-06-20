@@ -38,6 +38,12 @@ public class Model extends Observable implements IModel {
 		this.hero = new Hero(1,1);
 	}
 
+	/**
+	 * Instanciate the all load level
+	 * @return
+	 * Load all level
+	 */
+
 	public boolean loadAllLevels(){
 		DBConnection dbConnection = DBConnection.getInstance();
 		try {
@@ -53,7 +59,11 @@ public class Model extends Observable implements IModel {
 		}
 		return true;
 	}
-
+	/**
+	 * Instanciate the load of the level
+	 * @param id
+	 * Load the level
+	 */
 	public boolean loadLevel(int id){
 		DBConnection dbConnection = DBConnection.getInstance();
 		try {
@@ -99,7 +109,11 @@ public class Model extends Observable implements IModel {
 		this.hero.setSpell(true);
 		return true;
 	}
-
+	/**
+	 * Instanciate with a if the load of the next level
+	 * @return
+	 * If it load the next level
+	 */
 	public boolean loadNextLevel(){
 		int lastIndex = this.levelsId.indexOf(this.level.getId());
 		if((lastIndex+1) < this.levelsId.size()) {
@@ -108,7 +122,10 @@ public class Model extends Observable implements IModel {
 		}
 		return false;
 	}
-
+	/**
+	 * Instanciate the load safety level
+	 * A lot a set element like vWall, door, money, monster, lifeBubble, Hero, Direction ...
+	 */
 	protected void loadSafetyLevel(){
 		this.level = new Level(-1,20,12,new Hero(1,1),1);
 		this.level.setElement(10,5,new VWall(10,5));
@@ -176,6 +193,12 @@ public class Model extends Observable implements IModel {
 	public IEntity getHero(){
 		return this.hero;
 	}
+
+	/**
+	 * Get the level ID
+	 * @return
+	 * Level ID
+	 */
 
 	public ArrayList<Integer> getLevelsId() {
 		return levelsId;

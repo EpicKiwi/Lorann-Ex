@@ -13,7 +13,10 @@ import java.util.ArrayList;
  */
 public class Level implements ILevel {
 
-
+    /**
+     * the number of the level
+     * If Lorann can exit the level
+     */
     private int number;
     private boolean exit = false;
 
@@ -77,10 +80,27 @@ public class Level implements ILevel {
     public void removeEntity(IEntity entity){
         this.entities.remove(entity);
     }
+    /**
+     * Create the spell
+     * @param direction
+     */
 
-    public String getLoadQuery(int id) {
-        return null;
+    public void createSpell(int x, int y, Direction direction) {
+        this.addEntity(new Spell(x,y,direction));
     }
+    /**
+     * Destroy the element
+     * @param element
+     */
+    public void destroyElement(IElement element) {
+        if (element instanceof IEntity) {
+            this.entities.remove(element);
+        } else {
+            this.setElement(element.getLocation().getX(), element.getLocation().getY(), null);
+        }
+
+    }
+
     //GETTER & SETTER
 
     /**
@@ -90,6 +110,14 @@ public class Level implements ILevel {
      */
     public int getNumber() {
         return number;
+    }
+    /**
+     * Get the load Query
+     *@return
+     * The load query
+     */
+    public String getLoadQuery(int id) {
+        return null;
     }
     /**
      * Set the number of level
@@ -193,35 +221,44 @@ public class Level implements ILevel {
     public void setExit(boolean exit) {
         this.exit = exit;
     }
+    /**
+     * If the level is finished
+     * The end of the level
+     */
 
     public boolean isFinished() {
         return finished;
     }
-
+    /**
+     * Set if the level is finished
+     * @param finished
+     * The end of the level
+     */
     public void setFinished(boolean finished) {
         this.finished = finished;
     }
-
-    public void createSpell(int x, int y, Direction direction) {
-        this.addEntity(new Spell(x,y,direction));
-    }
-
-    public void destroyElement(IElement element){
-        if(element instanceof IEntity){
-            this.entities.remove(element);
-        } else {
-            this.setElement(element.getLocation().getX(),element.getLocation().getY(),null);
-        }
-    }
+    /**
+     * Get the value of the level
+     * @return
+     * The value
+     */
 
     public int getValue() {
         return 1000;
     }
-
+    /**
+     * Get the id of the level
+     * @return
+     * The ID
+     */
     public int getId() {
         return id;
     }
-
+    /**
+     * Set the Id of the level
+     * @param id
+     * The ID
+     */
     public void setId(int id) {
         this.id = id;
     }

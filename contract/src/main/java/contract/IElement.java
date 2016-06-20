@@ -3,7 +3,7 @@ package contract;
 import java.awt.*;
 
 /**
- * Created by baptiste on 15/06/16.
+ * @author Baptiste
  * configure the element
  */
 public interface IElement {

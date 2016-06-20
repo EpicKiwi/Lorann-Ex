@@ -3,7 +3,7 @@ package contract;
 import contract.IElement;
 
 /**
- * Created by baptiste on 16/06/16.
+ * @author Baptiste
  * set the state of the door
  */
 public interface IDoor extends IElement {

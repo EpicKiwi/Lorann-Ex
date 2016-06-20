@@ -28,7 +28,7 @@ public class Sprite implements ISprite {
         try {
             this.image = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(image));
         } catch (IOException e) {
-            System.err.println("Impossible de charger l'image "+image);
+            System.err.println("Impossible to load the image"+image);
             e.printStackTrace();
         }
     }
