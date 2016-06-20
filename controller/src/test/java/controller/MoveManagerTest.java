@@ -6,9 +6,12 @@ import contract.IEntity;
 import contract.IModel;
 import controller.mock.ElementMock;
 import controller.mock.EntityMock;
+import controller.mock.HeroMock;
 import controller.mock.ModelMock;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Random;
 
 import static org.junit.Assert.*;
 
@@ -20,10 +23,12 @@ public class MoveManagerTest {
 
     MoveManager mm;
     IModel m;
+    Random r;
 
     @Before
     public void setUp() throws Exception {
-        this.m = new ModelMock();
+        r = new Random();
+        this.m = new ModelMock(new HeroMock(5,5,Direction.DOWN));
         MoveManager.init(m);
         mm = MoveManager.getInstance();
     }
@@ -76,5 +81,47 @@ public class MoveManagerTest {
         assertSame(oth2,mm.hasCollision(m.getLevel().getHero()));
     }
 
+    @Test
+    public void testCanMoveOnShouldReturnFalse() throws Exception {
+        m.getLevel().setElement(2,6,new ElementMock(2,6,false));
 
+        assertFalse(mm.canMoveOn(15,6)); //Out of the level (width)
+        assertFalse(mm.canMoveOn(2,23)); //Out of the level (height)
+        assertFalse(mm.canMoveOn(2,6)); //On a not permeable element
+    }
+
+    @Test
+    public void testCanMoveOnShouldReturnTrue() throws Exception {
+        m.getLevel().setElement(2,6,new ElementMock(2,6,true));
+
+        assertTrue(mm.canMoveOn(r.nextInt(10),r.nextInt(20))); //In level
+        assertTrue(mm.canMoveOn(2,6)); //On permeable element
+    }
+
+    @Test
+    public void testSafeMoveToShouldMoveEntity() throws Exception {
+        IEntity e = new EntityMock(5,8,false,Direction.DOWN);
+
+        assertTrue(mm.safeMoveTo(e,6,8));
+        assertEquals(6,e.getLocation().getX());
+        assertEquals(8,e.getLocation().getY());
+    }
+
+    @Test
+    public void testSafeMoveToShouldntMoveEntity() throws Exception {
+        IEntity e = new EntityMock(5,8,false,Direction.DOWN);
+        m.getLevel().setElement(2,6,new ElementMock(2,6,false));
+
+        assertFalse(mm.safeMoveTo(e,15,6)); //Out of the level (width)
+        assertEquals(5,e.getLocation().getX());
+        assertEquals(8,e.getLocation().getY());
+
+        assertFalse(mm.safeMoveTo(e,2,23)); //Out of the level (height)
+        assertEquals(5,e.getLocation().getX());
+        assertEquals(8,e.getLocation().getY());
+
+        assertFalse(mm.safeMoveTo(e,2,6)); //On a not permeable element
+        assertEquals(5,e.getLocation().getX());
+        assertEquals(8,e.getLocation().getY());
+    }
 }

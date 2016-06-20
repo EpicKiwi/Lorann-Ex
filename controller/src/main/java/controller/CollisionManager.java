@@ -72,7 +72,7 @@ class CollisionManager {
 	 * @param element
 	 * @param other
 	 */
-    void performDeath(IElement element, IElement other){
+    private void performDeath(IElement element, IElement other){
         if(other instanceof IHero){
             ((IHero) other).setAlive(false);
         }
@@ -83,7 +83,7 @@ class CollisionManager {
      * @param element
      * @param other
      */
-    void performMorePoint(IElement element, IElement other){
+    private void performMorePoint(IElement element, IElement other){
         if(other instanceof IHero && element instanceof IValuable){
             ((IHero) other).setScore(((IHero) other).getScore()+((IValuable) element).getValue());
         }
@@ -94,7 +94,7 @@ class CollisionManager {
      * @param element
      * @param other
      */
-    void performUnlock(IElement element, IElement other){
+    private void performUnlock(IElement element, IElement other){
         if(other instanceof IHero) {
             ILevel level = this.model.getLevel();
             for (int y = 0; y < level.getDimention().getHeight(); y++) {
@@ -117,7 +117,7 @@ class CollisionManager {
      * @param element
      * @param other
      */
-    void performSpell(IElement element, IElement other){
+    private void performSpell(IElement element, IElement other){
         if(other instanceof IHero){
             ((IHero) other).setSpell(true);
             this.model.getLevel().destroyElement(element);
@@ -133,7 +133,7 @@ class CollisionManager {
      * @param element
      * @param other
      */
-    void performEnd(IElement element, IElement other){
+    private void performEnd(IElement element, IElement other){
         if(other instanceof IHero){
             if(!this.model.getLevel().isFinished()) {
                 this.model.getLevel().setFinished(true);

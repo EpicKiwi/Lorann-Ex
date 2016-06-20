@@ -17,8 +17,8 @@ public class ModelMock extends Observable implements IModel {
     IHero h;
     ILevel l;
 
-    public ModelMock() {
-        h = new HeroMock();
+    public ModelMock(IHero hero) {
+        this.h = hero;
         l = new LevelMock(h);
     }
 

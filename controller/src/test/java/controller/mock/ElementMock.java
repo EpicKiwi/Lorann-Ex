@@ -4,10 +4,11 @@ import contract.*;
 
 import java.awt.*;
 
-public class ElementMock implements IElement {
+public class ElementMock implements IElement,IValuable {
 
     ILocation l;
     boolean p;
+    Behavior b;
 
     public ElementMock(int x, int y, boolean permeable) {
         this.l = new LocationMock();
@@ -21,9 +22,13 @@ public class ElementMock implements IElement {
     }
 
     public Behavior getBehavior() {
-        // UNUSED METHOD
-        return null;
+        return b;
     }
+
+    public void setBehavior(Behavior behavior) {
+        b = behavior;
+    }
+
 
     public ILocation getLocation() {
         return this.l;
@@ -57,5 +62,9 @@ public class ElementMock implements IElement {
 
     public Image getImage() {
         return null;
+    }
+
+    public int getValue() {
+        return 267;
     }
 }

@@ -9,11 +9,13 @@ public class LevelMock implements ILevel {
     IHero h;
     IElement[][] e;
     ArrayList<IEntity> a;
+    boolean fin;
 
     public LevelMock(IHero h) {
         this.h = h;
         this.e = new IElement[20][10];
         this.a = new ArrayList<IEntity>();
+        fin = false;
     }
 
     public void addEntity(IEntity entity) {
@@ -88,20 +90,19 @@ public class LevelMock implements ILevel {
     }
 
     public void createSpell(int x, int y, Direction direction) {
-        // UNUSED METHOD
+        this.addEntity(new AiMock(x,y,direction,AIType.STRAIGHT));
     }
 
     public void destroyElement(IElement element) {
-        // UNUSED METHOD
+        this.a.remove(element);
     }
 
     public boolean isFinished() {
-        // UNUSED METHOD
-        return false;
+        return fin;
     }
 
     public void setFinished(boolean finished) {
-        // UNUSED METHOD
+        this.fin = finished;
     }
 
     public int getId() {
