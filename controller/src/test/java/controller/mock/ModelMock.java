@@ -10,26 +10,28 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Created by Marie on 20/06/2016.
+ * Mock class of a model
  */
 public class ModelMock extends Observable implements IModel {
 
     IHero h;
+    ILevel l;
 
     public ModelMock() {
         h = new HeroMock();
+        l = new LevelMock(h);
     }
 
     public boolean loadLevel(int id) {
-        return false;
+        return true;
     }
 
     public IElement getElement(int x, int y) {
-        return null;
+        return l.getElement(x,y);
     }
 
     public IElement[][] getElements() {
-        return new IElement[0][];
+        return l.getElements();
     }
 
     public void flush() {}
@@ -39,16 +41,15 @@ public class ModelMock extends Observable implements IModel {
     }
 
     public ILevel getLevel() {
-        ILevel l = new LevelMock(this.h);
         return l;
     }
 
     public boolean loadAllLevels() {
-        return false;
+        return true;
     }
 
     public boolean loadNextLevel() {
-        return false;
+        return true;
     }
 
     public ArrayList<Integer> getLevelsId() {

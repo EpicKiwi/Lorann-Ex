@@ -7,15 +7,15 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Created by Marie on 20/06/2016.
+ * Mock class of the view
  */
 public class ViewMock implements IView,Observer {
     public void repaint() {
-
+        // UNUSED METHOD
     }
 
     public void openFrame() {
-
+        // UNUSED METHOD
     }
 
     public Observer getObserver() {
@@ -23,10 +23,10 @@ public class ViewMock implements IView,Observer {
     }
 
     public void setController(IController controller) {
-
+        // UNUSED METHOD
     }
 
     public void update(Observable observable, Object o) {
-
+        // UNUSED METHOD
     }
 }

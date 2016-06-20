@@ -12,32 +12,49 @@ public class LevelMock implements ILevel {
 
     public LevelMock(IHero h) {
         this.h = h;
-        this.e = new IElement[20][20];
+        this.e = new IElement[20][10];
         this.a = new ArrayList<IEntity>();
     }
 
     public void addEntity(IEntity entity) {
-
+        a.add(entity);
     }
 
     public void removeEntity(IEntity entity) {
-
+        a.remove(entity);
     }
 
     public int getNumber() {
+        // UNUSED METHOD
         return 0;
     }
 
     public void setNumber(int number) {
-
+        // UNUSED METHOD
     }
 
     public IDimention getDimention() {
-        return null;
+        return new IDimention() {
+            public int getWidth() {
+                return 10;
+            }
+
+            public void setWidth(int width) {
+                // UNUSED METHOD
+            }
+
+            public int getHeight() {
+                return 20;
+            }
+
+            public void setHeight(int height) {
+                // UNUSED METHOD
+            }
+        };
     }
 
     public void setDimention(IDimention dimention) {
-
+        // UNUSED METHOD
     }
 
     public IHero getHero() {
@@ -53,15 +70,17 @@ public class LevelMock implements ILevel {
     }
 
     public void setElements(IElement[][] elements) {
-
+        // UNUSED METHOD
     }
 
     public IElement getElement(int x, int y) {
-        return null;
+        // UNUSED METHOD
+        return this.e[y][x];
     }
 
     public void setElement(int x, int y, IElement element) {
-
+        // UNUSED METHOD
+        this.e[y][x] = element;
     }
 
     public ArrayList<IEntity> getEntities() {
@@ -69,26 +88,29 @@ public class LevelMock implements ILevel {
     }
 
     public void createSpell(int x, int y, Direction direction) {
-
+        // UNUSED METHOD
     }
 
     public void destroyElement(IElement element) {
-
+        // UNUSED METHOD
     }
 
     public boolean isFinished() {
+        // UNUSED METHOD
         return false;
     }
 
     public void setFinished(boolean finished) {
-
+        // UNUSED METHOD
     }
 
     public int getId() {
+        // UNUSED METHOD
         return 0;
     }
 
     public int getValue() {
+        // UNUSED METHOD
         return 0;
     }
 }
