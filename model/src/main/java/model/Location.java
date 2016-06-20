@@ -25,7 +25,7 @@ public class Location implements contract.ILocation {
 
     /**
      * Get The Y position
-     * @return
+     * @return The Y position
      */
     public int getY() {
         return y;
@@ -42,7 +42,7 @@ public class Location implements contract.ILocation {
 
     /**
      * Get the X position
-     * @return
+     * @return The X position
      */
     public int getX() {
         return x;

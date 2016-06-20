@@ -20,6 +20,12 @@ public class Controller implements IController {
 	/** The clock of the game */
 	private Clock clock;
 
+	/** The cost of a retry */
+	private static int RETRY_COST = 350;
+
+	/**
+	 * The level of the game
+	 */
 	public static int LEVELID = 3;
 
 	/**
@@ -64,7 +70,9 @@ public class Controller implements IController {
 				hm.sendSpell();
 				break;
 			case RETRY:
-				this.model.loadLevel(LEVELID);
+				IHero h = model.getLevel().getHero();
+				h.setScore(h.getScore() - RETRY_COST);
+				this.model.loadLevel(this.model.getLevel().getId());
 				break;
 			default:
 				System.out.println("Not supported order : "+order.toString());
@@ -78,14 +86,14 @@ public class Controller implements IController {
 	 * Begin the game
 	 */
 	public void start(){
-		if(this.model.loadLevel(LEVELID)){
+		if(this.model.loadAllLevels()){
+			this.model.loadLevel(this.model.getLevelsId().get(0));
 			this.model.getObservable().addObserver(this.view.getObserver());
 			this.clock = new Clock(this);
 			this.clock.start();
 			this.view.openFrame();
-
 		} else {
-			System.err.println("Can't load level id:"+LEVELID);
+			System.err.println("Can't load levels");
 
 		}
 	}
@@ -107,6 +115,9 @@ public class Controller implements IController {
 		this.model.flush();
 	}
 
+	/**
+	 * Update the sprites
+	 */
 	private void updateSprites(){
 		for(IEntity entity:this.model.getLevel().getEntities()){
 			if(entity.getSprite() instanceof IAnimatedSprite){

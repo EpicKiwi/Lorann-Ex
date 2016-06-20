@@ -15,10 +15,17 @@ import java.util.ArrayList;
  */
 public class Level implements ILevel {
 
+
     private int number;
     private boolean exit = false;
 
     private ArrayList<IEntity> entities;
+
+    /**
+     * The database ID of the level
+     */
+    private int id;
+
     /**
      * Interface of Element
      */
@@ -48,25 +55,13 @@ public class Level implements ILevel {
      * @param hero
      *
      */
-    public Level(int width, int height, Hero hero, int number) {
+    public Level(int id,int width, int height, Hero hero, int number) {
         this.dimention = new Dimention(width,height);
         this.hero = hero;
         this.number = number;
         this.elements = new Element[height][width];
         this.entities = new ArrayList<IEntity>();
-
-    }
-
-    public Level(int id, String id1) {
-    }
-
-    public Level(int id) {
-
-    }
-
-
-    public boolean setElement(Integer x, Integer y, IElement element){
-        return false;
+        this.id = id;
     }
 
     /**
@@ -83,10 +78,6 @@ public class Level implements ILevel {
      */
     public void removeEntity(IEntity entity){
         this.entities.remove(entity);
-    }
-
-    public String getTableName() {
-        return ("level");
     }
 
     public String getLoadQuery(int id) {
@@ -148,16 +139,13 @@ public class Level implements ILevel {
     }
     /**
      * Set the element of the level
-    * @return
-     *The element
     */
     public void setElements(IElement[][] elements) {
         this.elements = elements;
     }
     /**
      * Get the element of level
-     * @return
-     * The element
+     * @return The element
      */
     public IElement getElement(int x, int y){
         return this.elements[y][x];
@@ -174,6 +162,7 @@ public class Level implements ILevel {
     public void setElement(int x, int y, IElement element){
         this.elements[y][x] = element;
     }
+
     /**
      * Get the entities of the level
      * @return
@@ -229,6 +218,14 @@ public class Level implements ILevel {
 
     public int getValue() {
         return 1000;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 

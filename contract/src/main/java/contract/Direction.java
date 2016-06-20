@@ -2,7 +2,7 @@ package contract;
 
 /**
  * @author Marie
- * enums of type of deplacement
+ * enums all possible direction
  */
 
 public enum Direction {

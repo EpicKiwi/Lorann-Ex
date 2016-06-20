@@ -73,15 +73,7 @@ public class Hero extends Entity implements contract.IHero {
         this.spell = spell;
     }
 
-    /**
-     * Get the type
-     * @return
-     * type
-     */
-
-    public String getType() {
-        return "hero";
-    }
+   
     /**
      * Get the load Query
      * @return

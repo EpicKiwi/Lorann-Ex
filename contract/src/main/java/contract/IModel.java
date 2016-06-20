@@ -1,6 +1,6 @@
 package contract;
 
-import java.awt.*;
+import java.util.ArrayList;
 import java.util.Observable;
 
 /**
@@ -27,14 +27,7 @@ public interface IModel{
 	 * A multi board to get the elements
 	 */
 	IElement[][] getElements();
-	/**
-	 * A method boolean to save the level
-	 */
-	boolean saveLevel();
-	/**
-	 * A method for flush
-	 *
-	 */
+
 	void flush();
 	/**
 	 * A method to get the observable
@@ -44,4 +37,7 @@ public interface IModel{
 	 * A method to get the level
 	 */
 	ILevel getLevel();
+	boolean loadAllLevels();
+	boolean loadNextLevel();
+	ArrayList<Integer> getLevelsId();
 }

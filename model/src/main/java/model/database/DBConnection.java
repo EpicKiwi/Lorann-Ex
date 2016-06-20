@@ -1,7 +1,5 @@
 package model.database;
 
-import model.Level;
-
 import java.lang.String;
 import java.sql.*;
 import java.sql.SQLException;
@@ -42,6 +40,14 @@ public final class DBConnection {
 		call.execute();
 		return call.getResultSet();
 	}
+
+	public ResultSet findAllLevels() throws SQLException{
+		final String sql = "{CALL get_levels()}";
+		final CallableStatement call = this.getConnection().prepareCall(sql);
+		call.execute();
+		return call.getResultSet();
+	}
+
 
 	/**
 	 * Gets the single instance of DBConnection.

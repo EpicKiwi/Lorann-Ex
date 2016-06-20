@@ -9,14 +9,14 @@ import model.Sprite;
 import static contract.AIType.STRAIGHT;
 
 /**
- *@Marie
+ *@author Marie
  * Spell of hero
  */
 public class Spell extends AI{
 
     /**
      * Instanciate a spell object
-     * @param x*
+     * @param x
      * The X position
      * @param y
      * The Y position
@@ -38,11 +38,4 @@ public class Spell extends AI{
         this.behavior = Behavior.SPELL;
     }
 
-    /**
-     * Get the type of the element
-     * @return spell
-     */
-    public String getType() {
-        return "spell";
-    }
 }

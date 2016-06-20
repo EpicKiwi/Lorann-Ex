@@ -44,7 +44,7 @@ public class Sprite implements ISprite {
 
     /**
      * Get the current image of the sprite
-     * @return
+     * @return The image of the sprite
      */
     public Image getImage() {
         return image;

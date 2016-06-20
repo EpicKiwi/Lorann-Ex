@@ -7,18 +7,6 @@ import java.util.ArrayList;
  * @author Baptiste
  */
 public interface ILevel extends IValuable {
-    /**
-     * A setter for element
-     * @param x
-     * @param y
-     * @param element
-     * Set element
-     */
-    boolean setElement(Integer x, Integer y, IElement element);
-    /**
-     * A method to add the entity
-     * @param entity
-     */
 
     void addEntity(IEntity entity);
     /**
@@ -27,6 +15,7 @@ public interface ILevel extends IValuable {
      */
 
     void removeEntity(IEntity entity);
+
     /**
      * A getter to get the number
      * @param
@@ -38,7 +27,7 @@ public interface ILevel extends IValuable {
      */
     void setNumber(int number);
     /**
-     * A method to get the dimention
+     * A getter to get the dimention
      */
     IDimention getDimention();
     /**
@@ -46,10 +35,7 @@ public interface ILevel extends IValuable {
      * @param dimention
      */
     void setDimention(IDimention dimention);
-    /**
-     * A getter for hero
-     * @return
-     */
+
     IHero getHero();
     /**
      * A setter for hero
@@ -83,41 +69,22 @@ public interface ILevel extends IValuable {
      * @return
      */
     ArrayList<IEntity> getEntities();
-    /**
-     * A setter for entities
-     * @param entities
-     */
-    void setEntities(ArrayList<IEntity> entities);
-    /**
-     * A getter for exit
-     * @return
-     */
-    boolean isExit();
-    /**
-     * A setter for exit
-     * @param exit
-     */
-    void setExit(boolean exit);
-    /**
-     * A method to create the spell
-     * @param direction
-     * @param x
-     * @param y
-     */
+
     void createSpell(int x, int y, Direction direction);
     /**
      * A method to destroy the element
      * @param element
      */
-    public void destroyElement(IElement element);
+     void destroyElement(IElement element);
     /**
      * A getter if the level is finished
      * @return
      */
-    public boolean isFinished();
+     boolean isFinished();
     /**
      * A setter if the level is finished
      * @param finished
      */
-    public void setFinished(boolean finished);
+     void setFinished(boolean finished);
+
 }

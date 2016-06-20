@@ -8,7 +8,7 @@ import model.Sprite;
 import static contract.AIType.*;
 
 /**
- *@Marie
+ *@author Marie
  * Monster of the game
  */
 public class Monster extends AI implements contract.IMonster {
@@ -55,14 +55,6 @@ public class Monster extends AI implements contract.IMonster {
                 this.value = 285;
                 break;
         }
-    }
-
-    /**
-     * Get the type of the element
-     * @return monster
-     */
-    public String getType() {
-        return "monster";
     }
 
     public int getValue(){

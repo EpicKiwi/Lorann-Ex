@@ -34,9 +34,7 @@ public class Door extends Element implements IDoor {
      * Get the type of this element
      * @return door
      */
-    public String getType() {
-        return "door";
-    }
+    
 
     @Override
     public Image getImage() {

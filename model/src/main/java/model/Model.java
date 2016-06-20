@@ -5,6 +5,7 @@ import contract.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Observable;
 
 import model.elements.*;
@@ -22,16 +23,43 @@ public class Model extends Observable implements IModel {
 	 */
 	private Level level;
 
-	/** Instantiates a new model. */
+	/**
+	 * The hero of the game
+	 */
+	private Hero hero;
 
+	/**
+	 * The IDs of the levels
+	 */
+	private ArrayList<Integer> levelsId;
+
+	/** Instantiates a new model. */
+	public Model() {
+		this.hero = new Hero(1,1);
+	}
+
+	public boolean loadAllLevels(){
+		DBConnection dbConnection = DBConnection.getInstance();
+		try {
+			ResultSet res = dbConnection.findAllLevels();
+			this.levelsId = new ArrayList<Integer>();
+			while(res.next()){
+				levelsId.add(res.getInt(1));
+			}
+		} catch (SQLException e) {
+			System.err.println("SQL error : "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 
 	public boolean loadLevel(int id){
-
 		DBConnection dbConnection = DBConnection.getInstance();
 		try {
 			ResultSet rawLevel = dbConnection.findLevel(id);
 			if(rawLevel.first()){
-				this.level = new Level(rawLevel.getInt(3),rawLevel.getInt(4),new Hero(0,0),rawLevel.getInt(2));
+				this.level = new Level(rawLevel.getInt(1),rawLevel.getInt(3),rawLevel.getInt(4),this.hero,rawLevel.getInt(2));
             } else {
 				System.err.println("The level "+id+" doesn't exists");
 				this.loadSafetyLevel();
@@ -65,12 +93,24 @@ public class Model extends Observable implements IModel {
 			System.err.println("SQL error : "+e.getMessage());
 			e.printStackTrace();
 			this.loadSafetyLevel();
+			return false;
 		}
+		this.hero.setAlive(true);
+		this.hero.setSpell(true);
 		return true;
 	}
 
-	public void loadSafetyLevel(){
-		this.level = new Level(20,12,new Hero(1,1),1);
+	public boolean loadNextLevel(){
+		int lastIndex = this.levelsId.indexOf(this.level.getId());
+		if((lastIndex+1) < this.levelsId.size()) {
+			this.loadLevel(this.levelsId.get(lastIndex+1));
+			return true;
+		}
+		return false;
+	}
+
+	protected void loadSafetyLevel(){
+		this.level = new Level(-1,20,12,new Hero(1,1),1);
 		this.level.setElement(10,5,new VWall(10,5));
 		this.level.setElement(1,5,new VWall(1,5));
 		this.level.setElement(19,5,new VWall(19,5));
@@ -90,15 +130,8 @@ public class Model extends Observable implements IModel {
 	}
 
 	/**
-	 * Save the level
-	 */
-	public boolean saveLevel()	{
-		return true;
-	}
-	
-	/**
 	 * Get the level
-	 * @return
+	 * @return The current level
 	 */
 	public Level getLevel(){
 		return this.level;
@@ -114,7 +147,7 @@ public class Model extends Observable implements IModel {
 	
 	/**
 	 * Get the observable
-	 * @return
+	 * @return The Observable object of the model
 	 */
 	public Observable getObservable() {
 		return this;
@@ -122,7 +155,7 @@ public class Model extends Observable implements IModel {
 	
 	/**
 	 * Get the element of a specific position
-	 * @return
+	 * @return The element at this position or null
 	 */
 	public IElement getElement(int x, int y) {
 		return this.level.getElement(x,y);
@@ -130,7 +163,7 @@ public class Model extends Observable implements IModel {
 
 	/**
 	 * Get element of the board
-	 * @return
+	 * @return A double array of the elements
 	 */
 	public IElement[][] getElements(){
 		return this.level.getElements();
@@ -138,9 +171,13 @@ public class Model extends Observable implements IModel {
 
 	/**
 	 * Get the hero
-	 * @return
+	 * @return The current hero of the level
 	 */
 	public IEntity getHero(){
-		return this.level.getHero();
+		return this.hero;
+	}
+
+	public ArrayList<Integer> getLevelsId() {
+		return levelsId;
 	}
 }
