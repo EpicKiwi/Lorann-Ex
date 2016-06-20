@@ -8,12 +8,16 @@ import java.util.ArrayList;
  */
 public interface ILevel extends IValuable {
 
+	/**
+	 * add the entity
+	 * @param entity
+	 */
     void addEntity(IEntity entity);
+    
     /**
-     * A method tp remove the entity
+     * A method to remove the entity
      * @param entity
      */
-
     void removeEntity(IEntity entity);
 
     /**
@@ -21,42 +25,54 @@ public interface ILevel extends IValuable {
      * @param
      */
     int getNumber();
+    
     /**
      * A setter for number
      * @param number
      */
     void setNumber(int number);
+    
     /**
      * A getter to get the dimention
      */
     IDimention getDimention();
+    
     /**
      * A setter for dimention
      * @param dimention
      */
     void setDimention(IDimention dimention);
 
+    /**
+     * get the hero
+     * @return
+     */
     IHero getHero();
+    
     /**
      * A setter for hero
      * @param hero
      */
     void setHero(IHero hero);
+    
     /**
      * A getter for element
      * @return
      */
     IElement[][] getElements();
+    
     /**
      * A setter for element
      * @param elements
      */
     void setElements(IElement[][] elements);
+    
     /**
      * A getter for element
      * @return
      */
     IElement getElement(int x, int y);
+    
     /**
      * A setter for element
      * @param element
@@ -64,27 +80,43 @@ public interface ILevel extends IValuable {
      * @param y
      */
     void setElement(int x, int y, IElement element);
+    
     /**
      * A getter for Entities
      * @return
      */
     ArrayList<IEntity> getEntities();
 
+    /**
+     * make the spell appear on screen
+     * @param x
+     * @param y
+     * @param direction
+     */
     void createSpell(int x, int y, Direction direction);
+    
     /**
      * A method to destroy the element
      * @param element
      */
      void destroyElement(IElement element);
+     
     /**
      * A getter if the level is finished
      * @return
      */
      boolean isFinished();
+     
     /**
      * A setter if the level is finished
      * @param finished
      */
      void setFinished(boolean finished);
+     
+     /**
+      * get the id of the chosen level
+      * @return
+      */
+     int getId();
 
 }
