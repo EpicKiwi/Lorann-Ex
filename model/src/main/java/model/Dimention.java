@@ -5,9 +5,18 @@ package model;
  * Dimention
  */
 public class Dimention implements contract.IDimention {
+    /**
+     * the width of the dimention of the game
+     * the height of the dimention of the game
+     */
     private int width;
     private int height;
 
+    /**
+     *Instanciate the class
+     * @param width
+     * @param height
+     */
     public Dimention(int width, int height) {
         this.width = width;
         this.height = height;
