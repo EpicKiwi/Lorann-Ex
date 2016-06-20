@@ -1,5 +1,6 @@
-package java.controller;
+package controller;
 
+import contract.Order;
 import controller.Controller;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,10 +24,16 @@ public class ControllerTest {
 
     @Test
     public void orderPerform() throws Exception {
-        controller.orderPerform();
-        assertNotNull("Press a button", controller.orderPerform());
-        assertTrue("You have to press a button to move", controller.orderPerform());
-        assertFalse("Unrecognized key", controller.orderPerform());
+        controller.orderPerform(Order.CHARACTER_DOWN);
+
+        controller.orderPerform(Order.CHARACTER_LEFT);
+
+        controller.orderPerform(Order.CHARACTER_RIGHT);
+
+        controller.orderPerform(Order.CHARACTER_SPELL);
+
+        controller.orderPerform(Order.CHARACTER_UP);
+
 
     }
     @Test

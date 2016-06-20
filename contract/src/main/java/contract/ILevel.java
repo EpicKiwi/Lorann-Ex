@@ -119,5 +119,4 @@ public interface ILevel extends IValuable {
       */
      int getId();
 
-    int getId();
 }
