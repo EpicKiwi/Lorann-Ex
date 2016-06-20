@@ -29,7 +29,7 @@ class HeroManager {
     /**
      * Direction of the hero
      * @param direction
-     * @return
+     * @return A boolean representing if the movement was possible
      */
     public boolean move(Direction direction){
         IHero h = this.model.getLevel().getHero();

@@ -6,30 +6,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Tests of the class CBProperties
+ * Tests for the DBProperties Class
  */
 public class DBPropertiesTest {
 
-    DBProperties tst;
+    DBProperties t;
 
     @Before
     public void setUp() throws Exception {
-        tst = new DBProperties();
+        t = new DBProperties();
     }
 
     @Test
-    public void getUrl() throws Exception {
-        assertEquals("jdbc:mysql://89.234.180.20:3306/wbuiyx_marie?autoReconnect=true&useSSL=false",tst.getUrl());
+    public void testGetLoginGetPasswordShouldReturnValidStrings() throws Exception {
+        assertNotNull("Login field can't be null",t.getLogin());
+        assertNotEquals("It should have a login","",t.getLogin());
+        assertNotNull("Password field can't be null",t.getPassword());
+        //Password field can be empty
     }
 
     @Test
-    public void getLogin() throws Exception {
-        assertEquals("wbuiyx_marie",tst.getLogin());
+    public void testGetUrlShouldReturnValidJdbcMysqlUrl() throws Exception {
+        assertNotNull("URL field is null",t.getUrl());
+        assertNotEquals("It should have an URL","",t.getUrl());
+        assertTrue("The Url is not a valid JDBC Url with Mysql driver",
+                t.getUrl().matches("^jdbc:mysql://(.+)(:[0-9]+)?/(.+)[?]autoReconnect=true&useSSL=false$"));
     }
-
-    @Test
-    public void getPassword() throws Exception {
-        assertEquals("marie",tst.getPassword());
-    }
-
 }

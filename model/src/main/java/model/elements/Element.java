@@ -150,7 +150,7 @@ public abstract class Element implements IElement {
 
     /**
      * Is (get) if the element if permeable
-     * @return
+     * @return A boolean representing if the element is permeable
      */
     public boolean isPermeable() {
         return permeable;
@@ -158,7 +158,7 @@ public abstract class Element implements IElement {
 
     /**
      * Get the image
-     * @return
+     * @return The image of the element
      */
     public Image getImage() {
         return this.sprite.getImage();

@@ -1,38 +1,25 @@
 package model.elements;
 
-import contract.Behavior;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 /**
- * Tests for the
+ * Test the class LifeBubble
  */
 public class LifeBubbleTest {
 
-    LifeBubble tst;
+    LifeBubble t;
 
     @Before
     public void setUp() throws Exception {
-        tst = new LifeBubble(45,95);
+        t = new LifeBubble(45,98);
     }
 
     @Test
-    public void getValue() throws Exception {
-        assertNotNull(tst.getValue());
-        assertEquals(tst.getValue(),75);
-    }
-
-    @Test
-    public void getBehavior() throws Exception {
-        assertNotNull(tst.getBehavior());
-        assertEquals(tst.getBehavior(), Behavior.UNLOCK);
-    }
-
-    @Test
-    public void isPermeable() throws Exception {
-        assertTrue(tst.isPermeable());
+    public void testGetValueShouldBeFixed() throws Exception {
+        assertEquals("The value of life bubble should be 75",75,t.getValue());
     }
 
 }

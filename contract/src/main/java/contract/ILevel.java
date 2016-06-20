@@ -3,19 +3,12 @@ package contract;
 import java.util.ArrayList;
 
 public interface ILevel extends IValuable {
-    boolean setElement(Integer x, Integer y, IElement element);
 
     void addEntity(IEntity entity);
 
     void removeEntity(IEntity entity);
 
-    int getNumber();
-
-    void setNumber(int number);
-
     IDimention getDimention();
-
-    void setDimention(IDimention dimention);
 
     IHero getHero();
 
@@ -31,19 +24,13 @@ public interface ILevel extends IValuable {
 
     ArrayList<IEntity> getEntities();
 
-    void setEntities(ArrayList<IEntity> entities);
-
-    boolean isExit();
-
-    void setExit(boolean exit);
-
     void createSpell(int x, int y, Direction direction);
 
-    public void destroyElement(IElement element);
+    void destroyElement(IElement element);
 
-    public boolean isFinished();
+    boolean isFinished();
 
-    public void setFinished(boolean finished);
+    void setFinished(boolean finished);
 
     int getId();
 
