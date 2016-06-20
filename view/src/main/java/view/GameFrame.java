@@ -127,6 +127,7 @@ class GameFrame extends JFrame implements KeyListener
 		switch(e.getKeyCode())
 		{
 			case KeyEvent.VK_Z: 
+			case KeyEvent.VK_W:
 			case KeyEvent.VK_UP:
 			this.controller.orderPerform(Order.CHARACTER_UP);
 			break;
