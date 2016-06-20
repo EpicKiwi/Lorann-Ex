@@ -1,4 +1,4 @@
-package java.controller;
+package controller;
 
 import controller.Clock;
 import org.junit.Before;

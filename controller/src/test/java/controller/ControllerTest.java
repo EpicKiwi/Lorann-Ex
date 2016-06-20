@@ -1,4 +1,4 @@
-package java.controller;
+package controller;
 
 import controller.Controller;
 import org.junit.Before;
