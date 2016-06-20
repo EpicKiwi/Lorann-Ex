@@ -1,8 +1,10 @@
 package contract;
 
 /**
- * All the behavior
+ * @author Baptiste
+ * enums of type of behavior
  */
+
 public enum Behavior {
     DEATH,
     MOREPOINT,

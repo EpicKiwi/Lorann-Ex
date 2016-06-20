@@ -1,7 +1,9 @@
 package contract;
 
 /**
- * Created by baptiste on 15/06/16.
+ * The Interface IPathAI
+ *
+ * @author Baptiste
  */
 public interface IPathAI {
     /**
@@ -11,7 +13,18 @@ public interface IPathAI {
      */
     void onTick(ILevel level);
 
+    /**
+     * A method for the ai
+     * @param ai
+     * get the AI
+     */
+
     void setAi(IAI ai);
+    /**
+     * A method to get the AI
+     * @return
+     * The Ai
+     */
 
     IAI getAi();
 }

@@ -1,8 +1,14 @@
 package contract;
 
 /**
- * Created by baptiste on 16/06/16.
+ * The Interface IAnimatedSprite
+ *
+ * @author Baptiste
  */
 public interface IAnimatedSprite extends ISprite {
+
+    /**
+     * Next step for sprite
+     */
     void nextStep();
 }
