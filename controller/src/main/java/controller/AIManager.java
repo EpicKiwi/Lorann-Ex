@@ -30,7 +30,10 @@ class AIManager {
     }
 
     // METHODS //
-
+/**
+ * All the movement that AI can do
+ * @param entity
+ */
     void performAi(IAI entity){
         switch (entity.getAiType()){
             case STRAIGHT:
@@ -47,7 +50,10 @@ class AIManager {
                 break;
         }
     }
-
+/**
+ * Diagonal movement for the AI
+ * @param ai
+ */
     void performDiagonal(IAI ai){
         int nextX, nextY;
         do {
@@ -93,7 +99,10 @@ class AIManager {
         }while (!this.mm.canMoveOn(nextX, nextY));
         mm.safeMoveTo(ai,nextX,nextY);
     }
-
+/**
+ * Lateral movement from the AI
+ * @param ai
+ */
     void performStraight(IAI ai){
         int nextX, nextY;
         do{
@@ -138,7 +147,10 @@ class AIManager {
         }while(!this.mm.canMoveOn(nextX, nextY));
         mm.safeMoveTo(ai,nextX,nextY);
     }
-
+/**
+ * Random movement for the AI
+ * @param ai
+ */
     void performRandom(IAI ai){
         int nextX;
         int nextY;
@@ -150,7 +162,10 @@ class AIManager {
         }while(!this.mm.canMoveOn(nextX, nextY));
         mm.safeMoveTo(ai,nextX,nextY);
     }
-
+/**
+ * Make the AI follow the hero
+ * @param ai
+ */
     void performFollow(IAI ai){
         if(!this.model.getLevel().getHero().isAlive())
             return;
@@ -186,7 +201,11 @@ class AIManager {
         }
         this.stepInDirection(ai);
     }
-
+/**
+ * Make a step in a direction
+ * @param entity
+ * @return
+ */
     boolean stepInDirection(IEntity entity){
         int nextX = entity.getLocation().getX();
         int nextY = entity.getLocation().getY();
