@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.8)  21 JUN 2016 10:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.8)  21 JUN 2016 12:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1323,420 +1323,425 @@ l.39 \clearpage
 
 ]
 Chapter 1.
-<resources/Planning-previsionnel.png, id=187, 674.52pt x 347.8596pt>
+[2
+
+
+] <resources/Planning-previsionnel.png, id=200, 674.52pt x 347.8596pt>
 File: resources/Planning-previsionnel.png Graphic file (type png)
 
 <use resources/Planning-previsionnel.png>
 Package pdftex.def Info: resources/Planning-previsionnel.png used on input line
- 61.
-(pdftex.def)             Requested size: 505.88876pt x 260.89406pt.
+ 64.
+(pdftex.def)             Requested size: 674.51836pt x 347.85875pt.
+ [3
 
-<resources/Planning-effectif.png, id=189, 674.52pt x 347.8596pt>
+ <./resources/Planning-previsionnel.png>] <resources/Planning-effectif.png, id=
+208, 674.52pt x 347.8596pt>
 File: resources/Planning-effectif.png Graphic file (type png)
 
 <use resources/Planning-effectif.png>
-Package pdftex.def Info: resources/Planning-effectif.png used on input line 67.
+Package pdftex.def Info: resources/Planning-effectif.png used on input line 76.
 
-(pdftex.def)             Requested size: 505.88876pt x 260.89406pt.
- [2
+(pdftex.def)             Requested size: 674.51836pt x 347.85875pt.
+ [4
 
 
- <./resources/Planning-previsionnel.png>] [3 <./resources/Planning-effectif.png
->]
+ <./resources/Planning-effectif.png>]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 78.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 90.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (11.4525pt too wide) in paragraph at lines 78--79
+Overfull \hbox (11.4525pt too wide) in paragraph at lines 90--91
 \T1/cmr/m/n/10 The in-stal-la-tion of the game is pretty easy. Just down-load t
 he ex-e-cutable \T1/cmr/m/it/10 JAR \T1/cmr/m/n/10 from \T1/cmr/m/it/10 github.
 com \T1/cmr/m/n/10 at the ad-dress []\T1/cmtt/m/n/10 goo.gl/Mf4zIH[]\T1/cmr/m/n
 /10 .
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 83.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 95.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-<resources/lvlorann.png, id=206, 784.9325pt x 559.08875pt>
+<resources/lvlorann.png, id=215, 784.9325pt x 559.08875pt>
 File: resources/lvlorann.png Graphic file (type png)
 
 <use resources/lvlorann.png>
-Package pdftex.def Info: resources/lvlorann.png used on input line 84.
+Package pdftex.def Info: resources/lvlorann.png used on input line 96.
 (pdftex.def)             Requested size: 392.46529pt x 279.54369pt.
 
-<resources/sprites/lorann_b.png, id=207, 24.09pt x 24.09pt>
+<resources/sprites/lorann_b.png, id=216, 24.09pt x 24.09pt>
 File: resources/sprites/lorann_b.png Graphic file (type png)
 
 <use resources/sprites/lorann_b.png>
-Package pdftex.def Info: resources/sprites/lorann_b.png used on input line 107.
+Package pdftex.def Info: resources/sprites/lorann_b.png used on input line 119.
 
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/bone.png, id=208, 24.09pt x 24.09pt>
+<resources/sprites/bone.png, id=217, 24.09pt x 24.09pt>
 File: resources/sprites/bone.png Graphic file (type png)
 
 <use resources/sprites/bone.png>
-Package pdftex.def Info: resources/sprites/bone.png used on input line 107.
+Package pdftex.def Info: resources/sprites/bone.png used on input line 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/vertical_bone.png, id=209, 24.09pt x 24.09pt>
+<resources/sprites/vertical_bone.png, id=218, 24.09pt x 24.09pt>
 File: resources/sprites/vertical_bone.png Graphic file (type png)
 
 <use resources/sprites/vertical_bone.png>
 Package pdftex.def Info: resources/sprites/vertical_bone.png used on input line
- 107.
+ 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/horizontal_bone.png, id=210, 24.09pt x 24.09pt>
+<resources/sprites/horizontal_bone.png, id=219, 24.09pt x 24.09pt>
 File: resources/sprites/horizontal_bone.png Graphic file (type png)
 
 <use resources/sprites/horizontal_bone.png>
 Package pdftex.def Info: resources/sprites/horizontal_bone.png used on input li
-ne 107.
+ne 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/purse.png, id=211, 24.09pt x 24.09pt>
+<resources/sprites/purse.png, id=220, 24.09pt x 24.09pt>
 File: resources/sprites/purse.png Graphic file (type png)
 
 <use resources/sprites/purse.png>
-Package pdftex.def Info: resources/sprites/purse.png used on input line 107.
+Package pdftex.def Info: resources/sprites/purse.png used on input line 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/crystal_ball.png, id=212, 24.09pt x 24.09pt>
+<resources/sprites/crystal_ball.png, id=221, 24.09pt x 24.09pt>
 File: resources/sprites/crystal_ball.png Graphic file (type png)
 
 <use resources/sprites/crystal_ball.png>
 Package pdftex.def Info: resources/sprites/crystal_ball.png used on input line 
-107.
+119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/gate_closed.png, id=213, 24.09pt x 24.09pt>
+<resources/sprites/gate_closed.png, id=222, 24.09pt x 24.09pt>
 File: resources/sprites/gate_closed.png Graphic file (type png)
 
 <use resources/sprites/gate_closed.png>
 Package pdftex.def Info: resources/sprites/gate_closed.png used on input line 1
-07.
+19.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/gate_open.png, id=214, 24.09pt x 24.09pt>
+<resources/sprites/gate_open.png, id=223, 24.09pt x 24.09pt>
 File: resources/sprites/gate_open.png Graphic file (type png)
 
 <use resources/sprites/gate_open.png>
-Package pdftex.def Info: resources/sprites/gate_open.png used on input line 107
+Package pdftex.def Info: resources/sprites/gate_open.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/monster_1.png, id=215, 24.09pt x 24.09pt>
+<resources/sprites/monster_1.png, id=224, 24.09pt x 24.09pt>
 File: resources/sprites/monster_1.png Graphic file (type png)
 
 <use resources/sprites/monster_1.png>
-Package pdftex.def Info: resources/sprites/monster_1.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_1.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/monster_2.png, id=216, 24.09pt x 24.09pt>
+<resources/sprites/monster_2.png, id=225, 24.09pt x 24.09pt>
 File: resources/sprites/monster_2.png Graphic file (type png)
 
 <use resources/sprites/monster_2.png>
-Package pdftex.def Info: resources/sprites/monster_2.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_2.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/monster_3.png, id=217, 24.09pt x 24.09pt>
+<resources/sprites/monster_3.png, id=226, 24.09pt x 24.09pt>
 File: resources/sprites/monster_3.png Graphic file (type png)
 
 <use resources/sprites/monster_3.png>
-Package pdftex.def Info: resources/sprites/monster_3.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_3.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-<resources/sprites/monster_4.png, id=218, 24.09pt x 24.09pt>
+<resources/sprites/monster_4.png, id=227, 24.09pt x 24.09pt>
 File: resources/sprites/monster_4.png Graphic file (type png)
 
 <use resources/sprites/monster_4.png>
-Package pdftex.def Info: resources/sprites/monster_4.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_4.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/lorann_b.png Graphic file (type png)
  <use resources/sprites/lorann_b.png>
-Package pdftex.def Info: resources/sprites/lorann_b.png used on input line 107.
+Package pdftex.def Info: resources/sprites/lorann_b.png used on input line 119.
 
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/bone.png Graphic file (type png)
 
 <use resources/sprites/bone.png>
-Package pdftex.def Info: resources/sprites/bone.png used on input line 107.
+Package pdftex.def Info: resources/sprites/bone.png used on input line 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/vertical_bone.png Graphic file (type png)
  <use resources/sprites/vertical_bone.png>
 Package pdftex.def Info: resources/sprites/vertical_bone.png used on input line
- 107.
+ 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/horizontal_bone.png Graphic file (type png)
 
 <use resources/sprites/horizontal_bone.png>
 Package pdftex.def Info: resources/sprites/horizontal_bone.png used on input li
-ne 107.
+ne 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/purse.png Graphic file (type png)
  <use resources/sprites/purse.png>
-Package pdftex.def Info: resources/sprites/purse.png used on input line 107.
+Package pdftex.def Info: resources/sprites/purse.png used on input line 119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/crystal_ball.png Graphic file (type png)
 
 <use resources/sprites/crystal_ball.png>
 Package pdftex.def Info: resources/sprites/crystal_ball.png used on input line 
-107.
+119.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/gate_closed.png Graphic file (type png)
 
 <use resources/sprites/gate_closed.png>
 Package pdftex.def Info: resources/sprites/gate_closed.png used on input line 1
-07.
+19.
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/gate_open.png Graphic file (type png)
  <use resources/sprites/gate_open.png>
-Package pdftex.def Info: resources/sprites/gate_open.png used on input line 107
+Package pdftex.def Info: resources/sprites/gate_open.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/monster_1.png Graphic file (type png)
 
 <use resources/sprites/monster_1.png>
-Package pdftex.def Info: resources/sprites/monster_1.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_1.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/monster_2.png Graphic file (type png)
  <use resources/sprites/monster_2.png>
-Package pdftex.def Info: resources/sprites/monster_2.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_2.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/monster_3.png Graphic file (type png)
 
 <use resources/sprites/monster_3.png>
-Package pdftex.def Info: resources/sprites/monster_3.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_3.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 File: resources/sprites/monster_4.png Graphic file (type png)
  <use resources/sprites/monster_4.png>
-Package pdftex.def Info: resources/sprites/monster_4.png used on input line 107
+Package pdftex.def Info: resources/sprites/monster_4.png used on input line 119
 .
 (pdftex.def)             Requested size: 16.86287pt x 16.86287pt.
 
-[4
+[5
+
 
  <./resources/lvlorann.png>]
 File: resources/sprites/monster_1.png Graphic file (type png)
  <use resources/sprites/monster_1.png>
-Package pdftex.def Info: resources/sprites/monster_1.png used on input line 120
+Package pdftex.def Info: resources/sprites/monster_1.png used on input line 132
 .
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 File: resources/sprites/monster_2.png Graphic file (type png)
 
 <use resources/sprites/monster_2.png>
-Package pdftex.def Info: resources/sprites/monster_2.png used on input line 125
+Package pdftex.def Info: resources/sprites/monster_2.png used on input line 137
 .
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 File: resources/sprites/monster_3.png Graphic file (type png)
  <use resources/sprites/monster_3.png>
-Package pdftex.def Info: resources/sprites/monster_3.png used on input line 130
+Package pdftex.def Info: resources/sprites/monster_3.png used on input line 142
 .
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 File: resources/sprites/monster_4.png Graphic file (type png)
 
 <use resources/sprites/monster_4.png>
-Package pdftex.def Info: resources/sprites/monster_4.png used on input line 135
+Package pdftex.def Info: resources/sprites/monster_4.png used on input line 147
 .
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
- [5 <./resources/sprites/lorann_b.png> <./resources/sprites/bone.png> <./resour
+ [6 <./resources/sprites/lorann_b.png> <./resources/sprites/bone.png> <./resour
 ces/sprites/vertical_bone.png> <./resources/sprites/horizontal_bone.png> <./res
 ources/sprites/purse.png> <./resources/sprites/crystal_ball.png> <./resources/s
 prites/gate_closed.png> <./resources/sprites/gate_open.png> <./resources/sprite
 s/monster_1.png> <./resources/sprites/monster_2.png> <./resources/sprites/monst
 er_3.png> <./resources/sprites/monster_4.png>] <resources/sprites/fireball_1.pn
-g, id=237, 24.09pt x 24.09pt>
+g, id=247, 24.09pt x 24.09pt>
 File: resources/sprites/fireball_1.png Graphic file (type png)
 
 <use resources/sprites/fireball_1.png>
-Package pdftex.def Info: resources/sprites/fireball_1.png used on input line 17
-5.
+Package pdftex.def Info: resources/sprites/fireball_1.png used on input line 18
+7.
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 
-<resources/sprites/fireball_2.png, id=238, 24.09pt x 24.09pt>
+<resources/sprites/fireball_2.png, id=248, 24.09pt x 24.09pt>
 File: resources/sprites/fireball_2.png Graphic file (type png)
 
 <use resources/sprites/fireball_2.png>
-Package pdftex.def Info: resources/sprites/fireball_2.png used on input line 17
-5.
+Package pdftex.def Info: resources/sprites/fireball_2.png used on input line 18
+7.
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 
-<resources/sprites/fireball_3.png, id=239, 24.09pt x 24.09pt>
+<resources/sprites/fireball_3.png, id=249, 24.09pt x 24.09pt>
 File: resources/sprites/fireball_3.png Graphic file (type png)
 
 <use resources/sprites/fireball_3.png>
-Package pdftex.def Info: resources/sprites/fireball_3.png used on input line 17
-5.
+Package pdftex.def Info: resources/sprites/fireball_3.png used on input line 18
+7.
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 
-<resources/sprites/fireball_4.png, id=240, 24.09pt x 24.09pt>
+<resources/sprites/fireball_4.png, id=250, 24.09pt x 24.09pt>
 File: resources/sprites/fireball_4.png Graphic file (type png)
 
 <use resources/sprites/fireball_4.png>
-Package pdftex.def Info: resources/sprites/fireball_4.png used on input line 17
-5.
+Package pdftex.def Info: resources/sprites/fireball_4.png used on input line 18
+7.
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
 
-<resources/sprites/fireball_5.png, id=241, 24.09pt x 24.09pt>
+<resources/sprites/fireball_5.png, id=251, 24.09pt x 24.09pt>
 File: resources/sprites/fireball_5.png Graphic file (type png)
 
 <use resources/sprites/fireball_5.png>
-Package pdftex.def Info: resources/sprites/fireball_5.png used on input line 17
-5.
+Package pdftex.def Info: resources/sprites/fireball_5.png used on input line 18
+7.
 (pdftex.def)             Requested size: 24.08992pt x 24.08992pt.
- [6
+ [7
 
  <./resources/sprites/fireball_1.png> <./resources/sprites/fireball_2.png> <./r
 esources/sprites/fireball_3.png> <./resources/sprites/fireball_4.png> <./resour
 ces/sprites/fireball_5.png>]
 Chapter 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 199.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 211.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 199.
- [7
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 211.
+ [8
 
 ]
-<resources/SVG/model.pdf, id=253, 1845.29402pt x 800.59097pt>
+<resources/SVG/model.pdf, id=262, 1845.29402pt x 800.59097pt>
 File: resources/SVG/model.pdf Graphic file (type pdf)
 
 <use resources/SVG/model.pdf>
-Package pdftex.def Info: resources/SVG/model.pdf used on input line 226.
+Package pdftex.def Info: resources/SVG/model.pdf used on input line 238.
 (pdftex.def)             Requested size: 719.66179pt x 312.22922pt.
 
-Overfull \hbox (25.05005pt too wide) in paragraph at lines 226--227
+Overfull \hbox (25.05005pt too wide) in paragraph at lines 238--239
 [][] 
  []
 
-[8
+[9
 
- <./resources/SVG/model.pdf>] [9
+ <./resources/SVG/model.pdf>] [10
 
 ]
-<resources/SVG/view.pdf, id=1776, 664.88402pt x 330.03299pt>
+<resources/SVG/view.pdf, id=1786, 664.88402pt x 330.03299pt>
 File: resources/SVG/view.pdf Graphic file (type pdf)
 
 <use resources/SVG/view.pdf>
-Package pdftex.def Info: resources/SVG/view.pdf used on input line 264.
+Package pdftex.def Info: resources/SVG/view.pdf used on input line 283.
 (pdftex.def)             Requested size: 731.3747pt x 363.03738pt.
 
-Overfull \hbox (36.76295pt too wide) in paragraph at lines 264--265
+Overfull \hbox (36.76295pt too wide) in paragraph at lines 283--284
 [][] 
  []
 
-[10
+[11
 
- <./resources/SVG/view.pdf>] [11
+ <./resources/SVG/view.pdf>] [12
 
 ]
-<resources/SVG/controler.pdf, id=2228, 1120.98805pt x 625.13548pt>
+<resources/SVG/controler.pdf, id=2238, 1120.98805pt x 625.13548pt>
 File: resources/SVG/controler.pdf Graphic file (type pdf)
 
 <use resources/SVG/controler.pdf>
-Package pdftex.def Info: resources/SVG/controler.pdf used on input line 311.
+Package pdftex.def Info: resources/SVG/controler.pdf used on input line 325.
 (pdftex.def)             Requested size: 728.6336pt x 406.33324pt.
 
-Overfull \hbox (34.02187pt too wide) in paragraph at lines 311--312
+Overfull \hbox (34.02187pt too wide) in paragraph at lines 325--326
 [][] 
  []
 
-[12
+[13
 
- <./resources/SVG/controler.pdf>] [13
+ <./resources/SVG/controler.pdf>] [14
 
 ]
-<resources/SVG/contract.pdf, id=2858, 1292.02695pt x 638.385pt>
+<resources/SVG/contract.pdf, id=2867, 1292.02695pt x 638.385pt>
 File: resources/SVG/contract.pdf Graphic file (type pdf)
 
 <use resources/SVG/contract.pdf>
-Package pdftex.def Info: resources/SVG/contract.pdf used on input line 333.
+Package pdftex.def Info: resources/SVG/contract.pdf used on input line 347.
 (pdftex.def)             Requested size: 723.53017pt x 357.49315pt.
 
-Overfull \hbox (28.91843pt too wide) in paragraph at lines 333--334
+Overfull \hbox (28.91843pt too wide) in paragraph at lines 347--348
 [][] 
- []
-
-[14
-
- <./resources/SVG/contract.pdf>]
-<resources/SVG/package.pdf, id=3888, 701.27934pt x 493.042pt>
-File: resources/SVG/package.pdf Graphic file (type pdf)
-
-<use resources/SVG/package.pdf>
-Package pdftex.def Info: resources/SVG/package.pdf used on input line 342.
-(pdftex.def)             Requested size: 561.02425pt x 394.43414pt.
-
-Overfull \hbox (32.0875pt too wide) in paragraph at lines 342--343
- [] 
  []
 
 [15
 
+ <./resources/SVG/contract.pdf>]
+<resources/SVG/package.pdf, id=3897, 701.27934pt x 493.042pt>
+File: resources/SVG/package.pdf Graphic file (type pdf)
+
+<use resources/SVG/package.pdf>
+Package pdftex.def Info: resources/SVG/package.pdf used on input line 356.
+(pdftex.def)             Requested size: 561.02425pt x 394.43414pt.
+
+Overfull \hbox (32.0875pt too wide) in paragraph at lines 356--357
+ [] 
+ []
+
+[16
+
  <./resources/SVG/package.pdf>]
-<resources/components.png, id=4090, 740.7675pt x 434.37282pt>
+<resources/components.png, id=4099, 740.7675pt x 434.37282pt>
 File: resources/components.png Graphic file (type png)
 
 <use resources/components.png>
-Package pdftex.def Info: resources/components.png used on input line 352.
+Package pdftex.def Info: resources/components.png used on input line 366.
 (pdftex.def)             Requested size: 518.5337pt x 304.0589pt.
 
-<resources/sequence.png, id=4091, 855.195pt x 502.12593pt>
+<resources/sequence.png, id=4100, 855.195pt x 502.12593pt>
 File: resources/sequence.png Graphic file (type png)
 
 <use resources/sequence.png>
-Package pdftex.def Info: resources/sequence.png used on input line 360.
+Package pdftex.def Info: resources/sequence.png used on input line 374.
 (pdftex.def)             Requested size: 513.12097pt x 301.27788pt.
- [16
+ [17
 
  <./resources/components.png> <./resources/sequence.png>] <resources/MPD.png, i
-d=4096, 1816.7875pt x 586.19pt>
+d=4105, 1816.7875pt x 586.19pt>
 File: resources/MPD.png Graphic file (type png)
 
 <use resources/MPD.png>
-Package pdftex.def Info: resources/MPD.png used on input line 372.
+Package pdftex.def Info: resources/MPD.png used on input line 386.
 (pdftex.def)             Requested size: 363.35107pt x 117.23592pt.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 383.
- [17 <./resources/MPD.png>]
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 397.
+ [18 <./resources/MPD.png>]
 Chapter 4.
-[18
-
-]
-Chapter 5.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
 [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
+Chapter 5.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
+[20
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 449.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 449.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: DBB124FD1D6701F5D3C4537850170A19;1723.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
+(rerunfilecheck)             Checksum: F006D5AB4D631C0703A59E4300F1F748;1786.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
  ) 
 Here is how much of TeX's memory you used:
- 26450 strings out of 493304
- 470262 string characters out of 6139872
+ 26453 strings out of 493304
+ 470293 string characters out of 6139872
  662832 words of memory out of 5000000
- 29331 multiletter control sequences out of 15000+600000
+ 29332 multiletter control sequences out of 15000+600000
  18145 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,13n,75p,10429b,1376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1751,10 +1756,10 @@ share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sfss0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on rapport.pdf (20 pages, 1135863 bytes).
+Output written on rapport.pdf (21 pages, 1136583 bytes).
 PDF statistics:
- 4203 PDF objects out of 4296 (max. 8388607)
- 2835 compressed objects within 29 object streams
- 84 named destinations out of 1000 (max. 500000)
- 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4213 PDF objects out of 4296 (max. 8388607)
+ 2844 compressed objects within 29 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 497 words of extra memory for PDF output out of 10000 (max. 10000000)
 
