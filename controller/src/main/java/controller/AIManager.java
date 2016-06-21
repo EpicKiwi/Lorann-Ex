@@ -33,6 +33,7 @@ class AIManager {
 /**
  * All the movement that AI can do
  * @param entity
+ * entity Ai management
  */
     void performAi(IAI entity){
         switch (entity.getAiType()){
@@ -53,6 +54,7 @@ class AIManager {
 /**
  * Diagonal movement for the AI
  * @param ai
+ * To allow movement in diagonal
  */
     private void performDiagonal(IAI ai){
         int nextX, nextY;
@@ -102,6 +104,7 @@ class AIManager {
 /**
  * Lateral movement from the AI
  * @param ai
+ * Ai movement
  */
     private void performStraight(IAI ai){
         int nextX, nextY;
@@ -150,6 +153,7 @@ class AIManager {
 /**
  * Random movement for the AI
  * @param ai
+ * random movement
  */
     private void performRandom(IAI ai){
         int nextX;
@@ -165,6 +169,7 @@ class AIManager {
 /**
  * Make the AI follow the hero
  * @param ai
+ * follow the hero
  */
     private void performFollow(IAI ai){
         if(!this.model.getLevel().getHero().isAlive())
@@ -204,7 +209,9 @@ class AIManager {
 /**
  * Make a step in a direction
  * @param entity
+ * step direction for entity
  * @return
+ * Step direction
  */
     private boolean stepInDirection(IEntity entity){
         int nextX = entity.getLocation().getX();

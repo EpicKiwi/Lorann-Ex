@@ -25,7 +25,9 @@ class CollisionManager {
     /**
      * All the collision of the game
      * @param element
+     * Element of collision manager
      * @param other
+     * other collision
      */
     void performCollision(IElement element, IElement other){
         if(element.getBehavior() == null)
@@ -58,7 +60,9 @@ class CollisionManager {
 	/**
 	 * Collision between elements
 	 * @param element
+     * Collision between elements
 	 * @param other
+     * collision between other
 	 */
     void performCrossedCollision(IElement element, IElement other){
         if(element.getBehavior() != null)
@@ -70,7 +74,9 @@ class CollisionManager {
 	/**
 	 * Method for when the hero die
 	 * @param element
+     * Element for the death of the hero
 	 * @param other
+     * Other for the death of the hero
 	 */
     private void performDeath(IElement element, IElement other){
         if(other instanceof IHero){
@@ -81,7 +87,9 @@ class CollisionManager {
     /**
      * Add point to the score
      * @param element
+     * element to allow add the point
      * @param other
+     * other to allow add the point
      */
     private void performMorePoint(IElement element, IElement other){
         if(other instanceof IHero && element instanceof IValuable){
@@ -92,7 +100,9 @@ class CollisionManager {
     /**
      * Unlock all the doors in the level
      * @param element
+     * element which allow unlock the door
      * @param other
+     * other which allow unlock the door
      */
     private void performUnlock(IElement element, IElement other){
         if(other instanceof IHero) {
@@ -115,7 +125,9 @@ class CollisionManager {
     /**
      * The spell destroy the monster
      * @param element
+     * Spell which destroy the element
      * @param other
+     * Spell which destroy other
      */
     private void performSpell(IElement element, IElement other){
         if(other instanceof IHero){
@@ -131,7 +143,9 @@ class CollisionManager {
     /**
      * End the level and load the next one
      * @param element
+     * Load the element
      * @param other
+     * Load other
      */
     private void performEnd(IElement element, IElement other){
         if(other instanceof IHero){

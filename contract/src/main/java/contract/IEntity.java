@@ -16,13 +16,16 @@ public interface IEntity extends IElement {
     /**
      * set the direction of an entity
      * @param direction
+     * Direction of the entity
      */
     void setDirection(Direction direction);
     
     /**
      * define where the entity has to move
      * @param x
+     * Entity has move to X
      * @param y
+     * Entity has move to Y
      */
     void moveTo(int x, int y);
 }
