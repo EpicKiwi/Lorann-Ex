@@ -1,0 +1,745 @@
+Baptiste le Tue Jun 21 08:56:17 2016
+
+    Merge branch 'rapport'
+
+Baptiste le Tue Jun 21 08:55:41 2016
+
+    Tests vue
+
+Baptiste le Tue Jun 21 08:36:23 2016
+
+    Much tests
+
+Baptiste le Mon Jun 20 23:12:19 2016
+
+    Verry useful tests
+
+Baptiste le Mon Jun 20 17:30:37 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Mon Jun 20 17:30:19 2016
+
+    More tests on controller
+
+Marie le Mon Jun 20 17:08:38 2016
+
+    Update Javadoc
+
+Baptiste le Mon Jun 20 16:39:58 2016
+
+    Mocks
+
+Baptiste le Mon Jun 20 16:08:46 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Mon Jun 20 16:05:20 2016
+
+    first report
+
+Marie le Mon Jun 20 15:44:56 2016
+
+    conflict
+
+Marie le Mon Jun 20 15:32:02 2016
+
+    mock et tdd v2
+
+Marie le Mon Jun 20 15:29:30 2016
+
+    mock et tdd
+
+Clément le Mon Jun 20 15:24:03 2016
+
+    qwerty gameplay
+
+Clément le Mon Jun 20 15:22:36 2016
+
+    modification javadoc
+
+Marie le Mon Jun 20 14:26:04 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Marie le Mon Jun 20 14:25:38 2016
+
+    TDD controller
+
+Clément le Mon Jun 20 14:22:17 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Clément le Mon Jun 20 14:22:12 2016
+
+    modification javadoc
+
+Maxime le Mon Jun 20 14:21:11 2016
+
+    contro
+
+Maxime le Mon Jun 20 14:16:20 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex.git
+
+Maxime le Mon Jun 20 14:14:27 2016
+
+    Javadoc controlleur
+
+Clément le Mon Jun 20 13:38:06 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Clément le Mon Jun 20 13:37:52 2016
+
+    UML complet
+
+Baptiste le Mon Jun 20 13:27:20 2016
+
+    Messages de chargement et de fin du jeu
+
+Marie le Mon Jun 20 11:44:19 2016
+
+    T.U controller (pas fini
+
+Marie le Mon Jun 20 10:17:15 2016
+
+    Conflit dans le package contract
+
+Marie le Mon Jun 20 10:10:13 2016
+
+    JavaDoc
+
+Baptiste le Mon Jun 20 09:19:14 2016
+
+    Merge branch 'tests'
+
+Baptiste le Mon Jun 20 09:08:18 2016
+
+    Tests (#1)
+
+Baptiste le Sun Jun 19 16:46:01 2016
+
+    test Level
+
+Baptiste le Sun Jun 19 13:36:45 2016
+
+    Test model
+
+Baptiste le Sat Jun 18 16:06:36 2016
+
+    Tests unitaires model
+
+Baptiste le Sat Jun 18 13:33:38 2016
+
+    Test DBProperty
+
+Baptiste le Sat Jun 18 11:48:26 2016
+
+    Menage
+
+Baptiste le Fri Jun 17 22:30:55 2016
+
+    Passage fluide entre les niveaux
+
+Baptiste le Fri Jun 17 22:22:39 2016
+
+    Possibilite de passe dans le negatif
+
+Baptiste le Fri Jun 17 22:18:04 2016
+
+    Ajout d'un cout d'essait
+
+Baptiste le Fri Jun 17 22:12:39 2016
+
+    Resolution de bugs
+
+Baptiste le Fri Jun 17 22:05:12 2016
+
+    Transfert du hero
+
+Baptiste le Fri Jun 17 21:32:52 2016
+
+    Chargement de la liste des levels
+
+Baptiste le Fri Jun 17 18:17:55 2016
+
+    Reizable = false
+
+Baptiste le Fri Jun 17 16:38:09 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Fri Jun 17 16:37:47 2016
+
+    Such tests unitaires
+
+Clément le Fri Jun 17 16:31:42 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Clément le Fri Jun 17 16:31:39 2016
+
+    UML Element
+
+Maxime le Fri Jun 17 15:50:46 2016
+
+    Javadoc
+
+Clément le Fri Jun 17 15:13:32 2016
+
+    UML contract
+
+Baptiste le Fri Jun 17 14:38:58 2016
+
+    Points everywhere
+
+Baptiste le Fri Jun 17 14:21:44 2016
+
+    Pathfinding
+
+Baptiste le Fri Jun 17 12:21:15 2016
+
+    Maps
+
+Baptiste le Fri Jun 17 12:20:37 2016
+
+    Merge remote-tracking branch 'origin/master'
+
+Baptiste le Fri Jun 17 12:20:29 2016
+
+    Ajout d'IA
+
+Clément le Fri Jun 17 12:09:31 2016
+
+    UML contract
+
+Baptiste le Fri Jun 17 12:02:27 2016
+
+    Nouveaux niveaux
+
+Clément le Fri Jun 17 10:34:14 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Clément le Fri Jun 17 10:34:09 2016
+
+    debut contract
+
+Marie le Fri Jun 17 10:27:35 2016
+
+    conflit
+
+Marie le Fri Jun 17 10:26:01 2016
+
+    connexion avec la bdd fini
+
+Baptiste le Fri Jun 17 10:25:37 2016
+
+    Chargement BDD
+
+Baptiste le Fri Jun 17 09:59:30 2016
+
+    conflits
+
+Baptiste le Fri Jun 17 09:58:39 2016
+
+    Connexion bdd
+
+Baptiste le Fri Jun 17 08:56:16 2016
+
+    Menage
+
+Baptiste le Fri Jun 17 08:46:04 2016
+
+    Ajout de END
+
+Baptiste le Fri Jun 17 08:44:58 2016
+
+    Implémentation de END
+
+Baptiste le Thu Jun 16 22:57:48 2016
+
+    R for Retry
+
+Baptiste le Thu Jun 16 22:32:48 2016
+
+    Petite modification
+
+Baptiste le Thu Jun 16 22:02:41 2016
+
+    Ajout des items
+
+Baptiste le Thu Jun 16 21:54:32 2016
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+    	view/src/main/java/view/GamePanel.java
+
+Baptiste le Thu Jun 16 21:50:31 2016
+
+    Ajout des compétences
+
+Clément le Thu Jun 16 13:21:59 2016
+
+    game over et score
+
+Marie le Thu Jun 16 12:05:27 2016
+
+    chargement depuis la base de donnee
+
+Marie le Thu Jun 16 11:44:13 2016
+
+    chargement des niveaux depuis la base de donnée
+
+Maxime le Thu Jun 16 11:43:19 2016
+
+    javadoc class hero
+
+Maxime le Thu Jun 16 11:21:35 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex.git
+
+Maxime le Thu Jun 16 11:20:39 2016
+
+    javadoc model
+
+Clément le Thu Jun 16 11:09:53 2016
+
+    Alive
+
+Clément le Thu Jun 16 10:42:08 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Thu Jun 16 10:41:58 2016
+
+    Spell
+
+Clément le Thu Jun 16 10:41:14 2016
+
+    k
+
+Clément le Thu Jun 16 10:40:31 2016
+
+    keyListener
+
+Baptiste le Thu Jun 16 10:26:04 2016
+
+    Ajout du Spell
+
+Clément le Thu Jun 16 09:52:20 2016
+
+    keyListener
+
+Clément le Thu Jun 16 09:51:31 2016
+
+    keyListener
+
+Baptiste le Thu Jun 16 09:05:30 2016
+
+    Merge remote-tracking branch 'origin/master'
+
+Baptiste le Thu Jun 16 09:05:18 2016
+
+    Mise a jour bdd
+
+Baptiste le Thu Jun 16 09:00:47 2016
+
+    Ajout du script SQL de création des tables
+
+Clément le Thu Jun 16 09:00:38 2016
+
+    hero !
+
+Clément le Thu Jun 16 08:50:23 2016
+
+    correction
+
+Marie le Thu Jun 16 08:47:26 2016
+
+    DB
+
+Clément le Thu Jun 16 08:46:30 2016
+
+    correction
+
+Baptiste le Wed Jun 15 21:39:55 2016
+
+    Corrections
+
+Baptiste le Wed Jun 15 17:35:49 2016
+
+    Merge remote-tracking branch 'origin/master'
+
+Baptiste le Wed Jun 15 17:26:13 2016
+
+    AI Ai Ai Ai Ai AI AI
+
+Clément le Wed Jun 15 17:22:51 2016
+
+    affichage sprite entities
+
+Clément le Wed Jun 15 17:21:52 2016
+
+    affichage sprite entities
+
+Baptiste le Wed Jun 15 17:03:12 2016
+
+    Ajout des deux IA
+
+Baptiste le Wed Jun 15 16:05:53 2016
+
+    Ajout des déplacements avec prise en compte des collisions
+
+Baptiste le Wed Jun 15 15:47:43 2016
+
+    Merge remote-tracking branch 'origin/master'
+
+Baptiste le Wed Jun 15 15:47:33 2016
+
+    Modification du fonctionnement des IA
+
+Clément le Wed Jun 15 15:38:50 2016
+
+    affichage sprite
+
+Clément le Wed Jun 15 15:35:20 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 15:25:14 2016
+
+    Model : Ajout des types
+
+Baptiste le Wed Jun 15 15:20:29 2016
+
+    Gestion des ticks, collisions et IA
+
+Baptiste le Wed Jun 15 14:22:37 2016
+
+    Funny Sunny
+
+Clément le Wed Jun 15 14:21:06 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 14:20:14 2016
+
+    Correction bug ressources
+
+Baptiste le Wed Jun 15 13:55:18 2016
+
+    Refactoring
+
+Baptiste le Wed Jun 15 13:38:19 2016
+
+    Mucho interface
+
+Clément le Wed Jun 15 12:18:42 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 12:18:19 2016
+
+    Model observer
+
+Clément le Wed Jun 15 12:17:04 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 12:15:38 2016
+
+    Corrections
+
+Clément le Wed Jun 15 12:08:33 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 12:08:12 2016
+
+    Resultion
+
+Baptiste le Wed Jun 15 12:06:29 2016
+
+    Collision & correction
+
+Marie le Wed Jun 15 11:24:41 2016
+
+    Javadoc + getter & setter + resolution
+
+Marie le Wed Jun 15 11:18:44 2016
+
+    javadoc + resolution probleme
+
+Clément le Wed Jun 15 11:18:25 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 11:18:13 2016
+
+    Much fun
+
+Marie le Wed Jun 15 11:10:16 2016
+
+    Javadoc + getter & setter
+
+Clément le Wed Jun 15 11:03:39 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Clément le Wed Jun 15 11:03:30 2016
+
+    mise a jouru UML
+
+Baptiste le Wed Jun 15 11:02:33 2016
+
+    Interface everywhere
+
+Baptiste le Wed Jun 15 10:46:31 2016
+
+    Model ticks
+
+Marie le Wed Jun 15 10:34:58 2016
+
+    getter & setter + javadoc + resolution probleme
+
+Marie le Wed Jun 15 10:30:02 2016
+
+    getter & setter + javadoc
+
+Baptiste le Wed Jun 15 10:14:10 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Wed Jun 15 10:13:34 2016
+
+    Perform order
+
+Clément le Wed Jun 15 09:53:47 2016
+
+    code des classes du package vue
+
+Baptiste le Wed Jun 15 09:46:53 2016
+
+    Controller
+
+Baptiste le Wed Jun 15 09:34:15 2016
+
+    controller & co
+
+Clément le Tue Jun 14 17:28:01 2016
+
+    debut code view
+
+Clément le Tue Jun 14 17:26:40 2016
+
+    d&but code view
+
+Baptiste le Tue Jun 14 17:25:38 2016
+
+    Debut du controller
+
+Baptiste le Tue Jun 14 16:49:17 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Tue Jun 14 16:48:59 2016
+
+    Correction de bug et sprites
+
+Marie le Tue Jun 14 16:42:53 2016
+
+    sprites crystal/Door/Money
+
+Baptiste le Tue Jun 14 16:30:22 2016
+
+    Ajout des sprites
+
+Baptiste le Tue Jun 14 16:26:39 2016
+
+    Petite correction de bug
+
+Baptiste le Tue Jun 14 16:25:43 2016
+
+    Resolution des conflits
+
+Baptiste le Tue Jun 14 16:24:28 2016
+
+    AI et tests model
+
+Marie le Tue Jun 14 16:21:32 2016
+
+    resolutionLiaison
+
+Marie le Tue Jun 14 16:20:22 2016
+
+    liaison modele
+
+Clément le Tue Jun 14 15:11:58 2016
+
+    Petit 
+Marie le Tue Jun 14 15:00:59 2016
+
+    fun
+
+Marie le Tue Jun 14 14:59:11 2016
+
+    fun
+
+Clément le Tue Jun 14 14:58:19 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Tue Jun 14 14:56:28 2016
+
+    Correction des erreur de cet ami de clément
+
+Clément le Tue Jun 14 14:53:51 2016
+
+    test
+
+Clément le Tue Jun 14 14:41:04 2016
+
+    modification animation
+
+Baptiste le Tue Jun 14 14:33:14 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Tue Jun 14 14:32:48 2016
+
+    Such funny documentation
+
+Marie le Tue Jun 14 14:23:44 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Marie le Tue Jun 14 14:21:41 2016
+
+    JavaDoc (incomplet) + ajout des dernieres classes
+
+Baptiste le Tue Jun 14 13:55:46 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Tue Jun 14 13:55:18 2016
+
+    Much documentation
+
+Clément le Tue Jun 14 13:54:51 2016
+
+    modification des comportements
+
+Clément le Tue Jun 14 13:52:57 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Clément le Tue Jun 14 13:50:29 2016
+
+    modification des comportements
+
+Clément le Tue Jun 14 13:49:37 2016
+
+    modification des comportements
+
+Baptiste le Tue Jun 14 13:26:08 2016
+
+    Documentation des comportements
+
+Baptiste le Tue Jun 14 13:13:11 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Marie le Tue Jun 14 13:12:54 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Marie le Tue Jun 14 13:10:04 2016
+
+    Model
+
+Baptiste le Tue Jun 14 11:22:48 2016
+
+    Sequences
+
+Clément le Tue Jun 14 10:58:56 2016
+
+    ajout des methodes openFrame et closeFrame dans la classe View, pour eviter des bug de chargement
+
+Clément le Tue Jun 14 10:55:48 2016
+
+    ajout de la methode openFrame dans la classe View, pour eviter des bug de chargement
+
+Clément le Tue Jun 14 10:37:03 2016
+
+    ajout des geters seters sur la classe GameFrame
+
+Baptiste le Tue Jun 14 10:33:45 2016
+
+    Mise à jour UML Controller
+
+Baptiste le Tue Jun 14 10:33:16 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Tue Jun 14 10:32:47 2016
+
+    Mise à jour UML Controller
+
+Clément le Tue Jun 14 10:24:41 2016
+
+    modification des classes View, GameFrame,GamePanel selon l'UML
+
+Clément le Tue Jun 14 10:21:20 2016
+
+    modification des classes View, GameFrame,GamePanel selon l'UML
+
+Baptiste le Tue Jun 14 10:14:15 2016
+
+    Class bouchonnée et tests Clock
+
+Baptiste le Tue Jun 14 09:50:44 2016
+
+    Code bouchonné controller
+
+Baptiste le Tue Jun 14 09:41:50 2016
+
+    Merge branch 'master' of https://github.com/Baptiste/Lorann-Ex
+
+Baptiste le Tue Jun 14 09:41:16 2016
+
+    Ajout du l'interface IController
+
+Clément le Tue Jun 14 09:39:25 2016
+
+    modification package: contract interface: IView ajout repaint()
+
+Baptiste le Tue Jun 14 09:20:40 2016
+
+    nettoyage
+
+Clément le Tue Jun 14 09:11:37 2016
+
+    ajout des schema UML
+
+Clément le Tue Jun 14 09:04:04 2016
+
+    envois du code et de l'uml
+
+Baptiste le Mon Jun 13 22:36:01 2016
+
+    Modification de la base de données
+
+Baptiste le Mon Jun 13 15:00:24 2016
+
+    Compatibilité Eclipse
+
+Baptiste le Fri Jun 10 14:55:39 2016
+
+    Create blank Maven project
+
+Baptiste le Fri Jun 10 14:02:22 2016
+
+    Initial commit

@@ -9,6 +9,7 @@ public interface IEntity extends IElement {
 	/**
 	 * get the direction of an entity
 	 * @return
+     * The direction of the entity
 	 */
     Direction getDirection();
     

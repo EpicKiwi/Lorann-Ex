@@ -18,12 +18,14 @@ public interface IElement {
     /**
      * get the behavior of the element
      * @return
+     * The behavior
      */
     Behavior getBehavior();
 
     /**
      * get the element's location on screen
      * @return
+     * The location
      */
     ILocation getLocation();
 
@@ -43,6 +45,7 @@ public interface IElement {
     /**
      * get the image of the element that will appear on screen
      * @return
+     * The sprite
      */
     ISprite getSprite();
 
@@ -55,12 +58,14 @@ public interface IElement {
     /**
      * define if the element can be walk trought or not
      * @return
+     * A boolean true if it's permeable
      */
     boolean isPermeable();
 
     /**
      * get the image of an element that is stocked
      * @return
+     * The current image of the element
      */
     Image getImage();
 }
