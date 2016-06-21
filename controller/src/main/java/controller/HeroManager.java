@@ -50,6 +50,22 @@ class HeroManager {
             case RIGHT:
                 nextX++;
                 break;
+            case TOPLEFT:
+                nextX--;
+                nextY--;
+                break;
+            case TOPRIGHT:
+                nextX++;
+                nextY--;
+                break;
+            case BOTTOMLEFT:
+                nextX--;
+                nextY++;
+                break;
+            case BOTTOMRIGHT:
+                nextX++;
+                nextY++;
+                break;
             default:
                 System.out.println("Invalid direction move");
                 break;

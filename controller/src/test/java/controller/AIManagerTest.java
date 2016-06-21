@@ -98,14 +98,14 @@ public class AIManagerTest {
         IAI e = new AiMock(5,8, Direction.UNDEFINED, AIType.FOLLOW);
 
 
-        IHero h = new HeroMock(6,10,Direction.DOWN);
+        IHero h = new HeroMock(7,8,Direction.DOWN);
         m.loadLevel(0);
         m.getLevel().setHero(h);
 
         t.performAi(e);
 
         assertEquals(5,e.getLocation().getX());
-        assertEquals(8,e.getLocation().getY());
+        assertEquals(7,e.getLocation().getY());
     }
 
 }
