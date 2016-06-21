@@ -26,6 +26,8 @@ class MoveManager {
      * Check if a collision append between the element and an other
      * @return
      * The other element in collision or null if no collision
+     * @param element
+     * Has a collision with element
      */
     IElement hasCollision(IElement element){
         ILocation elementLocation = element.getLocation();
@@ -40,8 +42,11 @@ class MoveManager {
     /**
      * Tell if a movement is possible or not
      * @param x
+     * movement x
      * @param y
+     * movement y
      * @return
+     * Can move
      */
     boolean canMoveOn(int x, int y){
         IDimention levelDimentions = this.model.getLevel().getDimention();
@@ -58,9 +63,13 @@ class MoveManager {
     /**
      * Allow to move to another position
      * @param entity
+     * Safe move for entity
      * @param x
+     * Localisation x
      * @param y
+     * localisation y
      * @return
+     * safe move entity
      */
     boolean safeMoveTo(IEntity entity, int x, int y){
         if(canMoveOn(x,y)) {

@@ -8,14 +8,16 @@ import contract.IElement;
  */
 public interface IDoor extends IElement {
 	/**
-	 * define if the door is locked or not
+	 * Getter if the door is unlocked
 	 * @return
+	 * define if the door is locked or not
 	 */
     boolean isUnlocked();
 
     /**
-     * set the state of the door
+     * Setter for the door unlocked
      * @param unlocked
+	 * set the state of the door
      */
     void setUnlocked(boolean unlocked);
 }

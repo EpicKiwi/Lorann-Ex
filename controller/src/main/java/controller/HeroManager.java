@@ -29,6 +29,7 @@ class HeroManager {
     /**
      * Direction of the hero
      * @param direction
+     * Direction of the hero
      * @return A boolean representing if the movement was possible
      */
     public boolean move(Direction direction){

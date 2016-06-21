@@ -82,7 +82,9 @@ class GameFrame extends JFrame implements KeyListener
 	
 	
 	/**
-	 * geter of the width attribute
+	 * getter of the width attribute
+	 * @return
+	 * Get width
 	 */
 	public int getWidth()
 	{
@@ -110,8 +112,9 @@ class GameFrame extends JFrame implements KeyListener
 	
 	
 	/**
-	 * seter from the controller class
+	 * setter from the controller class
 	 * @param controller
+	 * set the controller
 	 */
 	public void setController(IController controller)
 	{

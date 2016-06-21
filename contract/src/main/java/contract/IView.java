@@ -11,13 +11,14 @@ public interface IView
 {
 
 	/**
+	 *a method
 	 * update what the user see on screen
-	 * 
 	 */
 	void repaint();
 
 	
 	/**
+	 * a methode
 	 * Open the window
 	 */
 	void openFrame();
@@ -32,6 +33,8 @@ public interface IView
 
 	
 	/**
+	 * Setter of the controller
+	 * @param controller
 	 * Set the controller of the view
 	 */
 	void setController(IController controller);

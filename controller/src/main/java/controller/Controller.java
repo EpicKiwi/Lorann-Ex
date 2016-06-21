@@ -132,6 +132,8 @@ public class Controller implements IController {
 
 	/**
 	 * Perform the collision depending of the behavior
+	 * @param element
+	 * behavior with element
 	 */
 	private void performCollision(IElement element){
 		MoveManager mm = MoveManager.getInstance();

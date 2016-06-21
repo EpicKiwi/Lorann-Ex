@@ -25,6 +25,8 @@ public class Clock extends Thread {
 
     /**
      * Instantiates a new Clock.
+     * @param controller
+     * clock for the controller
      */
     public Clock(Controller controller) {
         this.tickNumber = 0;
@@ -34,7 +36,6 @@ public class Clock extends Thread {
 
     /**
      * Instantiates a new clock with a specified interval.
-     *
      * @param tickInterval
      * the interval between two ticks.
      */

@@ -11,7 +11,9 @@ public interface IElement {
 	/**
 	 * define actions if the object collide with an other
 	 * @param other
+     * Other object
 	 * @param level
+     * Level of the element
 	 */
     void onCollision(IElement other, ILevel level);
 
@@ -30,28 +32,32 @@ public interface IElement {
     ILocation getLocation();
 
     /**
-     * set the element's location on screen
+     * Setter for the location
      * @param location
+     * set the element's location on screen
      */
     void setLocation(ILocation location);
 
     /**
      * set the element's location on screen
      * @param x
+     * Location x
      * @param y
+     * Location y
      */
     void setLocation(int x, int y);
 
     /**
-     * get the image of the element that will appear on screen
+     * getter the image of the element that will appear on screen
      * @return
      * The sprite
      */
     ISprite getSprite();
 
     /**
-     * set the image of the element that will appear on screen
+     * Setter for the sprite
      * @param sprite
+     * set the image of the element that will appear on screen
      */
     void setSprite(ISprite sprite);
 
