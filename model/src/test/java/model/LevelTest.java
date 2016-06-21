@@ -28,10 +28,6 @@ public class LevelTest {
         t.setElement(0,0,e);
         assertNotNull("Should not be null",t.getElements()[0][0]);
         assertSame("Should set a new element at specified place",e,t.getElements()[0][0]);
-        Entity en = new EntityMock(0,0);
-        t.setElement(0,0,en);
-        assertNotSame("Should be stocked in the ArrayList",en,t.getElements()[0][0]);
-        assertTrue("Should be stocked in ArrayList",t.getEntities().indexOf(en) != -1);
     }
 
     @Test

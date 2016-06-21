@@ -27,16 +27,15 @@ public class View implements IView
 	public View()
 	{
 		this.frame = new GameFrame();
-		
 	}
-	
-	
+
+
 	/**
 	 * update methode from IView inteface
 	 */
 	public void repaint()
 	{
-		
+
 	}
 	
 	
@@ -46,7 +45,6 @@ public class View implements IView
 	public void openFrame()
 	{
 		this.frame.setVisible(true);
-		
 	}
 
 	
