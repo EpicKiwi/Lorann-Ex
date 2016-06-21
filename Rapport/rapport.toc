@@ -1,0 +1,19 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Planning}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Team}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Planning diagram}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Estimated planning}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Efficient planning}{3}{subsection.1.2.2}
+\contentsline {chapter}{\numberline {2}Game manual}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Installation}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Level}{4}{section.2.2}
+\contentsline {paragraph}{Goal}{5}{section*.2}
+\contentsline {paragraph}{Points}{5}{section*.3}
+\contentsline {section}{\numberline {2.3}Monsters}{5}{section.2.3}
+\contentsline {paragraph}{Straight monster}{5}{section*.4}
+\contentsline {paragraph}{Diagonal monster}{5}{section*.5}
+\contentsline {paragraph}{Random monster}{5}{section*.6}
+\contentsline {paragraph}{Following monster}{5}{section*.7}
+\contentsline {section}{\numberline {2.4}Controls}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Spell}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Retry}{6}{section.2.6}
